@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AiLisia Method — with Alison James | AiLisia Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF6F0;
+    --tint:#F4E8DA;
+    --accent:#C86BFF;
+    --accent-deep:#2D146F;
+    --ink:#1B1028;
+    --ink-soft:#6E6475;
+    --metal:#C8922E;
+    --white:#FFFFFF;
+    --shadow-soft: 0 2px 6px rgba(29,16,40,.06), 0 14px 34px color-mix(in srgb, var(--accent-deep) 10%, transparent);
+    --shadow-lift: 0 4px 10px rgba(29,16,40,.09), 0 22px 48px color-mix(in srgb, var(--accent-deep) 14%, transparent);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'DM Sans',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 90% -10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%),
+      radial-gradient(900px 500px at -5% 25%, color-mix(in srgb, var(--accent-deep) 8%, transparent), transparent 55%),
+      var(--paper);
+    line-height:1.7;
+    font-size:16.5px;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
+  .page{max-width:540px;margin:0 auto;padding:0 22px 90px}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;letter-spacing:-0.015em;line-height:1.12}
+  h1{font-size:clamp(2.3rem,8.5vw,3.1rem)}
+  h2{font-size:clamp(1.65rem,6vw,2.05rem);margin-bottom:.7rem}
+  .script{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--metal);font-weight:500}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-deep);margin-bottom:.9rem;
+  }
+  p.lead{font-size:1.12rem;color:var(--ink-soft)}
+  section{padding:58px 0 14px}
+  .band{
+    margin:60px -22px 0; padding:64px 30px;
+    background:linear-gradient(160deg, var(--accent-deep) 0%, color-mix(in srgb, var(--accent-deep) 75%, var(--ink)) 100%);
+    color:var(--paper);
+  }
+  .band h2{color:var(--paper)}
+  .band .script{color:color-mix(in srgb, var(--metal) 80%, var(--paper))}
+  .hero{padding-top:64px;text-align:center}
+  .hero .photo{
+    width:148px;height:148px;border-radius:50%;object-fit:cover;
+    border:5px solid var(--white); box-shadow:var(--shadow-lift); margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic;color:var(--accent-deep)}
+  .hero .sub{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
+  .hero .sub b{color:var(--ink)}
+  .btn{
+    display:block;text-align:center;text-decoration:none;
+    font-weight:800;font-size:1.05rem;letter-spacing:.01em;
+    background:linear-gradient(150deg,var(--accent-deep) 0%,color-mix(in srgb, var(--accent-deep) 80%, var(--accent)) 100%);
+    color:var(--white);padding:18px 26px;border-radius:60px;
+    box-shadow:0 6px 14px color-mix(in srgb, var(--accent-deep) 35%, transparent), 0 18px 40px color-mix(in srgb, var(--accent-deep) 20%, transparent);
+    transform:translateY(0);
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+    margin:28px 0 10px;
+  }
+  .btn:hover{transform:translateY(-3px)}
+  .btn:active{transform:translateY(-1px) scale(.99)}
+  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+  ul.check{list-style:none;margin-top:18px}
+  ul.check li{
+    padding:13px 16px 13px 48px;position:relative;background:var(--white);
+    border-radius:14px;margin-bottom:10px;box-shadow:var(--shadow-soft);font-weight:500;
+  }
+  ul.check li::before{content:"✦";position:absolute;left:16px;top:13px;font-size:.9rem;color:var(--metal)}
+  .story p{margin-bottom:1.05rem}
+  .story .punch{
+    font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;line-height:1.35;
+    color:var(--accent-deep);padding-left:18px;border-left:3px solid var(--metal);margin:1.4rem 0;
+  }
+  .photo-wide{width:100%;border-radius:20px;box-shadow:var(--shadow-lift);margin:22px 0 6px;display:block}
+  .caption{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-bottom:8px}
+  .receipt{
+    background:var(--white);border-radius:22px;padding:30px 26px;margin-top:24px;
+    box-shadow:var(--shadow-lift);text-align:center;position:relative;overflow:hidden;
+  }
+  .receipt::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--accent-deep),var(--metal),var(--accent));
+  }
+  .receipt .big{
+    font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--ink);
+    letter-spacing:-.01em;line-height:1.35;font-style:italic;padding:6px 4px;
+  }
+  .receipt .since{font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;font-weight:700}
+  .receipt .disclaim{
+    margin-top:16px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;
+    border-top:1px dashed var(--tint);padding-top:14px;
+  }
+  .stack{margin-top:10px}
+  .stack-item{
+    background:var(--white);border-radius:18px;padding:22px 22px 18px;margin-bottom:14px;
+    box-shadow:var(--shadow-soft);border:1px solid color-mix(in srgb, var(--accent-deep) 14%, transparent);
+  }
+  .stack-item h3{font-size:1.15rem;margin-bottom:6px}
+  .stack-item .tag{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:4px 12px;margin-bottom:10px;
+  }
+  .stack-item p{font-size:.95rem;color:var(--ink-soft)}
+  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,color-mix(in srgb, var(--metal) 10%, var(--white)))}
+  .notlist{display:grid;gap:10px;margin-top:18px}
+  .notlist div{background:var(--white);border-radius:14px;padding:14px 18px;font-weight:700;box-shadow:var(--shadow-soft)}
+  .notlist div span{margin-right:10px;color:var(--accent-deep)}
+  .quote{
+    background:var(--white);border-radius:20px;padding:26px 24px 20px;margin-bottom:16px;
+    box-shadow:var(--shadow-soft);position:relative;
+  }
+  .quote::before{
+    content:"\201C";font-family:'Cormorant Garamond',serif;font-size:4rem;color:var(--tint);
+    position:absolute;top:-2px;left:14px;line-height:1;
+  }
+  .quote p{position:relative;font-size:1rem;padding-top:8px}
+  .quote .who{margin-top:10px;font-weight:800;font-size:.86rem;color:var(--accent-deep)}
+  .quote .loc{font-weight:400;font-size:.82rem;color:var(--ink-soft)}
+  details{background:var(--white);border-radius:16px;margin-bottom:12px;box-shadow:var(--shadow-soft);overflow:hidden}
+  summary{cursor:pointer;font-weight:800;padding:18px 20px;list-style:none;position:relative;padding-right:48px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:12px;font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem;color:var(--accent-deep);transition:transform .3s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .a{padding:0 20px 18px;color:var(--ink-soft);font-size:.97rem}
+  .steps{counter-reset:step;margin-top:18px}
+  .step{position:relative;padding:6px 0 26px 64px}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
+    background:var(--accent-deep);color:var(--paper);font-family:'Cormorant Garamond',serif;font-weight:600;
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+    box-shadow:var(--shadow-soft);
+  }
+  .step:not(:last-child)::after{
+    content:"";position:absolute;left:21px;top:48px;bottom:2px;width:2px;
+    background:linear-gradient(var(--accent-deep), var(--tint));
+  }
+  .step h3{font-size:1.08rem;margin-bottom:2px}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+  .note{
+    background:var(--white);border-radius:24px;padding:34px 28px;box-shadow:var(--shadow-lift);
+    margin-top:24px;position:relative;
+  }
+  .note::before{content:"✦";position:absolute;top:-14px;left:50%;transform:translateX(-50%);font-size:1.3rem;color:var(--metal)}
+  .note p{margin-bottom:1rem}
+  .note .sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:2.2rem;color:var(--accent-deep);margin-top:6px;font-weight:400}
+  footer{
+    text-align:center;padding:46px 22px 30px;font-size:.78rem;color:var(--ink-soft);
+    max-width:540px;margin:0 auto;line-height:1.6;
+  }
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <img class="photo" src="https://placehold.co/148x148" alt="Alison James, AiLisia Labs">
+    <span class="eyebrow">Five-phase financial operating system</span>
+    <h1>You manage money for other people brilliantly. It's time to build a system <em>for your own.</em></h1>
+    <p class="sub">The AiLisia Method is a structured five-phase program that teaches high-earning women how to run their finances like the operating system they are. Not a budget. Not a course. <b>A complete method.</b></p>
+    <a class="btn" href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194">Join the AiLisia Method</a>
+    <p class="btn-note">$49/month or $297/year. Cancel anytime before your next billing date.</p>
+  </section>
+
+  <!-- ============ 2. STORY ============ -->
+  <section class="story reveal">
+    <span class="eyebrow">Why this exists</span>
+    <h2>I watched brilliant people with six-figure incomes working second jobs. Not because they didn't earn enough.</h2>
+    <p>I spent years in institutional finance. Managing capital at a structural level. Understanding how money moves, how systems protect it, how it compounds or erodes depending entirely on the architecture behind it.</p>
+    <p>And I watched the people I loved, credentialed and earning well, stretched thin and anxious anyway. Not because they failed. Because nobody had ever given them a system designed for their actual life.</p>
+    <p class="punch">"I'm going home to figure out the rest of my life, because this ain't it."</p>
+    <p>That's what I said the Friday I walked out. My dog had just needed emergency surgery. I had borrowed money from a friend. And my check was late. I had the institutional knowledge, the credentials, and the clarity that comes when the thing you've been ignoring becomes impossible to ignore. I never went back.</p>
+    <p>AiLisia Labs exists because nobody should be one paycheck, one emergency, one unreliable situation away from crisis. You don't need to earn more. You need a system. That is what The AiLisia Method builds.</p>
+    <img class="photo-wide" src="https://placehold.co/496x280" alt="AiLisia Labs — financial clarity for high-earning women">
+    <p class="caption">A method built from institutional knowledge, personal collapse, and the rebuild that followed.</p>
+  </section>
+
+  <!-- ============ 3. RECEIPT ============ -->
+  <section class="reveal">
+    <div class="receipt">
+      <div class="big">"For the first time, you'll see exactly where your money is going, and have a system to control it."</div>
+      <div class="since">What members say after completing the method</div>
+      <p class="disclaim"><b>Let me be honest with you:</b> That is the promise of the work, not a guarantee of any specific financial outcome. Your results will depend on your situation, your honesty with the process, and how consistently you apply the system. What I can tell you is that the method is built to work. It was built on real institutional knowledge and tested against real lives. The path is there. The walking is yours.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO IT'S FOR ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Is this you?</span>
+    <h2>This is for the woman who has built everything except a system for her own money.</h2>
+    <ul class="check">
+      <li>You earn well, look successful, and still feel anxious every time you open your banking app</li>
+      <li>You advise others on money, strategy, and resources, and have never applied that same rigor to yourself</li>
+      <li>You have tried budgets. They do not stick. Not because you lack discipline, but because a spreadsheet is not a system</li>
+      <li>You want to understand your FOS, your Financial Operating Score, not just feel vague about where you stand</li>
+      <li>You are ready to sit with the honest picture and do something about it</li>
+    </ul>
+  </section>
+
+  <!-- ============ 5. MISSION BAND ============ -->
+  <div class="band reveal">
+    <span class="script" style="font-size:1.6rem">You don't need to earn more.</span>
+    <h2>You need a system that actually runs on what you already have.</h2>
+  </div>
+
+  <!-- ============ 6. WHAT'S INSIDE ============ -->
+  <section id="offer" class="reveal">
+    <span class="eyebrow">What's inside The AiLisia Method</span>
+    <h2>Five phases. One operating system. Built at the depth the work actually requires.</h2>
+    <p class="lead">Each phase closes with an activation deliverable, something you build and keep. Not notes from a course. A working document you can act on.</p>
+    <div class="stack">
+      <div class="stack-item">
+        <div class="tag">Orientation + Phase 1</div>
+        <h3>Awaken: 13 lessons that start at the root</h3>
+        <p>Five orientation lessons setting the foundation and introducing the AiLisia GPT. Then Phase 1's eight lessons rewiring how you think about money at the source. Your activation deliverable: the Financial Clarity Snapshot. You leave knowing what's actually going on, not what you've been telling yourself.</p>
+      </div>
+      <div class="stack-item">
+        <div class="tag">Phase 2</div>
+        <h3>Audit: the two most honest documents you've built about your money</h3>
+        <p>Five lessons pulling back the curtain on your full financial picture. You walk out with your Financial Pressure Points and your Financial Baseline. These are not worksheets. They are the first genuinely accurate documents you have ever held about where you actually stand.</p>
+      </div>
+      <div class="stack-item">
+        <div class="tag">Phase 3 (in progress)</div>
+        <h3>Architect: your financial operating system</h3>
+        <p>Lessons 3.1 and 3.2 are live now. The full phase covers your Core Account Architecture and Income Allocation Strategy. This is where the system you have been building gets its structure. New lessons added as they are completed.</p>
+      </div>
+      <div class="stack-item bonus">
+        <div class="tag">The Difference</div>
+        <h3>Access to me, the community, and the AiLisia GPT, built for this work</h3>
+        <p>This is not a library of videos you work through alone. Inside the method you have a community of women in the same process, workbooks and activation materials at every phase, and the AiLisia GPT, an AI guide designed specifically for this system, not a general tool. Neisha said it: she finished Module 1 and immediately wanted the rest. That is the kind of community this is.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194">Join The AiLisia Method</a>
+    <p class="btn-note">$49/month or $297/year. Cancel before your next billing date to stop.</p>
+  </section>
+
+  <!-- ============ 7. WHAT THIS IS NOT ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Let's clear this up</span>
+    <h2>What this is <i>not</i>:</h2>
+    <div class="notlist">
+      <div><span>✗</span> A budgeting course for someone learning to manage money for the first time</div>
+      <div><span>✗</span> A motivational program built around mindset shifts and no structure</div>
+      <div><span>✗</span> A library of information without a system to apply it to your actual life</div>
+      <div><span>✗</span> A space where you are lectured at, shamed, or told to earn more</div>
+    </div>
+    <p style="margin-top:18px">This is a method. It requires honesty and the willingness to look at the real numbers. If you are ready for that, it will meet you there.</p>
+  </section>
+
+  <!-- ============ 8. PROOF ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What members are saying</span>
+    <h2>In their words.</h2>
+    <div class="quote">
+      <p>"The Financial Clarity Blueprint will make you sit with yourself. It asks you to be honest about where you actually are, not where you think you are. If you're willing to do the work, by the end you'll have a real picture of your finances you can actually do something with."</p>
+      <div class="who">Dr. Maria M. <span class="loc">— St. Thomas, U.S.V.I.</span></div>
+    </div>
+    <div class="quote">
+      <p>"Understanding why we make certain financial choices really stood out to me. It gave me the opportunity to reflect on my learned behaviors surrounding money. I truly enjoyed it."</p>
+      <div class="who">Gareth C. <span class="loc">— Philadelphia, PA</span></div>
+    </div>
+    <div class="quote">
+      <p>"I finished Module 1 and immediately wanted access to the rest. Understanding why we make certain choices is helpful, it all boils down to mindset. I like that the videos are short enough to listen to while working."</p>
+      <div class="who">Neisha C. <span class="loc">— St. Croix, U.S.V.I.</span></div>
+    </div>
+    <div class="quote">
+      <p>"The site is very well done. The videos are very calming and the instructions are clear. The community feels very safe."</p>
+      <div class="who">Chisa B. <span class="loc">— Charlotte, NC</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FAQ ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Questions worth asking</span>
+    <h2>Honest answers.</h2>
+    <details>
+      <summary>I already understand money well professionally. Will this teach me anything new?</summary>
+      <div class="a">Probably not conceptually. The AiLisia Method is not a financial education program. It is a system for applying what you already know, or already have access to, inside your own financial life. Most people in this program are not missing information. They are missing structure and accountability in a place they have been avoiding.</div>
+    </details>
+    <details>
+      <summary>Why should I do this with you specifically?</summary>
+      <div class="a">Because this method was not built from theory. I worked in institutional finance and watched the gap between what high earners knew and what they actually did with their own money. Then I lived that gap myself. What I built coming out of that is not a framework designed for a textbook. It is a system I built for a real life, tested on real people. The community inside reflects that: women who are doing the honest work alongside each other, not performing wellness.</div>
+    </details>
+    <details>
+      <summary>Phase 3 says it is still in progress. Should I wait to join?</summary>
+      <div class="a">No. Phases 1 and 2 contain enough work that most members are still in them when Phase 3 builds. Joining now means you move through the method as it grows, and you have access to the community and the AiLisia GPT from day one. Members who join now get Phase 3 as it is released, at no additional cost.</div>
+    </details>
+    <details>
+      <summary>What is the refund policy?</summary>
+      <div class="a">AiLisia Labs memberships run through Skool, and because of how Skool processes payments, refunds are not available for any membership charge, monthly or annual. If you decide the method is not for you, cancel before your next billing date and you will not be charged again. You keep full access through the end of your current period. If you are not sure yet, Alison offers a free Financial Clarity Blueprint at blueprint.ailisialabs.com/blueprint. Start there first.</div>
+    </details>
+    <details>
+      <summary>How much time does this take each week?</summary>
+      <div class="a">The videos are designed to be short enough to fit into a real week. Neisha listened while working. The activation deliverables take longer because they ask for real thought and honest numbers. Most members pace themselves through the phases over several weeks, not days. This is not a sprint. It is a system you build over time.</div>
+    </details>
+    <details>
+      <summary>Is this faith-based or spiritual?</summary>
+      <div class="a">The method itself is not. Alison's values show up in how she approaches the work: with dignity, not shame; with generosity, not gatekeeping. If that resonates with you, you are in the right place. There is no requirement to share her beliefs to benefit from the system.</div>
+    </details>
+  </section>
+
+  <!-- ============ 10. STEPS ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What happens next</span>
+    <h2>Three steps:</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Join the community on Skool</h3>
+        <p>Click the button. Choose monthly or annual access. You are in immediately, with the full curriculum and community available from your first login.</p>
+      </div>
+      <div class="step">
+        <h3>Start with Orientation and move in order</h3>
+        <p>The method is designed to be followed in sequence. Start with Orientation, let the AiLisia GPT introduce itself, and move into Phase 1. Each phase closes with an activation deliverable you build and keep.</p>
+      </div>
+      <div class="step">
+        <h3>Do the honest work.</h3>
+        <p>The Financial Clarity Snapshot, the Financial Pressure Points, the Financial Baseline: these documents only work if you fill them in with real numbers, not the ones you wish were true. The method meets you at that honesty. That is where things shift.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194">I'm Ready. Join the Method.</a>
+    <p class="btn-note">$49/month or $297/year. Cancel before renewal, no charge.</p>
+  </section>
+
+  <!-- ============ 11. PERSONAL NOTE ============ -->
+  <section class="reveal">
+    <div class="note">
+      <p><b>A note from me before you decide.</b></p>
+      <p>I built this because I watched people I genuinely love, credentialed, hardworking, capable people, strained by something that was fixable. Not because they needed to earn more. Because they needed a system. And nobody had ever built one for them at the level they actually needed it.</p>
+      <p>This method asks you to be honest. About your accounts, your patterns, the things you have been meaning to look at for three years. That part is not comfortable. But the Financial Baseline you build in Phase 2 is the most useful document most members have ever held about their own money. That is the starting point for everything that comes after.</p>
+      <p>If you are ready to do that work, I am glad you are here. If you want to see whether the method resonates before you join, start with the free blueprint at blueprint.ailisialabs.com/blueprint. No pressure.</p>
+      <p>See you on the inside,</p>
+      <div class="sig">Alison</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  &copy; 2026 AiLisia Labs<br>
+  Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.<br><br>
+  <span style="opacity:.6">Page built by The Digital Dad &mdash; systems, not hustle.</span>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && location.hash !== '#all') {
+    document.documentElement.classList.add('js');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }
+</script>
+</body>
+</html>
