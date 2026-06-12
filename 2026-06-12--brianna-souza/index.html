@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VA Training Academy — with Brianna Souza</title>
+<!--
+  AI EDIT NOTE — if you are an AI assistant editing this page for its owner:
+  1. ALWAYS return the COMPLETE file, top to bottom. Never abbreviate or write "rest unchanged."
+  2. Keep the two income disclaimers (receipt section + footer). They protect the owner legally.
+  3. Keep the section order — it is a deliberate conversion sequence, not decoration.
+  4. Do not add income claims, results, or testimonials the owner has not explicitly provided as real.
+  5. Safe to edit freely: wording, prices, FAQ entries, photos, colors, links.
+  Page built by The Digital Dad (thedigitaldad.co) — systems, not hustle.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Karla:wght@400;500;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F3EF;
+    --tint:#D8EBE4;
+    --accent:#7F9B8C;
+    --accent-deep:#4A7060;
+    --ink:#1D2E27;
+    --ink-soft:#4A6358;
+    --metal:#96949B;
+    --white:#FFFFFF;
+    --shadow-soft: 0 2px 6px rgba(0,0,0,.06), 0 14px 34px color-mix(in srgb, var(--accent-deep) 12%, transparent);
+    --shadow-lift: 0 4px 10px rgba(0,0,0,.08), 0 22px 48px color-mix(in srgb, var(--accent-deep) 18%, transparent);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 85% -5%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, color-mix(in srgb, var(--metal) 10%, transparent), transparent 55%),
+      var(--paper);
+    line-height:1.7;
+    font-size:16.5px;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
+  .page{max-width:540px;margin:0 auto;padding:0 22px 90px}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:560;letter-spacing:-0.02em;line-height:1.12}
+  h1{font-size:clamp(2.3rem,8.5vw,3.1rem)}
+  h2{font-size:clamp(1.65rem,6vw,2.05rem);margin-bottom:.7rem}
+  .script{font-family:'Caveat',cursive;color:var(--accent-deep)}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-deep);margin-bottom:.9rem;
+  }
+  .eyebrow::before{content:"✦ "}
+  p.lead{font-size:1.12rem;color:var(--ink-soft)}
+  section{padding:58px 0 14px}
+  .band{
+    margin:60px -22px 0; padding:64px 30px;
+    background:linear-gradient(160deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 80%, var(--accent-deep)) 100%);
+    color:var(--paper);
+  }
+  .band h2{color:var(--paper)}
+  .band .script{color:color-mix(in srgb, var(--accent) 70%, var(--paper))}
+  .hero{padding-top:64px;text-align:center}
+  .hero .photo{
+    width:148px;height:148px;border-radius:50%;object-fit:cover;
+    border:5px solid var(--white); box-shadow:var(--shadow-lift); margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic;color:var(--accent-deep)}
+  .hero .sub{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
+  .hero .sub b{color:var(--ink)}
+  .btn{
+    display:block;text-align:center;text-decoration:none;
+    font-weight:800;font-size:1.05rem;letter-spacing:.01em;
+    background:linear-gradient(150deg,var(--accent) 0%,var(--accent-deep) 100%);
+    color:var(--white);padding:18px 26px;border-radius:60px;
+    box-shadow:0 6px 14px color-mix(in srgb, var(--accent-deep) 35%, transparent), 0 18px 40px color-mix(in srgb, var(--accent-deep) 22%, transparent);
+    transform:translateY(0);
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+    margin:28px 0 10px;
+  }
+  .btn:hover{transform:translateY(-3px)}
+  .btn:active{transform:translateY(-1px) scale(.99)}
+  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+  ul.check{list-style:none;margin-top:18px}
+  ul.check li{
+    padding:13px 16px 13px 48px;position:relative;background:var(--white);
+    border-radius:14px;margin-bottom:10px;box-shadow:var(--shadow-soft);font-weight:500;
+  }
+  ul.check li::before{content:"→";position:absolute;left:16px;top:14px;font-size:1rem;color:var(--accent-deep);font-weight:800}
+  .story p{margin-bottom:1.05rem}
+  .story .punch{
+    font-family:'Fraunces',serif;font-size:1.28rem;font-weight:560;line-height:1.38;
+    color:var(--accent-deep);padding-left:18px;border-left:3px solid var(--metal);margin:1.4rem 0;
+  }
+  .photo-wide{width:100%;border-radius:20px;box-shadow:var(--shadow-lift);margin:22px 0 6px;display:block}
+  .caption{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-bottom:8px}
+  .receipt{
+    background:var(--white);border-radius:22px;padding:30px 26px;margin-top:24px;
+    box-shadow:var(--shadow-lift);position:relative;overflow:hidden;
+  }
+  .receipt::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--accent),var(--metal),var(--accent));
+  }
+  .receipt .claim-label{
+    font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:14px;display:block;
+  }
+  .receipt blockquote{
+    font-family:'Fraunces',serif;font-size:1.1rem;font-weight:500;
+    color:var(--ink);line-height:1.58;font-style:italic;
+    border-left:3px solid var(--accent);padding-left:16px;margin:0;
+  }
+  .receipt .disclaim{
+    margin-top:18px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;
+    border-top:1px dashed var(--tint);padding-top:14px;
+  }
+  .stack{margin-top:10px}
+  .stack-item{
+    background:var(--white);border-radius:18px;padding:22px 22px 18px;margin-bottom:14px;
+    box-shadow:var(--shadow-soft);border:1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .stack-item h3{font-size:1.15rem;margin-bottom:6px}
+  .stack-item .tag{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:4px 12px;margin-bottom:10px;
+  }
+  .stack-item p{font-size:.95rem;color:var(--ink-soft)}
+  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,color-mix(in srgb, var(--metal) 12%, var(--white)))}
+  .notlist{display:grid;gap:10px;margin-top:18px}
+  .notlist div{background:var(--white);border-radius:14px;padding:14px 18px;font-weight:700;box-shadow:var(--shadow-soft)}
+  .notlist div span{margin-right:10px;color:var(--accent-deep)}
+  .first-week{margin-top:18px}
+  .week-item{
+    background:var(--white);border-radius:16px;padding:18px 20px;margin-bottom:12px;
+    box-shadow:var(--shadow-soft);border-left:4px solid var(--accent);
+  }
+  .week-item h3{font-size:1rem;font-family:'Fraunces',serif;color:var(--accent-deep);margin-bottom:4px}
+  .week-item p{font-size:.93rem;color:var(--ink-soft)}
+  details{background:var(--white);border-radius:16px;margin-bottom:12px;box-shadow:var(--shadow-soft);overflow:hidden}
+  summary{cursor:pointer;font-weight:800;padding:18px 20px;list-style:none;position:relative;padding-right:48px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:12px;font-family:'Fraunces',serif;
+    font-size:1.6rem;color:var(--accent);transition:transform .3s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .a{padding:0 20px 18px;color:var(--ink-soft);font-size:.97rem}
+  .steps{counter-reset:step;margin-top:18px}
+  .step{position:relative;padding:6px 0 26px 64px}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
+    background:var(--ink);color:var(--paper);font-family:'Fraunces',serif;font-weight:600;
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+    box-shadow:var(--shadow-soft);
+  }
+  .step:not(:last-child)::after{
+    content:"";position:absolute;left:21px;top:48px;bottom:2px;width:2px;
+    background:linear-gradient(var(--accent), var(--tint));
+  }
+  .step h3{font-size:1.08rem;margin-bottom:2px}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+  .note{
+    background:var(--white);border-radius:24px;padding:34px 28px;box-shadow:var(--shadow-lift);
+    margin-top:24px;position:relative;
+  }
+  .note::before{content:"✦";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:1.8rem;color:var(--accent-deep)}
+  .note p{margin-bottom:1rem}
+  .note .sig{font-family:'Caveat',cursive;font-size:2.2rem;color:var(--accent-deep);margin-top:6px}
+  footer{
+    text-align:center;padding:46px 22px 30px;font-size:.78rem;color:var(--ink-soft);
+    max-width:540px;margin:0 auto;line-height:1.6;
+  }
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <img class="photo" src="photos/rpk7ZN-hf_20260608_185145_c387e69e-8667-4022-9a33-85a8fdee72f9_(1).png" alt="Brianna Souza, smiling">
+    <span class="eyebrow">For the mom who wants to build something of her own</span>
+    <h1>You don't have to go back to a job that doesn't fit your <em>life.</em></h1>
+    <p class="sub">I was a mom who wanted to contribute financially — and couldn't figure out what that was supposed to look like. VA skills gave me that answer. <b>The VA Training Academy is how I pass that roadmap on to you.</b></p>
+    <a class="btn" href="https://shop.beacons.ai/brianna_souza/403f75e7-6a79-4b93-b1e7-9681c01f1577">Yes, I'm ready — take me inside</a>
+    <p class="btn-note">$297 · Instant access · Work at your own pace</p>
+  </section>
+
+  <!-- ============ 2. STORY ============ -->
+  <section class="story reveal">
+    <span class="eyebrow">The real version</span>
+    <h2>For a long time, I thought "working for myself" was for other people.</h2>
+    <p>For many years, I was a single working mom doing everything on my own and still coming up short. There was a time when my three children and I faced homelessness — even while I was holding a job. Every dollar had somewhere to go before I had a chance to breathe.</p>
+    <p>I'm married now and have been a stay-at-home mom for a while. I'm grateful for that, genuinely. But I felt the weight of not contributing financially the way I wanted to. It was quiet, and it was constant.</p>
+    <p>I knew going back to a traditional job wasn't the answer. I needed something that would let me be present for my family and still build something for myself. Flexible. Real. Mine.</p>
+    <p class="punch">I didn't have to find a work-from-home job. I could work for myself. That one shift in thinking changed the direction of everything.</p>
+    <img class="photo-wide" src="photos/GgQWGZ-hf_20260607_183940_b4c093c6-d5ff-45f5-ab0d-ce8029235508.png" alt="Brianna Souza">
+    <p class="caption">Building something of your own, around the life you already have.</p>
+    <p>I started learning virtual assistant skills — automation, AI tools, Canva, how to build a portfolio, how to create services people actually pay for. The more I learned, the more I saw that I already had the instincts. I'd always been someone who loved to help and support people. Turns out that's the whole job description.</p>
+    <p>I built the VA Training Academy because I wanted a roadmap I didn't have — something specific, something step-by-step, something that didn't assume I already knew how any of this worked. This is that roadmap.</p>
+  </section>
+
+  <!-- ============ 3. RECEIPT (the ONE attested claim) ============ -->
+  <section class="reveal">
+    <div class="receipt">
+      <span class="claim-label">In Brianna's own words — what this training gave her</span>
+      <blockquote>One of the biggest things I've gained is confidence and clarity. Before, I knew I wanted to work from home and contribute financially, but I wasn't sure what that could look like. Through this training, I've learned valuable skills like automation, AI tools, Canva, creating digital assets, and building a professional portfolio. More importantly, I now have a clear roadmap and a better understanding of how to turn those skills into services that can help others. It's given me the confidence to pursue something I had been considering for a long time but wasn't sure how to start.</blockquote>
+      <p class="disclaim"><b>Something I want to be upfront about:</b> This program is educational. The words above reflect my personal experience as the creator of this training. Your results will depend on your effort, consistency, and the time you're able to put in. No specific income is promised or implied. This is skill-building — what you do with those skills is yours to decide.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO IT'S FOR ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Is this you?</span>
+    <h2>This was built for the mom who's ready to build something — even with a full plate.</h2>
+    <ul class="check">
+      <li>You're juggling school runs, the household, and everything in between — and you still want something for yourself</li>
+      <li>You've thought about working from home but weren't sure what you'd actually offer or where to start</li>
+      <li>You want flexibility over your schedule more than a corner office or a commute</li>
+      <li>Learning new tools sounds a little intimidating, but you're willing if someone walks you through it at a real pace</li>
+      <li>You want marketable skills — not vague advice and another course that sits unopened</li>
+    </ul>
+  </section>
+
+  <!-- ============ 5. MISSION BAND ============ -->
+  <div class="band reveal">
+    <span class="script" style="font-size:1.6rem">your current season doesn't have to define your future</span>
+    <h2>You can build income and still be there for the people you love.</h2>
+  </div>
+
+  <!-- ============ 6. WHAT'S INSIDE ============ -->
+  <section id="offer" class="reveal">
+    <span class="eyebrow">What's inside VA Training Academy</span>
+    <h2>From "I don't know where to start" to skills clients will pay for.</h2>
+    <p class="lead">Everything is organized so you can move through it at your own pace — no live sessions you have to show up for, no rigid timeline.</p>
+    <div class="stack">
+      <div class="stack-item">
+        <span class="tag">Foundation</span>
+        <h3>Understanding the VA world and setting up your business</h3>
+        <p>Welcome to the World of VA, Understanding the Ecosystem, Pricing Your Service, and Portfolio Submission walk you through the structure most people skip — and then wonder why nothing clicks later. You'll finish knowing what the work actually looks like and what you'd charge for it.</p>
+      </div>
+      <div class="stack-item">
+        <span class="tag">Platform Skills</span>
+        <h3>The tools clients are actively hiring VAs to manage</h3>
+        <p>Becoming a Beacons Pro, Becoming a Stan Pro, VA Design Skills (Canva), and Built to Convert. Hands-on, step-by-step. By the end of this track you'll have real platform experience — not just familiarity.</p>
+      </div>
+      <div class="stack-item">
+        <span class="tag">AI &amp; Automation</span>
+        <h3>The skills reshaping what businesses need from a VA</h3>
+        <p>ChatGPT 101, Automations Basics, Building Funnels, AI Twin Builder: VA Edition, and Building Bots that sell. This section separates the basic VA from one who's in demand — and it's taught from scratch.</p>
+      </div>
+      <div class="stack-item bonus">
+        <span class="tag">What makes this different</span>
+        <h3>You're not doing this alone</h3>
+        <p>The Live Zoom Replays, Build By Our Members showcase, Affiliate Leverage module, and Bonus Vault aren't extras. They're what turns a collection of lessons into actual momentum. Someone who's walked this path — and who started from exactly where you are — built this with you in mind.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://shop.beacons.ai/brianna_souza/403f75e7-6a79-4b93-b1e7-9681c01f1577">Get access to VA Training Academy</a>
+    <p class="btn-note">One-time investment of $297 · Digital access · No expiration</p>
+  </section>
+
+  <!-- ============ 7. WHAT THIS IS NOT ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Let's clear this up</span>
+    <h2>What this is <i>not</i>:</h2>
+    <div class="notlist">
+      <div><span>✕</span>A get-rich-quick promise — there isn't one here, and I wouldn't put one here</div>
+      <div><span>✕</span>An MLM or recruiting program — you're building skills you offer as services, nothing more</div>
+      <div><span>✕</span>A sprint you power through once and shelve — the content is yours to return to whenever you need it</div>
+      <div><span>✕</span>Only for people who already know tech — beginners are exactly who this was built for</div>
+    </div>
+    <p style="margin-top:18px">The VA world has room for people starting from zero. This is the path through it — structured, honest, and actually complete.</p>
+  </section>
+
+  <!-- ============ 8. PROOF — no testimonials provided; replaced with first-week walkthrough ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What to expect</span>
+    <h2>Your first week inside.</h2>
+    <div class="first-week">
+      <div class="week-item">
+        <h3>Day 1</h3>
+        <p>Complete the Welcome module and get oriented. Short, clear, and specific — you'll know exactly where you're headed and in what order.</p>
+      </div>
+      <div class="week-item">
+        <h3>Days 2–4</h3>
+        <p>Work through the Foundation modules one at a time. This is where you build the base that makes the rest of the training make sense.</p>
+      </div>
+      <div class="week-item">
+        <h3>Day 5 and beyond</h3>
+        <p>Move into Platform Skills — the hands-on modules. This is when it starts to feel real. You're not learning about VA work anymore. You're doing it.</p>
+      </div>
+      <div class="week-item">
+        <h3>Ongoing</h3>
+        <p>The Live Zoom Replays and member community are there when you have questions or want to see how others are applying what they've learned.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FAQ ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Questions I'd ask too</span>
+    <h2>FAQ — the honest version</h2>
+    <details>
+      <summary>I've never worked online before. Will this actually work for me?</summary>
+      <div class="a">Yes — the program was designed with beginners in mind. You don't need prior experience with clients, platforms, or running an online business. The Foundation modules exist specifically to start you from zero. If you can follow instructions and show up consistently, you can do this.</div>
+    </details>
+    <details>
+      <summary>Is this an MLM? Do I have to recruit anyone?</summary>
+      <div class="a">No. There is no recruiting, no downline, and no one you're required to bring in to make this work. You're learning skills you offer as services to businesses and creators. That's the whole model.</div>
+    </details>
+    <details>
+      <summary>Can I really fit this in around raising kids?</summary>
+      <div class="a">This is self-paced and always available. You're not on anyone else's schedule. One module at a time — whenever you have a window — is enough to keep moving. The program was built by a mom who needed exactly that kind of flexibility, because I needed it too.</div>
+    </details>
+    <details>
+      <summary>What's the refund policy?</summary>
+      <div class="a">Because this is a digital training program, all sales are final and refunds are not available. I always recommend taking time to review the details and make sure this aligns with what you're looking for before you purchase. If you have questions first, feel free to reach out.</div>
+    </details>
+    <details>
+      <summary>Why should I get this from you specifically?</summary>
+      <div class="a">Because I'm not teaching from a distance. I've been through the doubt, the wondering-if-I-can-actually-do-this, and the learning curve of figuring out VA skills without a clear roadmap. I built this because I wanted it to exist. That changes how it's taught — and it changes what's inside.</div>
+    </details>
+    <details>
+      <summary>What tools or subscriptions do I need to get started?</summary>
+      <div class="a">The program introduces tools as you get to them — you don't need to set anything up before you start. Many of the platforms covered have free tiers. Get inside first; the training will tell you what you need and when.</div>
+    </details>
+    <details>
+      <summary>How long do I have access?</summary>
+      <div class="a">Your access doesn't expire. Once you're in, the content is yours to work through at whatever pace fits your life — and to come back to whenever you need a refresher.</div>
+    </details>
+  </section>
+
+  <!-- ============ 10. STEPS ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What happens next</span>
+    <h2>Three steps and you're in:</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Click the button and complete checkout</h3>
+        <p>You'll check out securely through <a href="https://shop.beacons.ai/brianna_souza/403f75e7-6a79-4b93-b1e7-9681c01f1577">Beacons</a>. Straightforward, takes about two minutes.</p>
+      </div>
+      <div class="step">
+        <h3>Check your inbox for your access link</h3>
+        <p>Once you're in, go to the Welcome module first. It's short. It tells you exactly how to use everything inside and where to begin.</p>
+      </div>
+      <div class="step">
+        <h3>Move through one module at a time</h3>
+        <p>There's no rushing and no falling behind. One section whenever you have a window — and you'll be building real skills before the end of your first week.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://shop.beacons.ai/brianna_souza/403f75e7-6a79-4b93-b1e7-9681c01f1577">I'm ready — get me inside</a>
+    <p class="btn-note">$297 · Digital access · No expiration</p>
+  </section>
+
+  <!-- ============ 11. PERSONAL NOTE ============ -->
+  <section class="reveal">
+    <div class="note">
+      <p><b>If you've been sitting with this idea for a while:</b></p>
+      <p>The timing probably isn't going to get cleaner. There's always something else happening — another week of school runs, another thing that needs handling first. I know that feeling well.</p>
+      <p>What I can tell you is that this program was built for exactly where you are right now. Not where you think you need to be before you start. Where you actually are — curious, a little unsure, and ready to learn if someone walks you through it honestly.</p>
+      <p>Growth doesn't happen all at once. It happens in small steps. One lesson learned. One new skill. One decision to keep going even when you're unsure where it leads. That's what this training was built for.</p>
+      <p>See you on the inside.</p>
+      <div class="sig">Brianna</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Brianna Souza<br>
+  Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.<br><br>
+  <span style="opacity:.6">Page built by The Digital Dad — systems, not hustle.</span>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && location.hash !== '#all') {
+    document.documentElement.classList.add('js');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }
+</script>
+</body>
+</html>
