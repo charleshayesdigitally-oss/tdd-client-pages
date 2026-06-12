@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story to Sales Bestie Bot — with Ash | TheSavvyMamaa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Karla:wght@400;500;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFBFA;
+    --tint:#F5ECEB;
+    --accent:#E5C8C5;
+    --accent-deep:#CE9C9C;
+    --ink:#1A0F0F;
+    --ink-soft:#6B4545;
+    --metal:#C8926A;
+    --white:#FFFFFF;
+    --shadow-soft: 0 2px 6px rgba(0,0,0,.06), 0 14px 34px color-mix(in srgb, var(--accent-deep) 12%, transparent);
+    --shadow-lift: 0 4px 10px rgba(0,0,0,.08), 0 22px 48px color-mix(in srgb, var(--accent-deep) 18%, transparent);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 85% -5%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, color-mix(in srgb, var(--metal) 10%, transparent), transparent 55%),
+      var(--paper);
+    line-height:1.7;
+    font-size:16.5px;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
+  .page{max-width:540px;margin:0 auto;padding:0 22px 90px}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:560;letter-spacing:-0.02em;line-height:1.12}
+  h1{font-size:clamp(2.3rem,8.5vw,3.1rem)}
+  h2{font-size:clamp(1.65rem,6vw,2.05rem);margin-bottom:.7rem}
+  .script{font-family:'Caveat',cursive;color:var(--accent-deep)}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-deep);margin-bottom:.9rem;
+  }
+  .eyebrow::before{content:"💕 "}
+  p.lead{font-size:1.12rem;color:var(--ink-soft)}
+  section{padding:58px 0 14px}
+  .band{
+    margin:60px -22px 0; padding:64px 30px;
+    background:linear-gradient(160deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 80%, var(--accent-deep)) 100%);
+    color:var(--paper);
+  }
+  .band h2{color:var(--paper)}
+  .band .script{color:color-mix(in srgb, var(--accent) 70%, var(--paper))}
+  .hero{padding-top:64px;text-align:center}
+  .hero .photo{
+    width:148px;height:148px;border-radius:50%;object-fit:cover;
+    border:5px solid var(--white); box-shadow:var(--shadow-lift); margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic;color:var(--accent-deep)}
+  .hero .sub{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
+  .hero .sub b{color:var(--ink)}
+  .btn{
+    display:block;text-align:center;text-decoration:none;
+    font-weight:800;font-size:1.05rem;letter-spacing:.01em;
+    background:linear-gradient(150deg,var(--accent) 0%,var(--accent-deep) 100%);
+    color:var(--white);padding:18px 26px;border-radius:60px;
+    box-shadow:0 6px 14px color-mix(in srgb, var(--accent-deep) 35%, transparent), 0 18px 40px color-mix(in srgb, var(--accent-deep) 22%, transparent);
+    transform:translateY(0);
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+    margin:28px 0 10px;
+  }
+  .btn:hover{transform:translateY(-3px)}
+  .btn:active{transform:translateY(-1px) scale(.99)}
+  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+  ul.check{list-style:none;margin-top:18px}
+  ul.check li{
+    padding:13px 16px 13px 48px;position:relative;background:var(--white);
+    border-radius:14px;margin-bottom:10px;box-shadow:var(--shadow-soft);font-weight:500;
+  }
+  ul.check li::before{content:"💕";position:absolute;left:15px;top:12px;font-size:1.05rem}
+  .story p{margin-bottom:1.05rem}
+  .story .punch{
+    font-family:'Fraunces',serif;font-size:1.3rem;font-weight:560;line-height:1.35;
+    color:var(--accent-deep);padding-left:18px;border-left:3px solid var(--metal);margin:1.4rem 0;
+  }
+  .photo-wide{width:100%;border-radius:20px;box-shadow:var(--shadow-lift);margin:22px 0 6px;display:block}
+  .caption{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-bottom:8px}
+  .receipt{
+    background:var(--white);border-radius:22px;padding:30px 26px;margin-top:24px;
+    box-shadow:var(--shadow-lift);text-align:center;position:relative;overflow:hidden;
+  }
+  .receipt::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--accent),var(--metal),var(--accent));
+  }
+  .receipt .big{
+    font-family:'Fraunces',serif;font-size:1.35rem;font-weight:600;color:var(--ink);
+    letter-spacing:-.02em;line-height:1.3;padding:0 4px;
+  }
+  .receipt .big span{color:var(--accent-deep)}
+  .receipt .since{font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;font-weight:700}
+  .receipt .disclaim{
+    margin-top:16px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;
+    border-top:1px dashed var(--tint);padding-top:14px;
+  }
+  .stack{margin-top:10px}
+  .stack-item{
+    background:var(--white);border-radius:18px;padding:22px 22px 18px;margin-bottom:14px;
+    box-shadow:var(--shadow-soft);border:1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .stack-item h3{font-size:1.15rem;margin-bottom:6px}
+  .stack-item .tag{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:4px 12px;margin-bottom:10px;
+  }
+  .stack-item p{font-size:.95rem;color:var(--ink-soft)}
+  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,color-mix(in srgb, var(--metal) 12%, var(--white)))}
+  .notlist{display:grid;gap:10px;margin-top:18px}
+  .notlist div{background:var(--white);border-radius:14px;padding:14px 18px;font-weight:700;box-shadow:var(--shadow-soft)}
+  .notlist div span{margin-right:10px}
+  .quote{
+    background:var(--white);border-radius:20px;padding:26px 24px 20px;margin-bottom:16px;
+    box-shadow:var(--shadow-soft);position:relative;
+  }
+  .quote::before{
+    content:"\201C";font-family:'Fraunces',serif;font-size:4rem;color:var(--tint);
+    position:absolute;top:-2px;left:14px;line-height:1;
+  }
+  .quote p{position:relative;font-size:1rem;padding-top:8px}
+  .quote .who{margin-top:10px;font-weight:800;font-size:.86rem;color:var(--accent-deep)}
+  details{background:var(--white);border-radius:16px;margin-bottom:12px;box-shadow:var(--shadow-soft);overflow:hidden}
+  summary{cursor:pointer;font-weight:800;padding:18px 20px;list-style:none;position:relative;padding-right:48px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:12px;font-family:'Fraunces',serif;
+    font-size:1.6rem;color:var(--accent);transition:transform .3s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .a{padding:0 20px 18px;color:var(--ink-soft);font-size:.97rem}
+  .steps{counter-reset:step;margin-top:18px}
+  .step{position:relative;padding:6px 0 26px 64px}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
+    background:var(--ink);color:var(--paper);font-family:'Fraunces',serif;font-weight:600;
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+    box-shadow:var(--shadow-soft);
+  }
+  .step:not(:last-child)::after{
+    content:"";position:absolute;left:21px;top:48px;bottom:2px;width:2px;
+    background:linear-gradient(var(--accent), var(--tint));
+  }
+  .step h3{font-size:1.08rem;margin-bottom:2px}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+  .note{
+    background:var(--white);border-radius:24px;padding:34px 28px;box-shadow:var(--shadow-lift);
+    margin-top:24px;position:relative;
+  }
+  .note::before{content:"💕";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:1.8rem}
+  .note p{margin-bottom:1rem}
+  .note .sig{font-family:'Caveat',cursive;font-size:2.2rem;color:var(--accent-deep);margin-top:6px}
+  footer{
+    text-align:center;padding:46px 22px 30px;font-size:.78rem;color:var(--ink-soft);
+    max-width:540px;margin:0 auto;line-height:1.6;
+  }
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <img class="photo" src="https://placehold.co/148x148" alt="Ash, TheSavvyMamaa">
+    <span class="eyebrow">Your content coach is waiting</span>
+    <h1>Stop guessing what to post. Start turning <em>your real life</em> into content that actually sells.</h1>
+    <p class="sub">You're not out of ideas, Mama. You're just telling stories the long, hard way. <b>Story to Sales Bestie Bot</b> gives you a personalized AI coach that turns your everyday moments into posts that connect — and convert.</p>
+    <a class="btn" href="https://shop.beacons.ai/savvymamaa/4362770e-0228-4ca0-89e2-99ad3ef1f9fd">Get My Story to Sales Bestie 👇🏽</a>
+    <p class="btn-note">Instant access — just $27</p>
+  </section>
+
+  <!-- ============ 2. STORY ============ -->
+  <section class="story reveal">
+    <span class="eyebrow">My story (the real one)</span>
+    <h2>I didn't start this because I had a plan. I started because I had no choice.</h2>
+    <p>Eleven years in corporate property management. Then — while I was on medical leave — they forced me out. My car was close to repossession. My family was struggling. And I had no backup plan.</p>
+    <p>I started looking for ways to make money online because I needed something flexible. Something that would let me be present for my kids and still take care of my health while I figured it out. Like most beginners, I had no idea what I was doing. I overthought every post. I sat there staring at my phone wondering what to say.</p>
+    <p class="punch">As I learned how to tell my story — how to share real-life moments instead of manufactured content — everything changed.</p>
+    <p>I replaced my lost income. I became a stay-at-home mom. I built a business from my phone. Not through some formula or shortcut — through learning to share my actual life in a way that connected with people.</p>
+    <p>Story to Sales Bestie exists because I know that staring-at-the-phone feeling. And I didn't want anyone else stuck there as long as I was.</p>
+    <img class="photo-wide" src="https://placehold.co/496x280" alt="Ash — TheSavvyMamaa">
+    <p class="caption">Building a business from my phone — while being home with my babies 💕</p>
+  </section>
+
+  <!-- ============ 3. RECEIPT ============ -->
+  <section class="reveal">
+    <div class="receipt">
+      <div class="big">The same content storytelling process I used while building over <span>$30,000</span> in digital product sales.</div>
+      <div class="since">The process behind the sales — now yours</div>
+      <p class="disclaim"><b>Real talk, because I'll always be straight with you:</b> That's my personal result — built over time, with consistency and work. Digital products don't come with a guarantee, and I won't pretend otherwise. Your results will depend on your effort, your audience, and how you show up. What I can promise is that the process inside this bot is exactly what I used. No gimmicks. Just the real thing.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO IT'S FOR ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Is this you?</span>
+    <h2>This is for the mama who's done overthinking and ready to actually post.</h2>
+    <ul class="check">
+      <li>You open the app, stare at the blank caption box, and close it without posting — again</li>
+      <li>You're juggling work, kids, laundry, school pickup, dinner, and trying to figure out this online thing in the margins</li>
+      <li>You know you have a story — you just don't know how to turn it into content that connects</li>
+      <li>You've bought courses that gave you info but not a coach who speaks your language</li>
+      <li>You want content that sounds like YOU — not like every other account in your niche</li>
+      <li>You're done watching other moms win while you stay stuck in scroll mode</li>
+    </ul>
+  </section>
+
+  <!-- ============ 5. MISSION BAND ============ -->
+  <div class="band reveal">
+    <span class="script" style="font-size:1.6rem">Mama, your story IS the strategy.</span>
+    <h2>You don't need to go viral to make sales. You need to get real — and let the right people find you.</h2>
+  </div>
+
+  <!-- ============ 6. WHAT'S INSIDE ============ -->
+  <section id="offer" class="reveal">
+    <span class="eyebrow">What's inside Story to Sales Bestie Bot</span>
+    <h2>Your personalized content coach — on demand, in your voice.</h2>
+    <p class="lead">Every feature inside was built around one question: what does a mom with real-life chaos actually need to show up consistently online?</p>
+    <div class="stack">
+      <div class="stack-item">
+        <div class="tag">The Core</div>
+        <h3>Personalized AI content coach</h3>
+        <p>Not a generic prompt list. An AI that learns your voice, your niche, and your story — then helps you create content that actually sounds like you. Hook suggestions, caption support, CTA ideas, and content angles, all tuned to your life.</p>
+      </div>
+      <div class="stack-item">
+        <div class="tag">The Fuel</div>
+        <h3>Story-to-content prompts + idea generation</h3>
+        <p>Turn your real moments — the hard ones, the small wins, the everyday stuff — into posts that resonate. Content coaching for TikTok, Facebook, and Instagram, so wherever you show up, you're ready.</p>
+      </div>
+      <div class="stack-item">
+        <div class="tag">The Method</div>
+        <h3>Connect-and-convert content framework</h3>
+        <p>Content that connects first, sells second. The same story-sharing approach I used to build my business — guiding people from "who is she?" to "I need what she has" without ever feeling pushy or fake.</p>
+      </div>
+      <div class="stack-item bonus">
+        <div class="tag">The Difference</div>
+        <h3>Me, in your corner — not a robot in a box</h3>
+        <p>Every other bot I've tried sounds like a bot. Antonia said it best: "Everything else always feels generic. Yours doesn't." That's the whole point. This is built from my actual content experience — my voice patterns, my niche knowledge, my way of turning life into sales. You're not getting a template. You're getting what I built to work.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://shop.beacons.ai/savvymamaa/4362770e-0228-4ca0-89e2-99ad3ef1f9fd">Yes — I Want My Bestie Bot 👇🏽</a>
+    <p class="btn-note">Just $27 • Instant access after purchase</p>
+  </section>
+
+  <!-- ============ 7. WHAT THIS IS NOT ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Let's clear this up</span>
+    <h2>What this is <i>not</i>:</h2>
+    <div class="notlist">
+      <div><span>✗</span> A get-rich-quick shortcut or overnight success system</div>
+      <div><span>✗</span> Generic prompts you could find free on Pinterest</div>
+      <div><span>✗</span> Hustle culture disguised as help — this is built for real life, not 5am grind sessions</div>
+      <div><span>✗</span> A robot that sounds like one — because if your content sounds like AI, your audience can tell</div>
+    </div>
+    <p style="margin-top:18px">This is a tool. What you do with it — how consistently you show up, how honest you get in your content — that part is yours. I built the bot. You build the habit.</p>
+  </section>
+
+  <!-- ============ 8. PROOF ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What they're saying</span>
+    <h2>Don't take my word for it.</h2>
+    <div class="quote">
+      <p>"Listen! If you aren't using Ash's Story to Sales Bestie, you're missing out. It has helped me actually put my story together in a way that's easy and relatable when creating content. Go check it out if you haven't yet!"</p>
+      <div class="who">— Cindy</div>
+    </div>
+    <div class="quote">
+      <p>"I just want to tell you I love your bot more than any other bot I have. Everything else always feels generic and sounds like a bot. Yours doesn't."</p>
+      <div class="who">— Antonia</div>
+    </div>
+    <div class="quote">
+      <p>"Ash, why haven't you made this public yet? I got a lead right away today."</p>
+      <div class="who">— Taylor</div>
+    </div>
+    <div class="quote">
+      <p>"I've been using her and she's 🔥🔥🔥"</p>
+      <div class="who">— Marlene</div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FAQ ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Questions I'd ask too</span>
+    <h2>FAQ — the honest version</h2>
+    <details>
+      <summary>What exactly is a "Bestie Bot"?</summary>
+      <div class="a">It's a custom AI assistant — like a content coach available whenever you need one. You type in a situation, a feeling, a real moment from your day, and it helps you turn that into a post. You don't need tech experience. If you can text, you can use this.</div>
+    </details>
+    <details>
+      <summary>Will this work if I'm brand new to content creation?</summary>
+      <div class="a">That's exactly who it's for. You don't need a big audience, a content strategy, or years of experience. You need a story — and you already have one. The bot helps you find the words.</div>
+    </details>
+    <details>
+      <summary>Why buy this from you instead of just using a free AI tool?</summary>
+      <div class="a">Free AI tools are general. This bot is built specifically for moms creating content in the online business space — trained on my voice, my niche, my approach to connecting and converting. That specificity is what makes Antonia's review true: it doesn't sound like a bot. Generic tools do.</div>
+    </details>
+    <details>
+      <summary>Is this an MLM or some kind of recruiting thing?</summary>
+      <div class="a">No. This is a straightforward digital product. You buy it, you get access, you use it to create better content. There's nothing to sell, no one to recruit, no upsell hiding behind a paywall.</div>
+    </details>
+    <details>
+      <summary>What's your refund policy?</summary>
+      <div class="a">Due to the digital nature of this product, all sales are final and non-refundable. Access is delivered immediately upon purchase — please review the product details before buying so you know exactly what you're getting.</div>
+    </details>
+    <details>
+      <summary>How soon will I see results?</summary>
+      <div class="a">Taylor got a lead the same day. That's real, and it can happen — but I won't promise it will. Results depend on how consistently you use the bot and how honestly you show up in your content. The tool works when you do.</div>
+    </details>
+  </section>
+
+  <!-- ============ 10. STEPS ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What happens next</span>
+    <h2>Three steps:</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Grab your Bestie Bot</h3>
+        <p>Click the button, complete your purchase, and get instant access. No waiting, no downloads — it's ready when you are.</p>
+      </div>
+      <div class="step">
+        <h3>Start with a real moment from today</h3>
+        <p>Open the bot and tell it something that happened — a win, a hard moment, a thought you had during pickup line. Watch it help you turn that into content.</p>
+      </div>
+      <div class="step">
+        <h3>Post it. See who shows up.</h3>
+        <p>Real stories find real people. Keep showing up consistently — that's where the connection (and the sales) start building.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://shop.beacons.ai/savvymamaa/4362770e-0228-4ca0-89e2-99ad3ef1f9fd">I'm Ready — Get Me My Bot 👇🏽</a>
+    <p class="btn-note">Just $27 • Instant access</p>
+  </section>
+
+  <!-- ============ 11. PERSONAL NOTE ============ -->
+  <section class="reveal">
+    <div class="note">
+      <p><b>Mama, I need you to hear something.</b></p>
+      <p>I almost didn't build this. I kept thinking: who am I to sell something? My account wasn't big enough. My story wasn't polished enough. And I was scared of what people would think.</p>
+      <p>But I kept seeing mamas in the same place I'd been — staring at the phone, convinced they had nothing worth saying, watching everybody else build while they stayed stuck. That's what changed my mind. If you're in that place right now, I built this for you. Not the version of you that has it all together. The one who's figuring it out, one real post at a time.</p>
+      <p>See you on the inside 💕</p>
+      <div class="sig">Ash</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 TheSavvyMamaa<br>
+  Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.<br><br>
+  <span style="opacity:.6">Page built by The Digital Dad — systems, not hustle.</span>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && location.hash !== '#all') {
+    document.documentElement.classList.add('js');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }
+</script>
+</body>
+</html>

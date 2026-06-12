@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Saturday Shop Plans — with Marcus Hale | The Saturday Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700;900&family=Libre+Franklin:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF7F2;
+    --tint:#EDE4D4;
+    --accent:#9B6B3A;
+    --accent-deep:#7A4F25;
+    --ink:#1E1208;
+    --ink-soft:#5C3A1E;
+    --metal:#C4942A;
+    --white:#FFFFFF;
+    --shadow-soft: 0 2px 6px rgba(0,0,0,.07), 0 14px 34px color-mix(in srgb, var(--accent-deep) 10%, transparent);
+    --shadow-lift: 0 4px 10px rgba(0,0,0,.09), 0 22px 48px color-mix(in srgb, var(--accent-deep) 16%, transparent);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Libre Franklin',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 80% -8%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
+      radial-gradient(800px 500px at -8% 35%, color-mix(in srgb, var(--metal) 8%, transparent), transparent 55%),
+      var(--paper);
+    line-height:1.7;
+    font-size:16.5px;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.04;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
+  .page{max-width:540px;margin:0 auto;padding:0 22px 90px}
+  h1,h2,h3{font-family:'Bitter',serif;font-weight:700;letter-spacing:-0.02em;line-height:1.12}
+  h1{font-size:clamp(2.3rem,8.5vw,3.1rem)}
+  h2{font-size:clamp(1.65rem,6vw,2.05rem);margin-bottom:.7rem}
+  .script{font-family:'Bitter',serif;font-style:italic;color:var(--accent-deep);font-weight:400}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-deep);margin-bottom:.9rem;
+  }
+  p.lead{font-size:1.12rem;color:var(--ink-soft)}
+  section{padding:58px 0 14px}
+  .band{
+    margin:60px -22px 0; padding:64px 30px;
+    background:linear-gradient(160deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 80%, var(--accent-deep)) 100%);
+    color:var(--paper);
+  }
+  .band h2{color:var(--paper)}
+  .band .script{color:color-mix(in srgb, var(--metal) 80%, var(--paper))}
+  .hero{padding-top:64px;text-align:center}
+  .hero .photo{
+    width:148px;height:148px;border-radius:50%;object-fit:cover;
+    border:5px solid var(--white); box-shadow:var(--shadow-lift); margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic;color:var(--accent-deep)}
+  .hero .sub{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
+  .hero .sub b{color:var(--ink)}
+  .btn{
+    display:block;text-align:center;text-decoration:none;
+    font-weight:800;font-size:1.05rem;letter-spacing:.01em;
+    background:linear-gradient(150deg,var(--accent) 0%,var(--accent-deep) 100%);
+    color:var(--white);padding:18px 26px;border-radius:60px;
+    box-shadow:0 6px 14px color-mix(in srgb, var(--accent-deep) 35%, transparent), 0 18px 40px color-mix(in srgb, var(--accent-deep) 22%, transparent);
+    transform:translateY(0);
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+    margin:28px 0 10px;
+  }
+  .btn:hover{transform:translateY(-3px)}
+  .btn:active{transform:translateY(-1px) scale(.99)}
+  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+  ul.check{list-style:none;margin-top:18px}
+  ul.check li{
+    padding:13px 16px 13px 48px;position:relative;background:var(--white);
+    border-radius:14px;margin-bottom:10px;box-shadow:var(--shadow-soft);font-weight:500;
+  }
+  ul.check li::before{content:"→";position:absolute;left:16px;top:13px;font-size:1.05rem;font-weight:800;color:var(--accent-deep)}
+  .story p{margin-bottom:1.05rem}
+  .story .punch{
+    font-family:'Bitter',serif;font-size:1.3rem;font-weight:700;line-height:1.35;
+    color:var(--accent-deep);padding-left:18px;border-left:3px solid var(--metal);margin:1.4rem 0;
+  }
+  .photo-wide{width:100%;border-radius:20px;box-shadow:var(--shadow-lift);margin:22px 0 6px;display:block}
+  .caption{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-bottom:8px}
+  .receipt{
+    background:var(--white);border-radius:22px;padding:30px 26px;margin-top:24px;
+    box-shadow:var(--shadow-lift);text-align:center;position:relative;overflow:hidden;
+  }
+  .receipt::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--accent),var(--metal),var(--accent));
+  }
+  .receipt .big{
+    font-family:'Bitter',serif;font-size:3rem;font-weight:900;color:var(--ink);
+    letter-spacing:-.03em;line-height:1;
+  }
+  .receipt .big span{color:var(--accent-deep)}
+  .receipt .since{font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;font-weight:700}
+  .receipt .disclaim{
+    margin-top:16px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;
+    border-top:1px dashed var(--tint);padding-top:14px;
+  }
+  .stack{margin-top:10px}
+  .stack-item{
+    background:var(--white);border-radius:18px;padding:22px 22px 18px;margin-bottom:14px;
+    box-shadow:var(--shadow-soft);border:1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .stack-item h3{font-size:1.15rem;margin-bottom:6px}
+  .stack-item .tag{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:4px 12px;margin-bottom:10px;
+  }
+  .stack-item p{font-size:.95rem;color:var(--ink-soft)}
+  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,color-mix(in srgb, var(--metal) 12%, var(--white)))}
+  .notlist{display:grid;gap:10px;margin-top:18px}
+  .notlist div{background:var(--white);border-radius:14px;padding:14px 18px;font-weight:700;box-shadow:var(--shadow-soft)}
+  .notlist div span{margin-right:10px;color:var(--accent-deep)}
+  .walkthrough{margin-top:18px}
+  .wblock{
+    background:var(--white);border-radius:18px;padding:20px 22px;margin-bottom:12px;
+    box-shadow:var(--shadow-soft);border-left:4px solid var(--accent);
+  }
+  .wblock .time{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:4px}
+  .wblock h3{font-size:1.05rem;margin-bottom:4px}
+  .wblock p{font-size:.92rem;color:var(--ink-soft)}
+  details{background:var(--white);border-radius:16px;margin-bottom:12px;box-shadow:var(--shadow-soft);overflow:hidden}
+  summary{cursor:pointer;font-weight:800;padding:18px 20px;list-style:none;position:relative;padding-right:48px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:12px;font-family:'Bitter',serif;
+    font-size:1.6rem;color:var(--accent);transition:transform .3s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .a{padding:0 20px 18px;color:var(--ink-soft);font-size:.97rem}
+  .steps{counter-reset:step;margin-top:18px}
+  .step{position:relative;padding:6px 0 26px 64px}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
+    background:var(--ink);color:var(--paper);font-family:'Bitter',serif;font-weight:700;
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+    box-shadow:var(--shadow-soft);
+  }
+  .step:not(:last-child)::after{
+    content:"";position:absolute;left:21px;top:48px;bottom:2px;width:2px;
+    background:linear-gradient(var(--accent), var(--tint));
+  }
+  .step h3{font-size:1.08rem;margin-bottom:2px}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+  .note{
+    background:var(--white);border-radius:24px;padding:34px 28px;box-shadow:var(--shadow-lift);
+    margin-top:24px;position:relative;
+  }
+  .note::before{content:"✦";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:1.4rem;color:var(--metal)}
+  .note p{margin-bottom:1rem}
+  .note .sig{font-family:'Bitter',serif;font-style:italic;font-size:2rem;color:var(--accent-deep);margin-top:6px;font-weight:400}
+  footer{
+    text-align:center;padding:46px 22px 30px;font-size:.78rem;color:var(--ink-soft);
+    max-width:540px;margin:0 auto;line-height:1.6;
+  }
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <img class="photo" src="https://placehold.co/148x148" alt="Marcus Hale, The Saturday Shop">
+    <span class="eyebrow">12 project plans for dads with one day</span>
+    <h1>Build something real this Saturday — with <em>the tools you already own.</em></h1>
+    <p class="sub">12 woodworking plans built for guys with a garage, a circular saw, and one free morning. Cut lists. Hardware costs under $60. <b>The mistakes I made so you don't have to.</b> No table saw required.</p>
+    <a class="btn" href="https://stan.store/">Get The Saturday Shop Plans 👇🏽</a>
+    <p class="btn-note">$39 — instant download</p>
+  </section>
+
+  <!-- ============ 2. STORY ============ -->
+  <section class="story reveal">
+    <span class="eyebrow">How this started</span>
+    <h2>I couldn't afford the bookshelf. So I built an ugly one instead.</h2>
+    <p>Maintenance tech. Married fourteen years. Three kids. Four years ago, my daughter wanted a bookshelf and I couldn't make it happen. So I borrowed a saw, bought some lumber, and built the worst-looking bookshelf you've ever seen in my garage.</p>
+    <p class="punch">She didn't care that it was ugly. She cared that I built it.</p>
+    <p>I got better every Saturday after that. Started posting the builds online — not because I planned to, but because guys kept asking where I got the plans. That's when I realized most woodworking content is made by guys with $40,000 shops talking to other guys with $40,000 shops. Nobody was making plans for the dad with a circular saw and three hours on Saturday morning.</p>
+    <p>So I wrote the plans I wished existed. Simple cuts. Real material costs. Honest notes about what I did wrong. God's been good to us through it — what started as not being able to afford a bookshelf became the thing that pays for my kids' sports seasons. These plans exist because that first ugly build showed me what was possible.</p>
+    <img class="photo-wide" src="https://placehold.co/496x280" alt="The Saturday Shop — builds for working dads">
+    <p class="caption">One Saturday. One project. The right plans make the difference.</p>
+  </section>
+
+  <!-- ============ 3. RECEIPT ============ -->
+  <section class="reveal">
+    <div class="receipt">
+      <div class="big"><span>127</span> dads</div>
+      <div class="since">built the workbench plan in its first year</div>
+      <p class="disclaim"><b>Straight talk:</b> That's the workbench plan's track record — not a promise about what you'll build or sell. Most of those dads were beginners. Results come from cutting the first board, not from buying the plans. If you put in the Saturday, you'll have something real to show for it.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO IT'S FOR ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Is this you?</span>
+    <h2>This is for the dad with a garage and a saw — not a workshop and a YouTube channel.</h2>
+    <ul class="check">
+      <li>You've got a circular saw, a drill, and a tape measure — and that's about it</li>
+      <li>Saturday morning is your window and you want to use it, not spend it watching shop tours</li>
+      <li>Every plan you've found starts with "first, on your table saw" and you stop reading</li>
+      <li>You want to build something your kids will actually use — not a showpiece for Instagram</li>
+      <li>You've scrapped a project halfway through because the instructions skipped something obvious</li>
+    </ul>
+  </section>
+
+  <!-- ============ 5. MISSION BAND ============ -->
+  <div class="band reveal">
+    <span class="script" style="font-size:1.6rem">One saw. One Saturday. Go.</span>
+    <h2>The guy with the $40k shop isn't better than you. He's just further along and better funded.</h2>
+  </div>
+
+  <!-- ============ 6. WHAT'S INSIDE ============ -->
+  <section id="offer" class="reveal">
+    <span class="eyebrow">What's inside The Saturday Shop Plans</span>
+    <h2>Everything I needed four years ago. Nothing I didn't.</h2>
+    <p class="lead">12 full project plans, written for a dad with basic tools and a Saturday. Each one is one-day buildable. No exceptions.</p>
+    <div class="stack">
+      <div class="stack-item">
+        <div class="tag">12 Plans</div>
+        <h3>Complete project plans — workbench to bookshelf to planter box</h3>
+        <p>Workbench, kids' bookshelf, planter box, entry bench, garage shelving, and 7 more. Every plan includes a full cut list, hardware list with actual prices, step-by-step instructions with photos, and the "where I screwed up" section. Material costs stay under $60.</p>
+      </div>
+      <div class="stack-item">
+        <div class="tag">Honest Notes</div>
+        <h3>The "where I screwed up" section — on every single plan</h3>
+        <p>Every plan has a section on what I got wrong the first time and how to avoid it. Not to impress you. Because the best plans I've found told me what could go sideways before it did. Saves you a second trip to the lumber yard.</p>
+      </div>
+      <div class="stack-item">
+        <div class="tag">Bonus Guide</div>
+        <h3>Tool buying order — the 6 to get first, the 14 to skip</h3>
+        <p>A straight list: what to buy, in what order, and what you don't need yet. Put together after watching guys spend money on tools they never use before they have anything built. Buy right the first time.</p>
+      </div>
+      <div class="stack-item bonus">
+        <div class="tag">The Real Difference</div>
+        <h3>Plans written by the guy using them — not by someone selling a lifestyle</h3>
+        <p>I'm a maintenance tech with a basic garage setup. These plans exist because I needed them and they didn't exist. Every cut list has been tested. Every material cost is real — from the actual lumber yard, not a photoshoot. Free updates every time I add a plan. You're buying from someone still in the shop.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://stan.store/">Get The Plans — $39 👇🏽</a>
+    <p class="btn-note">Instant download • 30-day no-build refund</p>
+  </section>
+
+  <!-- ============ 7. WHAT THIS IS NOT ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Let's clear this up</span>
+    <h2>What this is <i>not</i>:</h2>
+    <div class="notlist">
+      <div><span>✗</span> Plans that require tools you don't own yet</div>
+      <div><span>✗</span> A course teaching you to be a woodworker — these are plans, not a curriculum</div>
+      <div><span>✗</span> Shop-tour content made for other guys with shop-tour budgets</div>
+      <div><span>✗</span> A get-rich scheme — building is the point, not the business angle</div>
+    </div>
+    <p style="margin-top:18px">If you want to build something real this weekend, these plans get you there. That's the whole pitch.</p>
+  </section>
+
+  <!-- ============ 8. PROOF (no testimonials — your first Saturday walkthrough) ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What your first Saturday looks like</span>
+    <h2>Here's what happens after you download.</h2>
+    <div class="walkthrough">
+      <div class="wblock">
+        <div class="time">Saturday morning</div>
+        <h3>Pick your plan and read through it once</h3>
+        <p>Start with the workbench or the entry bench — both are designed for a first build. Read the cut list, check you have what you need, make your lumber yard run Friday night if you want to save time.</p>
+      </div>
+      <div class="wblock">
+        <div class="time">Mid-morning</div>
+        <h3>Make your first cut</h3>
+        <p>The plans give you dimensions, not guesswork. Cut the first board. The rest of it follows one cut at a time. Read the "where I screwed up" section for that project before you hit any step that tripped me up.</p>
+      </div>
+      <div class="wblock">
+        <div class="time">End of the day</div>
+        <h3>Put something in your garage that wasn't there this morning</h3>
+        <p>That's it. Not perfect. Not Instagram-ready. But real. Built by you, with the tools you have, in the time you had. That's what 127 dads did with the workbench plan in its first year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FAQ ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Questions I'd ask too</span>
+    <h2>FAQ — the honest version</h2>
+    <details>
+      <summary>I'm a complete beginner. Is this too advanced for me?</summary>
+      <div class="a">That's who these are for. Every plan is written assuming you have basic tools and no formal training. If you can read a tape measure and follow a numbered list, you can build from these. The "where I screwed up" section on each plan exists specifically for first-timers.</div>
+    </details>
+    <details>
+      <summary>I only have a circular saw and a drill. Is that enough?</summary>
+      <div class="a">For all 12 plans, yes. None of them require a table saw, a miter saw, a router, or anything else on the "skip it for now" list in the tool buying guide. You need what you have.</div>
+    </details>
+    <details>
+      <summary>Why buy plans from you instead of finding free ones online?</summary>
+      <div class="a">Free plans online are usually missing the cut list, skip the hardware costs, and don't tell you where things get tricky. I've used them. That's why I wrote my own. These are tested — I built every project in this pack with my own tools, in my own garage, with real material costs from my actual lumber yard. The "where I screwed up" notes are the part you can't find anywhere else.</div>
+    </details>
+    <details>
+      <summary>What's the refund policy?</summary>
+      <div class="a">30 days. If you downloaded the plans and didn't build anything, email me and I'll send your money back. The plans only work if you do — so if you tried and something fell short, that's a conversation worth having.</div>
+    </details>
+    <details>
+      <summary>Do I get updates when new plans are added?</summary>
+      <div class="a">Yes. Free updates for life. When I add a plan, you get it.</div>
+    </details>
+    <details>
+      <summary>What are the material costs actually like?</summary>
+      <div class="a">Under $60 for every project in this pack. Some are closer to $40. The hardware lists include the actual prices I paid — not estimated costs from a website. Lumber prices vary by location, so yours may differ slightly, but these are real numbers from a real lumber yard.</div>
+    </details>
+  </section>
+
+  <!-- ============ 10. STEPS ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What happens next</span>
+    <h2>Three steps:</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Download the plans</h3>
+        <p>Click the button. Purchase. Instant download — all 12 plans plus the tool guide. No email course, no upsell sequence.</p>
+      </div>
+      <div class="step">
+        <h3>Pick your first build and start a list</h3>
+        <p>Read through the plan. Write down what you need. Make the lumber run. Most of the work happens before Saturday morning — once you have the materials, you're building.</p>
+      </div>
+      <div class="step">
+        <h3>Cut the first board.</h3>
+        <p>That's the hard part. Not because it's complicated — because starting is. Cut the first board. The rest follows.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://stan.store/">Get The Saturday Shop Plans 👇🏽</a>
+    <p class="btn-note">$39 • 30-day refund if you don't build anything</p>
+  </section>
+
+  <!-- ============ 11. PERSONAL NOTE ============ -->
+  <section class="reveal">
+    <div class="note">
+      <p><b>Fellas, here's the honest version:</b></p>
+      <p>I'm not a professional woodworker. I'm a maintenance tech who started building because I had to, then kept going because it turned into something real. I've made the cuts wrong, bought the wrong hardware, and had to start a board over more than once. That's in every plan — not to make it feel complicated, but because knowing where to be careful is half the work.</p>
+      <p>You don't need a better shop. You need a plan that was actually written for the shop you have. That's what I tried to build here. Give it a Saturday and see what happens.</p>
+      <p>See you on the inside,</p>
+      <div class="sig">Marcus</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 The Saturday Shop<br>
+  Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.<br><br>
+  <span style="opacity:.6">Page built by The Digital Dad — systems, not hustle.</span>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && location.hash !== '#all') {
+    document.documentElement.classList.add('js');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }
+</script>
+</body>
+</html>
