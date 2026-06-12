@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Quiet Launch Kit — with Maya | Maya Bennett Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Karla:wght@400;500;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF7F0;
+    --tint:#E4EBDD;
+    --accent:#8FA97A;
+    --accent-deep:#5C7350;
+    --ink:#2C3526;
+    --ink-soft:#5E6B54;
+    --metal:#C8A560;
+    --white:#FFFFFF;
+    --shadow-soft: 0 2px 6px rgba(0,0,0,.06), 0 14px 34px color-mix(in srgb, var(--accent-deep) 12%, transparent);
+    --shadow-lift: 0 4px 10px rgba(0,0,0,.08), 0 22px 48px color-mix(in srgb, var(--accent-deep) 18%, transparent);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Karla',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 85% -5%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+      radial-gradient(900px 500px at -10% 30%, color-mix(in srgb, var(--metal) 10%, transparent), transparent 55%),
+      var(--paper);
+    line-height:1.7;
+    font-size:16.5px;
+  }
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:50; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  }
+  .page{max-width:540px;margin:0 auto;padding:0 22px 90px}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:560;letter-spacing:-0.02em;line-height:1.12}
+  h1{font-size:clamp(2.3rem,8.5vw,3.1rem)}
+  h2{font-size:clamp(1.65rem,6vw,2.05rem);margin-bottom:.7rem}
+  .script{font-family:'Caveat',cursive;color:var(--accent-deep)}
+  .eyebrow{
+    display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-deep);margin-bottom:.9rem;
+  }
+  .eyebrow::before{content:"🤍 "}
+  p.lead{font-size:1.12rem;color:var(--ink-soft)}
+  section{padding:58px 0 14px}
+  .band{
+    margin:60px -22px 0; padding:64px 30px;
+    background:linear-gradient(160deg, var(--ink) 0%, color-mix(in srgb, var(--ink) 80%, var(--accent-deep)) 100%);
+    color:var(--paper);
+  }
+  .band h2{color:var(--paper)}
+  .band .script{color:color-mix(in srgb, var(--accent) 70%, var(--paper))}
+  .hero{padding-top:64px;text-align:center}
+  .hero .photo{
+    width:148px;height:148px;border-radius:50%;object-fit:cover;
+    border:5px solid var(--white); box-shadow:var(--shadow-lift); margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic;color:var(--accent-deep)}
+  .hero .sub{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
+  .hero .sub b{color:var(--ink)}
+  .btn{
+    display:block;text-align:center;text-decoration:none;
+    font-weight:800;font-size:1.05rem;letter-spacing:.01em;
+    background:linear-gradient(150deg,var(--accent) 0%,var(--accent-deep) 100%);
+    color:var(--white);padding:18px 26px;border-radius:60px;
+    box-shadow:0 6px 14px color-mix(in srgb, var(--accent-deep) 35%, transparent), 0 18px 40px color-mix(in srgb, var(--accent-deep) 22%, transparent);
+    transform:translateY(0);
+    transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
+    margin:28px 0 10px;
+  }
+  .btn:hover{transform:translateY(-3px)}
+  .btn:active{transform:translateY(-1px) scale(.99)}
+  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+  ul.check{list-style:none;margin-top:18px}
+  ul.check li{
+    padding:13px 16px 13px 48px;position:relative;background:var(--white);
+    border-radius:14px;margin-bottom:10px;box-shadow:var(--shadow-soft);font-weight:500;
+  }
+  ul.check li::before{content:"🤍";position:absolute;left:15px;top:12px;font-size:1.05rem}
+  .story p{margin-bottom:1.05rem}
+  .story .punch{
+    font-family:'Fraunces',serif;font-size:1.3rem;font-weight:560;line-height:1.35;
+    color:var(--accent-deep);padding-left:18px;border-left:3px solid var(--metal);margin:1.4rem 0;
+  }
+  .photo-wide{width:100%;border-radius:20px;box-shadow:var(--shadow-lift);margin:22px 0 6px;display:block}
+  .caption{font-size:.82rem;color:var(--ink-soft);text-align:center;margin-bottom:8px}
+  .receipt{
+    background:var(--white);border-radius:22px;padding:30px 26px;margin-top:24px;
+    box-shadow:var(--shadow-lift);text-align:center;position:relative;overflow:hidden;
+  }
+  .receipt::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--accent),var(--metal),var(--accent));
+  }
+  .receipt .big{
+    font-family:'Fraunces',serif;font-size:3rem;font-weight:600;color:var(--ink);
+    letter-spacing:-.03em;line-height:1;
+  }
+  .receipt .big span{color:var(--accent-deep)}
+  .receipt .since{font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;font-weight:700}
+  .receipt .disclaim{
+    margin-top:16px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;
+    border-top:1px dashed var(--tint);padding-top:14px;
+  }
+  .stack{margin-top:10px}
+  .stack-item{
+    background:var(--white);border-radius:18px;padding:22px 22px 18px;margin-bottom:14px;
+    box-shadow:var(--shadow-soft);border:1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+  .stack-item h3{font-size:1.15rem;margin-bottom:6px}
+  .stack-item .tag{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:4px 12px;margin-bottom:10px;
+  }
+  .stack-item p{font-size:.95rem;color:var(--ink-soft)}
+  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,color-mix(in srgb, var(--metal) 12%, var(--white)))}
+  .notlist{display:grid;gap:10px;margin-top:18px}
+  .notlist div{background:var(--white);border-radius:14px;padding:14px 18px;font-weight:700;box-shadow:var(--shadow-soft)}
+  .notlist div span{margin-right:10px}
+  .quote{
+    background:var(--white);border-radius:20px;padding:26px 24px 20px;margin-bottom:16px;
+    box-shadow:var(--shadow-soft);position:relative;
+  }
+  .quote::before{
+    content:"\201C";font-family:'Fraunces',serif;font-size:4rem;color:var(--tint);
+    position:absolute;top:-2px;left:14px;line-height:1;
+  }
+  .quote p{position:relative;font-size:1rem;padding-top:8px}
+  .quote .who{margin-top:10px;font-weight:800;font-size:.86rem;color:var(--accent-deep)}
+  details{background:var(--white);border-radius:16px;margin-bottom:12px;box-shadow:var(--shadow-soft);overflow:hidden}
+  summary{cursor:pointer;font-weight:800;padding:18px 20px;list-style:none;position:relative;padding-right:48px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:12px;font-family:'Fraunces',serif;
+    font-size:1.6rem;color:var(--accent);transition:transform .3s ease;
+  }
+  details[open] summary::after{transform:rotate(45deg)}
+  details .a{padding:0 20px 18px;color:var(--ink-soft);font-size:.97rem}
+  .steps{counter-reset:step;margin-top:18px}
+  .step{position:relative;padding:6px 0 26px 64px}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
+    background:var(--ink);color:var(--paper);font-family:'Fraunces',serif;font-weight:600;
+    display:flex;align-items:center;justify-content:center;font-size:1.25rem;
+    box-shadow:var(--shadow-soft);
+  }
+  .step:not(:last-child)::after{
+    content:"";position:absolute;left:21px;top:48px;bottom:2px;width:2px;
+    background:linear-gradient(var(--accent), var(--tint));
+  }
+  .step h3{font-size:1.08rem;margin-bottom:2px}
+  .step p{font-size:.95rem;color:var(--ink-soft)}
+  .note{
+    background:var(--white);border-radius:24px;padding:34px 28px;box-shadow:var(--shadow-lift);
+    margin-top:24px;position:relative;
+  }
+  .note::before{content:"🤍";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:1.8rem}
+  .note p{margin-bottom:1rem}
+  .note .sig{font-family:'Caveat',cursive;font-size:2.2rem;color:var(--accent-deep);margin-top:6px}
+  footer{
+    text-align:center;padding:46px 22px 30px;font-size:.78rem;color:var(--ink-soft);
+    max-width:540px;margin:0 auto;line-height:1.6;
+  }
+  /* reveal — hidden ONLY when JS runs; previews/no-JS see everything */
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1)}
+  html.js .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){html.js .reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <img class="photo" src="https://placehold.co/296x296/E4EBDD/5C7350?text=Maya" alt="Maya, smiling">
+    <span class="eyebrow">for the mama with a small account</span>
+    <h1>you don't need 10k followers. you need <em>one tiny product</em> and the guts to post about it.</h1>
+    <p class="sub">I built my first digital product with <b>212 followers</b> and a Canva account, and sold it while folding laundry. The Quiet Launch Kit is everything I wish someone had handed me that day.</p>
+    <a class="btn" href="https://stan.store/">get the quiet launch kit — $67 👇</a>
+    <p class="btn-note">instant access · 7-day no-questions refund</p>
+  </section>
+
+  <!-- ============ 2. STORY ============ -->
+  <section class="story reveal">
+    <span class="eyebrow">My story (the real one)</span>
+    <h2>Two years ago I felt guilty buying a $5 coffee.</h2>
+    <p>We were living on one income. I was a stay-at-home mom with 212 Instagram followers, a Canva account, and a camera roll full of other people's wins.</p>
+    <p>I tried the influencer route first — posting every day, trying to be everywhere. I burned out in six weeks with nothing to show for it.</p>
+    <p>So I stopped trying to be loud. I built one tiny digital product instead.</p>
+    <p class="punch">I sold my first copy while folding laundry — and cried over a $19 sale because it was MINE.</p>
+    <p>I'm still not famous. I still have a small account. But my little products have quietly paid for groceries, then car repairs, then our first real family vacation in five years. This kit is the system I wish I could mail back in time to that overwhelmed mama with 212 followers.</p>
+    <img class="photo-wide" src="https://placehold.co/1000x700/E4EBDD/5C7350?text=lifestyle+photo+coming" alt="Maya working at her kitchen table">
+    <p class="caption">the kitchen-table office where all of this happened</p>
+  </section>
+
+  <!-- ============ 3. RECEIPT (the ONE attested claim) ============ -->
+  <section class="reveal">
+    <div class="receipt">
+      <div class="big">$4,200 <span>in sales</span></div>
+      <div class="since">in my first 90 days — with under 600 followers</div>
+      <p class="disclaim"><b>real talk, because I'll always be honest with you:</b> that's my result, not a promise of yours. It took real work, consistency, and time my kids were asleep for. Your results will depend on your offer, your effort, and your audience — and anyone who guarantees you a number is selling you a story.</p>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO IT'S FOR ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Is this you?</span>
+    <h2>This is for you if…</h2>
+    <ul class="check">
+      <li>you have somewhere between 100 and 800 followers, and you're a little embarrassed by the number (nobody's judging you — but I remember the feeling)</li>
+      <li>your phone is full of screenshots of other people's wins, and none of your own yet</li>
+      <li>you get about 45 usable minutes a day, usually during nap time</li>
+      <li>you've spent more on courses than you've made online (no shame — me too)</li>
+      <li>you don't want a personal brand. you want grocery money you made yourself, without performing on camera</li>
+    </ul>
+  </section>
+
+  <!-- ============ 5. MISSION BAND ============ -->
+  <div class="band reveal">
+    <span class="script" style="font-size:1.6rem">start small. start scared. just start.</span>
+    <h2>A small account was never the problem.</h2>
+  </div>
+
+  <!-- ============ 6. WHAT'S INSIDE ============ -->
+  <section id="offer" class="reveal">
+    <span class="eyebrow">What's inside The Quiet Launch Kit</span>
+    <h2>Everything I wish someone handed me at 212 followers.</h2>
+    <p class="lead">One tiny product. One quiet system. No dancing, no pointing at text, no pretending to be an influencer.</p>
+    <div class="stack">
+      <div class="stack-item">
+        <span class="tag">the decision</span>
+        <h3>Pick your first product</h3>
+        <p>The 20-minute decision framework that ends the what-do-I-even-sell spiral. You'll leave module 1 with your product chosen — not a list of maybes.</p>
+      </div>
+      <div class="stack-item">
+        <span class="tag">the page</span>
+        <h3>A product page that sells while you sleep</h3>
+        <p>My exact product page template. Copy it, paste it, make it yours. This is the piece doing its quiet thing at 6:47am while you make pancakes.</p>
+      </div>
+      <div class="stack-item">
+        <span class="tag">the launch</span>
+        <h3>The 9-post launch plan + first-week emails</h3>
+        <p>Built specifically for accounts under 500 followers. Nine posts, in order, plus five fill-in-the-blank email scripts for your first week of buyers.</p>
+      </div>
+      <div class="stack-item bonus">
+        <span class="tag">the part no template has</span>
+        <h3>Me, in your corner</h3>
+        <p>A private email line straight to me for your first 30 days, my personal "what do you do?" DM scripts, and lifetime updates to everything in the kit. You're not buying files — you're starting with someone who's been the mama with 212 followers.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://stan.store/">I'm ready — let's launch quiet 👇</a>
+    <p class="btn-note">$67 · instant access · 7-day no-questions refund</p>
+  </section>
+
+  <!-- ============ 7. WHAT THIS IS NOT ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Let's clear this up</span>
+    <h2>What this is <i>not</i>:</h2>
+    <div class="notlist">
+      <div><span>🚫</span>An MLM or anything with recruiting. You're building YOUR product — there's no downline, and I make nothing off anyone you know.</div>
+      <div><span>🚫</span>A get-rich-quick anything. It's a system, and systems take a few quiet weeks of nap times.</div>
+      <div><span>🚫</span>An influencer bootcamp. No daily reels, no trending audio, no performing.</div>
+      <div><span>🚫</span>Another giant course you'll never finish. Every piece is sized for one nap time.</div>
+    </div>
+    <p style="margin-top:18px">If you've been burned by loud promises before — good. Your guard is working. This is the quiet alternative.</p>
+  </section>
+
+  <!-- ============ 8. PROOF ============ -->
+  <section class="reveal">
+    <span class="eyebrow">from a kit mama</span>
+    <h2>Don't take my word for it.</h2>
+    <div class="quote">
+      <p>I bought the kit on a Tuesday and made my first sale that Sunday. I literally screenshotted it and cried in the school pickup line.</p>
+      <div class="who">— Kelsey R., kit member</div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FAQ ============ -->
+  <section class="reveal">
+    <span class="eyebrow">Questions I'd ask too</span>
+    <h2>FAQ — the honest version</h2>
+    <details>
+      <summary>I have a tiny account. Will this even work for me?</summary>
+      <div class="a">It was built for you specifically. I started with 212 followers, and the launch plan assumes you have under 500. If you have a big audience, honestly, you need this less than the mama you follow who has 300.</div>
+    </details>
+    <details>
+      <summary>How much time does this actually take?</summary>
+      <div class="a">Every piece is sized for one nap time — roughly 45 minutes. You go at your pace. There's no cohort to keep up with and no live calls to miss.</div>
+    </details>
+    <details>
+      <summary>Is this an MLM?</summary>
+      <div class="a">No. There's nothing to join, no one to recruit, and no commissions changing hands. You build your own product and keep what it makes. That's the whole model.</div>
+    </details>
+    <details>
+      <summary>Why buy this from you and not some guru?</summary>
+      <div class="a">Honestly? Because I'm not a guru. I don't have a yacht or a stage. I'm a mom with a small account who figured out the quiet way, and the kit only teaches things I actually did. If you want hype energy, I'm genuinely not your person — and that's okay.</div>
+    </details>
+    <details>
+      <summary>Will I make money with this?</summary>
+      <div class="a">I don't know — and anyone who promises you will is lying to you. What I can give you is the exact system I used, in order, with nothing held back. The doing part is yours, and I'll be in your inbox for the first 30 days while you do it.</div>
+    </details>
+    <details>
+      <summary>What if it's not for me?</summary>
+      <div class="a">7-day no-questions refund. Email me and I'll send it back myself. I mean that literally — it's me reading that inbox.</div>
+    </details>
+  </section>
+
+  <!-- ============ 10. STEPS ============ -->
+  <section class="reveal">
+    <span class="eyebrow">What happens next</span>
+    <h2>Three steps:</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Grab the kit</h3>
+        <p>Checkout takes about a minute. Your login lands in your inbox right away.</p>
+      </div>
+      <div class="step">
+        <h3>Open module 1 during today's nap time</h3>
+        <p>Pick your product with the 20-minute framework — then say hi on the private email line so I know you're in.</p>
+      </div>
+      <div class="step">
+        <h3>Post the nine posts</h3>
+        <p>Quiet, simple, in order, yours. The plan tells you exactly what each one says.</p>
+      </div>
+    </div>
+    <a class="btn" href="https://stan.store/">okay, I'm in 👇</a>
+    <p class="btn-note">$67 · instant access · a refund policy with a human behind it</p>
+  </section>
+
+  <!-- ============ 11. PERSONAL NOTE ============ -->
+  <section class="reveal">
+    <div class="note">
+      <p><b>hey friend —</b></p>
+      <p>if you've read this far, you're probably her. the mama with the small account and the folder of screenshots. I was her two years ago, feeling guilty about a $5 coffee and wondering if the number next to my name meant I wasn't allowed to start.</p>
+      <p>I can't promise you numbers — I won't do that. what I can tell you is that when I write every module, the person in my head is you: at the kitchen table, 45 minutes on the clock, with a dream that feels a little silly to say out loud. it's not silly.</p>
+      <p>See you on the inside,</p>
+      <div class="sig">Maya</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  © 2026 Maya Bennett Co.<br>
+  Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.<br><br>
+  <span style="opacity:.6">Page built by The Digital Dad — systems, not hustle.</span>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && location.hash !== '#all') {
+    document.documentElement.classList.add('js');
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.12});
+    els.forEach(el=>io.observe(el));
+  }
+</script>
+</body>
+</html>
