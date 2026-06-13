@@ -19,12 +19,13 @@
 <style>
   :root{
     color-scheme: light;
-    --paper:#0D0D12;
-    --tint:#16151F;
-    --accent:#7C4DFF;
-    --ink:#F0EDF8;
-    --ink-soft:#9B96B8;
-    --metal:#A87FD0;
+    --paper:#0D0B10;
+    --tint:#1B1620;
+    --accent:#C9A84C;
+    --accent-deep:#A08035;
+    --ink:#F5EEE6;
+    --ink-soft:#B8A89E;
+    --metal:#C21025;
     --edge:#000;
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -32,7 +33,7 @@
   body{
     font-family:'Manrope',sans-serif;color:var(--ink);
     background:
-      linear-gradient(180deg, rgba(124,77,255,0.06), transparent 480px),
+      linear-gradient(180deg, rgba(201,168,76,0.06), transparent 480px),
       var(--paper);
     line-height:1.65;font-size:17px;
   }
@@ -80,17 +81,17 @@
   .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft);letter-spacing:.04em}
   ul.check{list-style:none;margin-top:20px}
   ul.check li{
-    padding:14px 16px 14px 46px;position:relative;background:var(--tint);
-    border:1px solid rgba(240,237,248,0.14);
+    padding:14px 16px 14px 48px;position:relative;background:var(--tint);
+    border:1px solid rgba(245,238,230,0.14);
     border-left:5px solid var(--accent);margin-bottom:10px;font-weight:500;
   }
-  ul.check li::before{content:"✔️";position:absolute;left:16px;top:13px;font-weight:800}
+  ul.check li::before{content:"✔️";position:absolute;left:14px;top:12px;font-size:1rem}
   .story p{margin-bottom:1.05rem}
   .story .punch{
     font-family:'Archivo Black',sans-serif;font-size:1.35rem;line-height:1.3;text-transform:uppercase;
     color:var(--accent);border-left:6px solid var(--accent);padding-left:18px;margin:1.5rem 0;
   }
-  .photo-wide{width:100%;border:3px solid var(--ink);box-shadow:10px 10px 0 rgba(124,77,255,0.55);margin:24px 0 10px;display:block}
+  .photo-wide{width:100%;border:3px solid var(--ink);box-shadow:10px 10px 0 rgba(201,168,76,0.55);margin:24px 0 10px;display:block}
   .caption{font-size:.8rem;color:var(--ink-soft);margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase}
   .receipt{
     background:var(--tint);border:3px solid var(--ink);padding:34px 26px;margin-top:26px;
@@ -102,17 +103,17 @@
     letter-spacing:.2em;padding:5px 16px;white-space:nowrap;
   }
   .receipt .big{
-    font-family:'Archivo Black',sans-serif;font-size:clamp(1.6rem,5.5vw,2.4rem);color:var(--ink);line-height:1.2;
+    font-family:'Archivo Black',sans-serif;font-size:clamp(1.5rem,5vw,2.1rem);color:var(--ink);line-height:1.2;
   }
   .receipt .big span{color:var(--accent)}
   .receipt .since{font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px;font-weight:800}
   .receipt .disclaim{
     margin-top:18px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;
-    border-top:1px dashed rgba(240,237,248,0.30);padding-top:14px;text-align:left;
+    border-top:1px dashed rgba(245,238,230,0.30);padding-top:14px;text-align:left;
   }
   .stack{margin-top:12px}
   .stack-item{
-    background:var(--tint);border:1px solid rgba(240,237,248,0.16);
+    background:var(--tint);border:1px solid rgba(245,238,230,0.16);
     padding:24px 22px 18px;margin-bottom:12px;position:relative;
   }
   .stack-item h3{font-size:1.05rem;margin-bottom:8px}
@@ -121,9 +122,9 @@
     background:var(--accent);color:#111;padding:4px 12px;margin-bottom:12px;
   }
   .stack-item p{font-size:.95rem;color:var(--ink-soft)}
-  .stack-item.bonus{border:3px dashed var(--accent);background:#1E1931}
+  .stack-item.bonus{border:3px dashed var(--accent);background:#292224}
   .notlist{display:grid;gap:10px;margin-top:20px}
-  .notlist div{background:var(--tint);border:1px solid rgba(240,237,248,0.16);padding:15px 18px;font-weight:700}
+  .notlist div{background:var(--tint);border:1px solid rgba(245,238,230,0.16);padding:15px 18px;font-weight:700}
   .notlist div span{margin-right:10px}
   .quote{
     background:var(--tint);border-left:6px solid var(--metal);padding:24px 22px 18px;margin-bottom:14px;
@@ -131,7 +132,7 @@
   .quote p{font-size:1rem}
   .quote .stars{display:none}
   .quote .who{margin-top:12px;font-weight:800;font-size:.82rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
-  details{background:var(--tint);border:1px solid rgba(240,237,248,0.16);margin-bottom:10px;overflow:hidden}
+  details{background:var(--tint);border:1px solid rgba(245,238,230,0.16);margin-bottom:10px;overflow:hidden}
   summary{cursor:pointer;font-weight:800;padding:18px 48px 18px 20px;list-style:none;position:relative}
   summary::-webkit-details-marker{display:none}
   summary::after{
@@ -148,7 +149,7 @@
     font-family:'Archivo Black',sans-serif;font-size:2.2rem;color:var(--accent);line-height:1;
   }
   .step:not(:last-child)::after{
-    content:"";position:absolute;left:14px;top:52px;bottom:6px;width:3px;background:rgba(124,77,255,0.40);
+    content:"";position:absolute;left:14px;top:52px;bottom:6px;width:3px;background:rgba(201,168,76,0.40);
   }
   .step h3{font-size:1rem;margin-bottom:4px}
   .step p{font-size:.95rem;color:var(--ink-soft)}
@@ -161,7 +162,7 @@
   .note .sig{font-family:'Permanent Marker',cursive;font-size:1.9rem;color:var(--accent);margin-top:8px}
   footer{
     text-align:center;padding:48px 22px 30px;font-size:.76rem;color:var(--ink-soft);
-    max-width:620px;margin:0 auto;line-height:1.6;border-top:1px solid rgba(240,237,248,0.14);
+    max-width:620px;margin:0 auto;line-height:1.6;border-top:1px solid rgba(245,238,230,0.14);
   }
   html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1)}
   html.js .reveal.in{opacity:1;transform:none}
@@ -173,161 +174,176 @@
 
   <!-- ============ 1. HERO ============ -->
   <section class="hero">
-    <img class="photo" src="photos/image-1.png" alt="Bold &amp; Bare — AI prompt bank for male avatars">
-    <span class="eyebrow">Just Dropped</span>
-    <h1>Stop wrestling with prompts that generate <em>the wrong thing every time</em></h1>
-    <p class="sub">I noticed nobody had built a solid prompt bank for male AI avatars — so I made one. <b>Prompts for images and video, built to generate consistent male characters for content creators.</b></p>
-    <a class="btn" href="https://shop.beacons.ai/ronniecortez1010/2fb28b7e-dc1c-484e-8779-dc4d64ee3f07">Grab Bold &amp; Bare — $9 🎉</a>
-    <p class="btn-note">Digital download. Instant access. No subscription.</p>
+    <img class="photo" src="photos/photo1.png" alt="Ronnie Cortez">
+    <span class="eyebrow">New prompt bank drop</span>
+    <h1>Stop wasting renders on male AI images that miss — <em>just plug in and create</em></h1>
+    <p class="sub">I was building my own AI influencer and couldn't find a solid prompt bank for male content anywhere. <b>So I built one.</b> 100 prompts. 20 scenes. Image + video pairs. $9.</p>
+    <a class="btn" href="https://shop.beacons.ai/ronniecortez1010/2fb28b7e-dc1c-484e-8779-dc4d64ee3f07">Grab Bold &amp; Bare Vol. 1 — $9 🎉</a>
+    <p class="btn-note">Instant download. Digital product. 💸</p>
   </section>
 
   <!-- ============ 2. STORY ============ -->
   <section class="story reveal">
-    <span class="eyebrow">The Real Story</span>
-    <h2>I was building my own AI influencer and kept hitting a wall</h2>
-    <p>I'm a full-time worker. Side projects are my thing — always looking for what's possible on the internet. When I started developing my own AI influencer on Favnue, I ran into something I couldn't ignore.</p>
-    <p>Almost everything built for AI content creation is aimed at women. Prompt banks, style references, aesthetic guides — female avatars everywhere. Male avatars? You're largely on your own, figuring it out from scratch.</p>
-    <p>So I kept reading. Learning. Creating. Testing prompts, finding out what actually generates right and what wastes your time.</p>
-    <p class="punch">At some point I didn't just want to consume — I wanted to create too.</p>
-    <p>Bold &amp; Bare is what came out of that process. Not theory. Actual prompts, tested by me, built to generate male avatars in specific scenes and locations — so you can skip the trial-and-error and just plug in and go.</p>
-    <img class="photo-wide" src="photos/image-2.png" alt="Sample output from the Bold &amp; Bare prompt bank">
-    <p class="caption">Sample output from the Bold &amp; Bare prompt bank</p>
+    <span class="eyebrow">The real story</span>
+    <h2>How I built the prompt bank the market was missing</h2>
+    <p>I was building my influencer on Favnue and spending serious time generating images. And I kept running into the same wall — prompts for women? Everywhere. Tons of them, really good ones too.</p>
+    <p>For men? Almost nothing. Not seductive, not editorial, not stylish. Just... missing.</p>
+    <p>So I kept reading. Learning. Experimenting. Figuring out what actually worked in the tools I was already using. Getting better at the prompts, better at the scenes, figuring out which words got me the image I was actually picturing.</p>
+    <p class="punch">At some point I wanted to create as well.</p>
+    <p>That's where Bold &amp; Bare came from. Instead of waiting for someone else to build it, I built it myself. 100 prompts. 20 scenes. Each image prompt paired with a video prompt so you can push the content further. Made by someone who's been inside the generator — not just writing prompts in theory.</p>
+    <img class="photo-wide" src="photos/photo2.png" alt="Bold and Bare Vol. 1 — Men's Premium Image and Video Prompt Package">
+    <p class="caption">Bold &amp; Bare Vol. 1 — 100 image + video prompts across 20 scenes</p>
   </section>
 
   <!-- ============ 3. RECEIPT (the ONE attested claim) ============ -->
   <section class="reveal">
     <div class="receipt">
-      <div class="big"><span>the product has just launched.</span></div>
-      <div class="since">Fresh drop — you're early</div>
-      <p class="disclaim"><b>Real talk, because I'll always keep it straight with you:</b> The only promise here is that this is brand new and built from my own experience with AI content creation. Every image you generate is yours to build with — what you do with it is up to you. No income guarantee, no "you'll make X." Just a prompt bank, honestly described.</p>
+      <div class="big"><span>The product has just launched.</span></div>
+      <div class="since">You're in early — be one of the first creators inside</div>
+      <p class="disclaim"><b>Real talk 💯 —</b> No income or results are claimed or implied. This is a creative prompt resource for AI content creators. Your images, output, and results depend on the tools you use, your consistency, and how you apply these prompts. Individual results will vary.</p>
     </div>
   </section>
 
   <!-- ============ 4. WHO IT'S FOR ============ -->
   <section class="reveal">
-    <span class="eyebrow">Is This You?</span>
-    <h2>This is for the creator who's tired of generating the same wrong thing</h2>
+    <span class="eyebrow">Is this you?</span>
+    <h2>This was built for you if...</h2>
     <ul class="check">
-      <li>You've got a clear vision in your head but the AI keeps missing it</li>
-      <li>You want to create male AI avatar content and every prompt bank you've found was built for women</li>
-      <li>You're spending way too long tweaking prompts and still not loving the result</li>
-      <li>You see the opportunity in AI-generated content and you're ready to actually build something</li>
-      <li>You want something you can plug into your workflow right now — not a 10-module course with homework</li>
+      <li>You're generating AI content and your male images just aren't coming out the way you pictured them</li>
+      <li>You spend more time re-prompting than actually creating — and it's eating your credits</li>
+      <li>You've noticed the gap: female AI content packs everywhere, male content? Almost nothing</li>
+      <li>You want prompts that cover multiple scenes so your content has real variety, not 20 versions of the same thing</li>
+      <li>You're ready to plug a prompt in, generate, and move on — not start from scratch every single time 💸</li>
     </ul>
   </section>
 
   <!-- ============ 5. MISSION BAND ============ -->
   <div class="band reveal">
-    <span class="script" style="font-size:1.7rem">Plug in. Generate. Create.</span>
-    <h2>Male avatars that look consistent. That's the whole point.</h2>
+    <span class="script" style="font-size:1.7rem">plug and create</span>
+    <h2>Stop guessing. Stop wasting renders. Start building.</h2>
   </div>
 
   <!-- ============ 6. WHAT'S INSIDE ============ -->
   <section id="offer" class="reveal">
-    <span class="eyebrow">What's Inside Bold &amp; Bare</span>
-    <h2>Two prompt types. One goal: stop fighting your generator.</h2>
-    <p class="lead">Images and video — both built specifically for male avatars, not recycled from a generic library.</p>
+    <span class="eyebrow">What's inside Bold &amp; Bare</span>
+    <h2>Here's what you get for $9</h2>
+    <p class="lead">One-time payment. Instant download. No subscription, no upsells.</p>
     <div class="stack">
       <div class="stack-item">
-        <div class="tag">Included</div>
-        <h3>Image Prompt Bank</h3>
-        <p>Prompts engineered for male avatars across a range of scenes and locations. Not the anything-goes library — these are built specifically for men. Same quality, same aesthetic, without starting over every session.</p>
+        <div class="tag">Core Content</div>
+        <h3>100 Image + Video Prompt Pairs</h3>
+        <p>Not a random list someone slapped together. Each image prompt is paired with a video prompt so you can take the content further. Tested, refined, ready to drop in and use.</p>
       </div>
       <div class="stack-item">
-        <div class="tag">Included</div>
-        <h3>Video Prompt Bank</h3>
-        <p>The same specificity for video. Create motion content with your male avatar — same character, same quality focus, built for creators who want more than just still images.</p>
+        <div class="tag">Scene Variety</div>
+        <h3>20 Distinct Scenes</h3>
+        <p>From seductive urban settings to editorial looks — 20 different occasions and locations. Your content won't look the same twice. 🤯</p>
+      </div>
+      <div class="stack-item">
+        <div class="tag">Tool-Agnostic</div>
+        <h3>Built for Top AI Models</h3>
+        <p>These work across the AI image and video tools content creators are already using. No expensive platform required. Drop in a prompt, generate, done.</p>
       </div>
       <div class="stack-item bonus">
-        <div class="tag">Bonus</div>
-        <h3>Me — the builder 💸</h3>
-        <p>I made this from inside the process. I was the one testing prompts, developing an actual AI influencer, figuring out what generates right and what's a waste of time. When you have a question about getting results, you're not asking a reseller. You're asking the person who built the prompts.</p>
+        <div class="tag">What's Different</div>
+        <h3>The Curation Behind It 🎉</h3>
+        <p>I built this while actively developing my own AI influencer. These aren't prompts grabbed off a list — they're the ones that actually worked in the field, tested against real generators, refined until they hit the way I was picturing. That's what separates this from a random prompt pack.</p>
       </div>
     </div>
-    <a class="btn" href="https://shop.beacons.ai/ronniecortez1010/2fb28b7e-dc1c-484e-8779-dc4d64ee3f07">Grab Bold &amp; Bare — $9 🎉</a>
-    <p class="btn-note">One-time $9. Digital download. No subscription, no upsells.</p>
+    <a class="btn" href="https://shop.beacons.ai/ronniecortez1010/2fb28b7e-dc1c-484e-8779-dc4d64ee3f07">Get Bold &amp; Bare Vol. 1 — Only $9 💸</a>
+    <p class="btn-note">One-time payment. Instant access after checkout.</p>
   </section>
 
   <!-- ============ 7. WHAT THIS IS NOT ============ -->
   <section class="reveal">
-    <span class="eyebrow">Let's Clear This Up</span>
+    <span class="eyebrow">Let's clear this up</span>
     <h2>What this is <span style="color:var(--accent)">not</span>:</h2>
     <div class="notlist">
-      <div><span>❌</span>Not a promise of income. It's a tool — what you build with it depends on you.</div>
-      <div><span>❌</span>Not a subscription. One payment of $9. Yours forever.</div>
-      <div><span>❌</span>Not generic prompts recycled from a women's influencer library. Built specifically for male avatars.</div>
-      <div><span>❌</span>Not a 10-step course with assignments. Open the file, plug in a prompt, generate.</div>
+      <div><span>❌</span> A massive course with hours of modules you'll forget by next week</div>
+      <div><span>❌</span> Female-forward AI content — finally, the other side 👏</div>
+      <div><span>❌</span> Something that requires expensive tools or paid platforms to start using</div>
+      <div><span>❌</span> A generic list nobody actually tested in a real generator</div>
     </div>
-    <p style="margin-top:18px">If you're looking for overnight income with zero effort, this isn't that. If you're a creator who wants to stop fighting your generator and start building real content — keep scrolling. 💸</p>
+    <p style="margin-top:18px;color:var(--ink-soft)">It's a prompt bank. You use it. It works. That's the whole point. 💰</p>
   </section>
 
-  <!-- ============ 8. PROOF — no testimonials provided; replaced with first-week walkthrough ============ -->
+  <!-- ============ 8. PROOF — replaced with first-session walkthrough (no testimonials provided) ============ -->
   <section class="reveal">
-    <span class="eyebrow">What to Expect</span>
-    <h2>Your first few sessions with Bold &amp; Bare</h2>
-    <p>Session one: you pick a prompt, drop it in your AI tool, generate. Your first image already looks more intentional than anything you got from generic prompting.</p>
-    <p>By session two or three: you start seeing it — the character holds. Same aesthetic, session after session. That consistency takes forever to figure out on your own. The prompts do it for you.</p>
-    <p>A week in: you've got a library of content and a workflow that actually moves. That's what a focused prompt bank compresses — the hours you'd spend figuring it out.</p>
+    <span class="eyebrow">What your first session looks like</span>
+    <h2>How you'll use this in under an hour</h2>
+    <p style="margin-bottom:1rem;color:var(--ink-soft)">Here's what actually happens when you open the pack:</p>
+    <ul class="check">
+      <li>Open the prompt bank and pick one of the 20 scenes that fits what you're creating</li>
+      <li>Drop the image prompt into your AI tool of choice — no guessing what words to use</li>
+      <li>Generate. If you've been spending 45 minutes re-prompting for one decent image, this is the fix.</li>
+      <li>Take the paired video prompt and push the content even further 🤯</li>
+    </ul>
+    <p style="margin-top:18px;color:var(--ink-soft)">No wasted credits. No starting from scratch. Just — plug and create. 💸</p>
   </section>
 
   <!-- ============ 9. FAQ ============ -->
   <section class="reveal">
-    <span class="eyebrow">Straight Answers</span>
+    <span class="eyebrow">Straight answers</span>
     <h2>FAQ — the honest version</h2>
     <details>
+      <summary>What AI tools do these prompts work with?</summary>
+      <div class="a">These are written for the top AI image and video generators content creators are already using. You'll know within your first session whether it works with your tool of choice — but they're built to be compatible with the major platforms in this space.</div>
+    </details>
+    <details>
+      <summary>Can I sell content I create using these prompts?</summary>
+      <div class="a">This is a creative resource for your content creation. What you do with the images and videos you generate is your call. Just check the terms of service of whichever AI tool you're using — they set the commercial use rules, not me.</div>
+    </details>
+    <details>
       <summary>What's the refund policy?</summary>
-      <div class="a">Digital products aren't refundable. Once you download it, it's yours — that's the nature of a digital file. Read the description first so you know exactly what you're getting before you buy.</div>
+      <div class="a">Digital products are not refundable. If you're on the fence, the price is $9 — the risk is as low as it gets. Can't go wrong with this one. 🎉</div>
     </details>
     <details>
-      <summary>Why buy this instead of just googling prompts?</summary>
-      <div class="a">You can google prompts all day. These are specific, tested, and built for male avatars — a use case that's underserved in every prompt library I've seen. I built what I couldn't find. The difference is in the specificity and how consistently they generate.</div>
+      <summary>Why buy this instead of just writing my own prompts?</summary>
+      <div class="a">You can absolutely write your own. It takes time, a lot of trial and error, and a lot of wasted credits figuring out why your image doesn't look right. This exists because I went through all of that already. You get the version that works.</div>
     </details>
     <details>
-      <summary>Is this an MLM or some kind of recruiting thing?</summary>
-      <div class="a">No. This is a $9 prompt bank. You buy it, you download it, you use it. No recruits, no downline, no commission structure. Just prompts.</div>
+      <summary>Is this a course, a membership, or a subscription?</summary>
+      <div class="a">None of the above. One-time purchase. 100 prompts. No recurring charge, no login portal, no platform to navigate. Just the prompt bank, instantly downloaded after checkout.</div>
     </details>
     <details>
-      <summary>Do I need AI experience to use this?</summary>
-      <div class="a">Basic familiarity with an AI image or video generator helps. If you know how to paste a prompt into a tool like Midjourney, DALL-E, Kling, or similar — you're set.</div>
+      <summary>Will there be more volumes?</summary>
+      <div class="a">Vol. 1 just launched 🎉 — I'm already working on what comes next. Grab the first pack now and be in early before that changes.</div>
     </details>
     <details>
-      <summary>What format does the download come in?</summary>
-      <div class="a">You'll get a digital file with the prompts organized by category — image prompts and video prompts, ready to plug in.</div>
-    </details>
-    <details>
-      <summary>Can I use the images I generate commercially?</summary>
-      <div class="a">The prompts are yours to use. Whether you can sell or monetize AI-generated output depends on the specific AI tool you're using — check that platform's terms of service before you publish or sell.</div>
+      <summary>Who is this for — personal use, brand building, or selling AI content?</summary>
+      <div class="a">All three. If you're creating AI content featuring male subjects — whether you're building your own AI influencer, creating for clients, or selling content — this is for you.</div>
     </details>
   </section>
 
   <!-- ============ 10. STEPS ============ -->
   <section class="reveal">
-    <span class="eyebrow">What Happens Next</span>
+    <span class="eyebrow">What happens next</span>
     <h2>Three steps:</h2>
     <div class="steps">
       <div class="step">
-        <h3>Grab Bold &amp; Bare</h3>
-        <p>Click the button below. Takes about 30 seconds to check out.</p>
+        <h3>Grab the pack</h3>
+        <p>$9 at checkout. Instant access right after payment. No waiting. 💸</p>
       </div>
       <div class="step">
-        <h3>Check your email</h3>
-        <p>Your download link lands right away — no waiting, no extra steps.</p>
+        <h3>Open your AI tool and drop in a prompt</h3>
+        <p>Pick a scene, paste the prompt, generate. The paired video prompt is right there when you're ready to push further.</p>
       </div>
       <div class="step">
-        <h3>Open it and start generating</h3>
-        <p>Pick any prompt, drop it in your AI tool, and see what happens when the prompts are actually built for what you're making. 🤯</p>
+        <h3>Create content that actually looks right</h3>
+        <p>No more re-prompting. No more wasted renders. Just content that hits the way you pictured it. 🤯💸</p>
       </div>
     </div>
-    <a class="btn" href="https://shop.beacons.ai/ronniecortez1010/2fb28b7e-dc1c-484e-8779-dc4d64ee3f07">Grab Bold &amp; Bare — $9 🎉</a>
-    <p class="btn-note">Digital download. Instant access.</p>
+    <a class="btn" href="https://shop.beacons.ai/ronniecortez1010/2fb28b7e-dc1c-484e-8779-dc4d64ee3f07">Get Bold &amp; Bare Vol. 1 — $9 🎉</a>
+    <p class="btn-note">Instant download. Digital product. No subscription needed.</p>
   </section>
 
   <!-- ============ 11. PERSONAL NOTE ============ -->
   <section class="reveal">
     <div class="note">
-      <p><b>Hey —</b></p>
-      <p>I built Bold &amp; Bare because I lived the frustration. Hours testing prompts, adjusting, regenerating, finally getting something that looks right — and then not being able to replicate it. The gap in the male avatar space was real, and I couldn't find what I needed, so I made it.</p>
-      <p>This isn't a big promise. It's a $9 prompt bank that removes one specific headache for creators building male AI content. Grab it, use it, build something with it. 💸</p>
+      <p><b>Hey! 🎉</b></p>
+      <p>I built this because I was frustrated. I couldn't find what I needed in this space — good, tested prompts for male AI content. So instead of waiting for someone else to make it, I made it.</p>
+      <p>For $9 you get 100 prompts that have actually been through the generator. Not ideal prompts written in theory — real ones, from someone actively building in this space. If you've been wanting to create AI male content and just couldn't get the images to look the way you imagined, this is exactly why Bold &amp; Bare exists.</p>
+      <p>Can't go wrong with this one. 💸</p>
       <p>See you on the inside,</p>
       <div class="sig">Ronnie</div>
     </div>
@@ -336,7 +352,7 @@
 </div>
 
 <footer>
-  &copy; 2026 Ronnie Cortez<br>
+  © 2026 Ronnie Cortez<br>
   Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.<br><br>
   <span style="opacity:.6">Page built by The Digital Dad — systems, not hustle.</span>
 </footer>
