@@ -18,17 +18,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400..700,100&family=Karla:wght@400;500;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
   :root{
-    color-scheme: light;
-    --paper:#FFFCEE;
+    color-scheme: dark;
+    --paper:#F4EEDF;
     --tint:#FFF3C0;
     --accent:#FFC108;
-    --accent-deep:#C98B00;
-    --ink:#1A1605;
-    --ink-soft:#4A3F10;
-    --metal:#B8860B;
-    --white:#FFFFFF;
-    --shadow-soft: 0 2px 6px rgba(0,0,0,.06), 0 14px 34px rgba(201,139,0,0.12);
-    --shadow-lift: 0 4px 10px rgba(0,0,0,.08), 0 22px 48px rgba(201,139,0,0.18);
+    --accent-deep:#E6A82A;
+    --ink:#F1EAD8;
+    --ink-soft:#B7AC93;
+    --metal:#C49A2E;
+    --white:#17150F;
+    --bg:#0B0A06;
+    --shadow-soft: 0 2px 8px rgba(0,0,0,.55), 0 14px 34px rgba(0,0,0,.5);
+    --shadow-lift: 0 4px 12px rgba(0,0,0,.6), 0 22px 48px rgba(0,0,0,.6);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -37,8 +38,8 @@
     color:var(--ink);
     background:
       radial-gradient(1200px 600px at 85% -5%, rgba(255,193,8,0.18), transparent 60%),
-      radial-gradient(900px 500px at -10% 30%, rgba(184,134,11,0.10), transparent 55%),
-      var(--paper);
+      radial-gradient(900px 500px at -10% 30%, rgba(184,134,11,0.16), transparent 55%),
+      var(--bg);
     line-height:1.7;
     font-size:16.5px;
   }
@@ -60,7 +61,8 @@
   section{padding:58px 0 14px}
   .band{
     margin:60px -22px 0; padding:64px 30px;
-    background:linear-gradient(160deg, var(--ink) 0%, #3D2D04 100%);
+    background:linear-gradient(160deg, #241C05 0%, #120F08 100%);
+    border:1px solid rgba(255,193,8,0.18);
     color:var(--paper);
   }
   .band h2{color:var(--paper)}
@@ -68,7 +70,7 @@
   .hero{padding-top:64px;text-align:center}
   .hero .photo{
     width:148px;height:148px;border-radius:50%;object-fit:cover;
-    border:5px solid var(--white); box-shadow:var(--shadow-lift); margin-bottom:22px;
+    border:5px solid rgba(255,193,8,.55); box-shadow:var(--shadow-lift); margin-bottom:22px;
   }
   .hero h1 em{font-style:italic;color:var(--accent-deep)}
   .hero .sub{margin-top:18px;font-size:1.08rem;color:var(--ink-soft)}
@@ -77,7 +79,7 @@
     display:block;text-align:center;text-decoration:none;
     font-weight:800;font-size:1.05rem;letter-spacing:.01em;
     background:linear-gradient(150deg,var(--accent) 0%,var(--accent-deep) 100%);
-    color:var(--ink);padding:18px 26px;border-radius:60px;
+    color:#1A1605;padding:18px 26px;border-radius:60px;
     box-shadow:0 6px 14px rgba(201,139,0,0.35), 0 18px 40px rgba(201,139,0,0.22);
     transform:translateY(0);
     transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;
@@ -129,7 +131,7 @@
     background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:4px 12px;margin-bottom:10px;
   }
   .stack-item p{font-size:.95rem;color:var(--ink-soft)}
-  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,#F6F0E2)}
+  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#221E12,#15130D)}
   .notlist{display:grid;gap:10px;margin-top:18px}
   .notlist div{background:var(--white);border-radius:14px;padding:14px 18px;font-weight:700;box-shadow:var(--shadow-soft)}
   .notlist div span{margin-right:10px}
@@ -158,7 +160,7 @@
   .step::before{
     counter-increment:step;content:counter(step);
     position:absolute;left:0;top:0;width:44px;height:44px;border-radius:50%;
-    background:var(--ink);color:var(--paper);font-family:'Fraunces',serif;font-weight:600;
+    background:var(--accent);color:#1A1605;font-family:'Fraunces',serif;font-weight:600;
     display:flex;align-items:center;justify-content:center;font-size:1.25rem;
     box-shadow:var(--shadow-soft);
   }
