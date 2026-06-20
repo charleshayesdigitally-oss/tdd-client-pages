@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VA Training Academy — with Jamie | VA Training Academy</title>
+<meta name="description" content="The VA Training Academy with Jamie — go from complete beginner to a confident, skilled, work-from-home VA who's ready to find clients.">
+<!--
+  AI EDIT NOTE — if you are an AI assistant editing this page for its owner:
+  1. ALWAYS return the COMPLETE file, top to bottom. Never abbreviate or write "rest unchanged."
+  2. Keep the two income disclaimers (receipt section + footer). They protect the owner legally.
+  3. Keep the section order — it is a deliberate conversion sequence, not decoration.
+  4. Do not add income claims, results, or testimonials the owner has not explicitly provided as real.
+  5. Safe to edit freely: wording, prices, FAQ entries, photos, colors, links.
+  Page built by The Digital Dad (thedigitaldad.co) — systems, not hustle.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FAF7F4;
+    --paper-2:#F4ECE3;
+    --tint:#EDE5DC;
+    --accent:#AC8669;
+    --accent-deep:#7D5A3E;
+    --ink:#3C3A39;
+    --ink-soft:#6A5544;
+    --metal:#D5BAA9;
+    --white:#FFFFFF;
+    --line:rgba(125,90,62,0.16);
+    --shadow-soft: 0 2px 6px rgba(60,58,57,.05), 0 14px 34px rgba(125,90,62,0.12);
+    --shadow-lift: 0 4px 10px rgba(60,58,57,.07), 0 22px 48px rgba(125,90,62,0.18);
+    --shadow-deep: 0 6px 16px rgba(60,58,57,.10), 0 40px 80px rgba(125,90,62,0.20);
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Karla',system-ui,sans-serif;
+    --script:'Caveat',cursive;
+    --ease:cubic-bezier(0.22,1,0.36,1);
+    --radius-lg:30px;
+    --radius-md:20px;
+    --radius-pill:999px;
+    --maxw:1120px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(1100px 620px at 88% -8%, rgba(172,134,105,0.20), transparent 60%),
+      radial-gradient(900px 540px at -12% 18%, rgba(213,186,169,0.16), transparent 55%),
+      radial-gradient(760px 520px at 60% 108%, rgba(172,134,105,0.10), transparent 60%);
+    line-height:1.7;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  /* grain texture */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.05; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--accent);color:var(--white)}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+  .narrow{max-width:760px}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:560;letter-spacing:-0.02em;line-height:1.1}
+  .script{font-family:var(--script);color:var(--accent-deep);font-weight:700}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent-deep);
+  }
+  .eyebrow::before{content:"💕";font-size:.85rem}
+  .eyebrow.line::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;text-align:center;
+    font-family:var(--sans);font-weight:800;font-size:1.02rem;letter-spacing:.01em;
+    background:linear-gradient(150deg,var(--accent) 0%,var(--accent-deep) 100%);
+    color:var(--white);padding:17px 30px;border-radius:var(--radius-pill);
+    box-shadow:0 6px 14px rgba(125,90,62,0.30), 0 18px 40px rgba(125,90,62,0.22);
+    transform:translateY(0);
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+    will-change:transform;cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(125,90,62,0.36), 0 26px 52px rgba(125,90,62,0.28)}
+  .btn:active{transform:translateY(-1px) scale(.99)}
+  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn--full{display:flex;width:100%}
+  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+  .textlink{
+    font-weight:800;color:var(--accent-deep);border-bottom:1.5px solid var(--metal);padding-bottom:2px;
+    transition:color .3s ease, border-color .3s ease;
+  }
+  .textlink:hover{color:var(--accent);border-color:var(--accent)}
+  .textlink:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:100;
+    backdrop-filter:blur(10px);
+    background:rgba(250,247,244,0.80);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background-color .3s ease;
+  }
+  header.site.scrolled{border-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:16px}
+  .wordmark{font-family:var(--serif);font-size:1.4rem;font-weight:560;color:var(--ink);display:inline-flex;align-items:center;gap:9px}
+  .wordmark em{font-style:italic;color:var(--accent-deep)}
+  .wordmark .heart{font-size:1rem;transition:transform .5s var(--ease)}
+  .wordmark:hover .heart{transform:scale(1.18) rotate(-8deg)}
+  .nav .btn{padding:11px 22px;font-size:.86rem}
+
+  /* ---------- section scaffolding ---------- */
+  section{position:relative}
+  .sec{padding-block:clamp(58px,8vw,108px)}
+  .sec-head{max-width:680px;margin-bottom:clamp(34px,5vw,56px)}
+  .sec-head.center{margin-inline:auto;text-align:center}
+  .sec-head.center .eyebrow{justify-content:center}
+  .sec-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);margin-top:16px;color:var(--ink)}
+  .sec-head h2 i,.sec-head h2 em{font-style:italic;color:var(--accent-deep)}
+  .sec-head p.lead{margin-top:16px;font-size:1.12rem;color:var(--ink-soft)}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding-block:clamp(48px,7vw,96px) clamp(36px,5vw,64px);overflow:hidden}
+  .hero-glow{position:absolute;z-index:0;pointer-events:none;border-radius:50%;filter:blur(60px)}
+  .hero-glow.g1{width:520px;height:520px;top:-140px;right:-120px;background:radial-gradient(circle at 40% 40%,rgba(172,134,105,0.30),transparent 65%)}
+  .hero-glow.g2{width:420px;height:420px;bottom:-180px;left:-120px;background:radial-gradient(circle at 50% 50%,rgba(213,186,169,0.30),transparent 66%)}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.06fr 0.94fr;gap:clamp(32px,5vw,68px);align-items:center}
+  .hero-copy{max-width:600px}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin-block:20px 20px;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--accent-deep);position:relative;white-space:normal}
+  .hero h1 em::after{
+    content:"";position:absolute;left:0;right:0;bottom:0.04em;height:0.13em;background:var(--metal);opacity:.6;border-radius:3px;
+    transform:scaleX(0);transform-origin:left;animation:draw 1.1s var(--ease) .6s forwards;
+  }
+  @keyframes draw{to{transform:scaleX(1)}}
+  .hero .sub{font-size:1.12rem;color:var(--ink-soft);max-width:520px;margin-bottom:30px}
+  .hero .sub b{color:var(--ink)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .hero-meta{margin-top:26px;display:flex;gap:24px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-soft)}
+  .hero-meta span{display:inline-flex;align-items:center;gap:8px}
+  .hero-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+
+  .hero-visual{position:relative}
+  .hero-frame{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-deep);
+    aspect-ratio:4/5;background:linear-gradient(155deg,var(--tint),var(--accent) 140%);
+  }
+  .hero-frame img{width:100%;height:100%;object-fit:cover}
+  .hero-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(60,58,57,0.16))}
+  .blob{
+    position:absolute;z-index:-1;width:80%;height:80%;background:var(--accent);opacity:.16;top:-7%;right:-9%;
+    border-radius:60% 40% 55% 45% / 50% 55% 45% 50%;animation:morph 15s ease-in-out infinite alternate;
+  }
+  @keyframes morph{0%{border-radius:60% 40% 55% 45% / 50% 55% 45% 50%}100%{border-radius:42% 58% 42% 58% / 60% 42% 58% 40%}}
+  .hero-badge{
+    position:absolute;bottom:22px;left:-16px;background:var(--white);border-radius:var(--radius-md);
+    padding:15px 20px;box-shadow:var(--shadow-soft);display:flex;align-items:center;gap:13px;max-width:240px;
+  }
+  .hero-badge .num{font-family:var(--serif);font-size:2rem;color:var(--accent-deep);line-height:1;font-weight:600}
+  .hero-badge .lbl{font-size:.74rem;line-height:1.35;color:var(--ink-soft)}
+
+  /* ---------- marquee ---------- */
+  .strip{border-block:1px solid var(--line);overflow:hidden;background:var(--paper-2);padding-block:15px}
+  .marquee{display:flex;gap:0;white-space:nowrap;width:max-content;animation:slide 38s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--ink-soft);align-items:center}
+  .marquee span{display:inline-flex;align-items:center;gap:48px;padding-right:48px}
+  .marquee .sep{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- story ---------- */
+  .story-grid{display:grid;grid-template-columns:1fr 0.82fr;gap:clamp(34px,5vw,64px);align-items:center}
+  .story p{margin-bottom:1.05rem}
+  .story .punch{
+    font-family:var(--serif);font-size:1.32rem;font-weight:560;line-height:1.35;color:var(--accent-deep);
+    padding-left:20px;border-left:3px solid var(--metal);margin:1.5rem 0;
+  }
+  .story-visual{position:relative}
+  .story-visual img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lift);aspect-ratio:4/5;object-fit:cover}
+  .story-visual .caption{
+    position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);
+    background:var(--white);border-radius:var(--radius-pill);padding:10px 22px;box-shadow:var(--shadow-soft);
+    font-family:var(--script);font-size:1.25rem;color:var(--accent-deep);white-space:nowrap;
+  }
+
+  /* ---------- receipt ---------- */
+  .receipt{
+    max-width:660px;margin-inline:auto;background:var(--white);border-radius:var(--radius-lg);padding:clamp(34px,5vw,52px) clamp(26px,4vw,44px);
+    box-shadow:var(--shadow-deep);text-align:center;position:relative;overflow:hidden;
+  }
+  .receipt::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--accent),var(--metal),var(--accent))}
+  .receipt .since-top{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);font-weight:800;margin-bottom:14px}
+  .receipt .big{font-family:var(--serif);font-size:clamp(3.2rem,9vw,5rem);font-weight:600;color:var(--ink);letter-spacing:-.03em;line-height:.95}
+  .receipt .big span{color:var(--accent-deep)}
+  .receipt .since{font-size:.92rem;letter-spacing:.04em;color:var(--ink-soft);margin-top:14px;max-width:420px;margin-inline:auto;font-weight:500}
+  .receipt .disclaim{margin-top:22px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;border-top:1px dashed var(--tint);padding-top:18px;text-align:left}
+
+  /* ---------- who it's for ---------- */
+  .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  ul.check{list-style:none;display:contents}
+  ul.check li{
+    padding:18px 20px 18px 52px;position:relative;background:var(--white);border-radius:var(--radius-md);
+    box-shadow:var(--shadow-soft);font-weight:500;border:1px solid var(--line);
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease);will-change:transform;
+  }
+  ul.check li:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  ul.check li::before{content:"💕";position:absolute;left:18px;top:17px;font-size:1.05rem}
+
+  /* ---------- mission band ---------- */
+  .band{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ink) 0%,#49403A 100%);color:var(--paper)}
+  .band::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 0%,rgba(172,134,105,0.26),transparent 52%),radial-gradient(circle at 4% 100%,rgba(213,186,169,0.18),transparent 50%)}
+  .band .wrap{position:relative;z-index:1;text-align:center}
+  .band .script{color:#D8BBA3;font-size:clamp(1.5rem,4vw,2rem);display:block;margin-bottom:14px}
+  .band h2{color:var(--paper);font-size:clamp(2rem,5vw,3.1rem)}
+
+  /* ---------- what's inside ---------- */
+  .stack{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .stack-item{
+    background:var(--white);border-radius:var(--radius-md);padding:28px 26px 24px;
+    box-shadow:var(--shadow-soft);border:1px solid var(--line);position:relative;overflow:hidden;
+    transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);will-change:transform;
+  }
+  .stack-item::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),var(--metal));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .stack-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);border-color:transparent}
+  .stack-item:hover::after{transform:scaleX(1)}
+  .stack-item h3{font-size:1.22rem;margin-bottom:8px;color:var(--ink)}
+  .stack-item .tag{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:5px 13px;margin-bottom:13px}
+  .stack-item p{font-size:.97rem;color:var(--ink-soft)}
+  .stack-item.bonus{grid-column:1 / -1;border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,#F8F1EA)}
+  .stack-item.bonus .tag{background:var(--accent);color:var(--white)}
+  .inside-cta{margin-top:34px;text-align:center}
+
+  /* ---------- what this is NOT ---------- */
+  .notlist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .notlist div{
+    background:var(--white);border-radius:var(--radius-md);padding:18px 22px;font-weight:700;box-shadow:var(--shadow-soft);
+    display:flex;gap:12px;align-items:flex-start;border-left:3px solid var(--accent);
+    transition:transform .3s var(--ease);will-change:transform;
+  }
+  .notlist div:hover{transform:translateX(5px)}
+  .notlist div span{flex:none}
+  .not-after{margin-top:22px;font-size:1.08rem;color:var(--ink-soft);max-width:640px}
+
+  /* ---------- proof ---------- */
+  .quote-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .quote{
+    background:var(--white);border-radius:var(--radius-md);padding:34px 26px 24px;box-shadow:var(--shadow-soft);
+    position:relative;border:1px solid var(--line);
+  }
+  .quote::before{content:"\201C";font-family:var(--serif);font-size:4.4rem;color:var(--tint);position:absolute;top:6px;left:18px;line-height:1}
+  .quote p{position:relative;font-size:1.02rem;padding-top:18px;color:var(--ink)}
+  .quote .who{margin-top:16px;font-weight:800;font-size:.82rem;letter-spacing:.04em;color:var(--accent-deep)}
+
+  /* ---------- faq ---------- */
+  .faq-list{max-width:780px;margin-inline:auto}
+  details{background:var(--white);border-radius:var(--radius-md);margin-bottom:12px;box-shadow:var(--shadow-soft);overflow:hidden;border:1px solid var(--line)}
+  summary{cursor:pointer;font-weight:800;padding:20px 56px 20px 22px;list-style:none;position:relative;font-size:1.04rem;color:var(--ink);transition:color .25s ease}
+  summary:hover{color:var(--accent-deep)}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";position:absolute;right:22px;top:14px;font-family:var(--serif);font-size:1.7rem;color:var(--accent);transition:transform .35s var(--ease)}
+  details[open] summary::after{transform:rotate(45deg)}
+  summary:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:var(--radius-md)}
+  details .a{padding:0 22px 20px;color:var(--ink-soft);font-size:.98rem}
+
+  /* ---------- steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
+  .step{position:relative;background:var(--white);border-radius:var(--radius-md);padding:30px 26px 26px;box-shadow:var(--shadow-soft);border:1px solid var(--line)}
+  .step::before{
+    counter-increment:step;content:counter(step);
+    width:50px;height:50px;border-radius:50%;background:linear-gradient(150deg,var(--accent),var(--accent-deep));
+    color:var(--paper);font-family:var(--serif);font-weight:600;font-size:1.4rem;
+    display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft);margin-bottom:18px;
+  }
+  .step h3{font-size:1.15rem;margin-bottom:8px;color:var(--ink)}
+  .step p{font-size:.96rem;color:var(--ink-soft)}
+  .steps-cta{margin-top:34px;text-align:center}
+
+  /* ---------- personal note ---------- */
+  .note{
+    max-width:680px;margin-inline:auto;background:var(--white);border-radius:var(--radius-lg);padding:clamp(36px,5vw,52px) clamp(28px,4vw,48px);
+    box-shadow:var(--shadow-deep);position:relative;
+  }
+  .note::before{content:"💕";position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:1.9rem}
+  .note p{margin-bottom:1rem}
+  .note p b{color:var(--ink)}
+  .note .sig{font-family:var(--script);font-size:2.4rem;color:var(--accent-deep);margin-top:8px}
+
+  /* ---------- footer ---------- */
+  footer.site{text-align:center;padding-block:48px 36px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink-soft);line-height:1.6}
+  footer.site .wrap{max-width:680px}
+  footer.site .built{margin-top:14px;opacity:.6}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease), transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .marquee{animation:none}
+    .blob{animation:none}
+    .hero h1 em::after{animation:none;transform:scaleX(1)}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-visual{max-width:440px;margin-inline:auto;order:-1}
+    .story-grid{grid-template-columns:1fr}
+    .story-visual{max-width:440px;margin-inline:auto}
+    .stack{grid-template-columns:1fr}
+    .quote-row{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    body{font-size:16px}
+    .check-grid{grid-template-columns:1fr}
+    .notlist{grid-template-columns:1fr}
+    .hero-badge{left:0}
+    .nav .btn{display:none}
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .hero-cta .btn{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="wordmark" aria-label="VA Training Academy home">
+      <span class="heart" aria-hidden="true">💕</span> VA Training <em>Academy</em>
+    </a>
+    <a href="#offer" class="btn">Get Instant Access</a>
+  </div>
+</header>
+
+<span id="top"></span>
+<div class="page">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero">
+    <div class="hero-glow g1" aria-hidden="true"></div>
+    <div class="hero-glow g2" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">For the mama who's ready to build something real</span>
+        <h1>You don't need more confidence. You need <em>the skills that build it.</em></h1>
+        <p class="sub">If you've been thinking about becoming a VA but had no idea where to actually start — this is that start. The VA Training Academy takes you from complete beginner to confident, skilled, and ready to find clients.</p>
+        <div class="hero-cta">
+          <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">Yes, I Want In — Get Instant Access 👇🏽</a>
+          <a href="#story" class="textlink">Hear how it started</a>
+        </div>
+        <div class="hero-meta">
+          <span><span class="dot" aria-hidden="true"></span> $297 one-time</span>
+          <span><span class="dot" aria-hidden="true"></span> Instant digital access</span>
+          <span><span class="dot" aria-hidden="true"></span> Start today</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="blob" aria-hidden="true"></div>
+        <div class="hero-frame">
+          <img src="./photos/photo1.png" alt="Jamie O'Connor, smiling" loading="eager">
+        </div>
+        <div class="hero-badge">
+          <span class="num">30</span>
+          <span class="lbl">step-by-step modules to take you from curious to client-ready</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE STRIP ===== -->
+  <div class="strip" aria-hidden="true">
+    <div class="marquee">
+      <span>Real tools <i class="sep"></i> Real clients <i class="sep"></i> Real systems <i class="sep"></i> Work from home <i class="sep"></i> Start as a beginner <i class="sep"></i> Build something real <i class="sep"></i></span>
+      <span>Real tools <i class="sep"></i> Real clients <i class="sep"></i> Real systems <i class="sep"></i> Work from home <i class="sep"></i> Start as a beginner <i class="sep"></i> Build something real <i class="sep"></i></span>
+    </div>
+  </div>
+
+  <!-- ============ 2. STORY ============ -->
+  <section class="sec story" id="story">
+    <div class="wrap story-grid">
+      <div class="reveal">
+        <span class="eyebrow">My story (the real one)</span>
+        <h2 style="margin-top:16px;margin-bottom:1.1rem">How I Saw the Gap Nobody Was Filling</h2>
+        <p>When I first stepped into this space, I had no idea I would end up here. I didn't plan on becoming a VA. Didn't map out some big strategy. I just stepped in — and started paying attention.</p>
+        <p class="punch">But once I was working behind the scenes for real businesses, I saw it clearly: a true beginner could not simply walk in and become a VA. Not without real skill.</p>
+        <p>There were opportunities. There were creators. There were platforms. But nobody was teaching the practical, behind-the-scenes execution that actually makes someone valuable in this role.</p>
+        <p>You don't become a VA by wanting it. You become one by knowing how to operate inside real systems.</p>
+        <p>That's why the academy exists. Platform familiarity. Real backend practice. Clear structure. A legitimate pathway — the kind I wish had existed when I was starting. 🖤</p>
+      </div>
+      <div class="story-visual reveal">
+        <img src="./photos/photo2.png" alt="Jamie working on her business from home">
+        <span class="caption">Building something real, one skill at a time.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. RECEIPT (the ONE attested claim) ============ -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="receipt reveal">
+        <div class="since-top">The proof, kept honest</div>
+        <div class="big">6k a month</div>
+        <div class="since">what Jamie earns working from her phone as a stay-at-home mom</div>
+        <p class="disclaim"><b>Real talk, because I'll always be honest with you:</b> Results like Jamie's are not typical and are not guaranteed. Income depends on your effort, consistency, the skills you develop, and many other factors. This is education — what you do with it is up to you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. WHO IT'S FOR ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Is this you?</span>
+        <h2>This one's for you if...</h2>
+      </div>
+      <div class="check-grid">
+        <ul class="check">
+          <li class="reveal">You want extra income but you're working full-time and can't afford to throw time at the wrong thing</li>
+          <li class="reveal">You've thought about being a VA but had no idea what tools to learn or where to actually find clients</li>
+          <li class="reveal">You want flexible, work-from-home income that fits into your real life — not one that takes it over</li>
+          <li class="reveal">You're tired of scrolling other people's wins and wondering when yours is coming</li>
+          <li class="reveal">You don't have a big following, a degree, or a lot of money to start — and you're ready to start anyway</li>
+          <li class="reveal">You're done waiting to feel ready (friend, that feeling doesn't come before the action)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. MISSION BAND ============ -->
+  <section class="sec band reveal">
+    <div class="wrap">
+      <span class="script">"When you understand how businesses actually run..."</span>
+      <h2>You become valuable everywhere you go.</h2>
+    </div>
+  </section>
+
+  <!-- ============ 6. WHAT'S INSIDE ============ -->
+  <section id="offer" class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What's inside VA Training Academy</span>
+        <h2>Everything you need to go from curious to clients.</h2>
+        <p class="lead">30 modules. 100+ hours. Real tools, real clients, real systems.</p>
+      </div>
+      <div class="stack">
+        <div class="stack-item reveal">
+          <span class="tag">The Full Training</span>
+          <h3>30 Modules — Step by Step</h3>
+          <p>Every tool you need to actually work as a VA: Canva, Stan, Beacons, Lovable, Go High Level, building GPT bots, and more. Over 100 hours of instruction that takes you somewhere — not just hands you information and walks away.</p>
+        </div>
+        <div class="stack-item reveal">
+          <span class="tag">Client Acquisition</span>
+          <h3>How to Find Clients and Get Paid</h3>
+          <p>The part nobody teaches. Landing real paying clients, building a portfolio, and getting work — without guessing or cold-messaging people who have no idea who you are. This is the piece that makes the skills worth something.</p>
+        </div>
+        <div class="stack-item reveal">
+          <span class="tag">AI Module · Bonus</span>
+          <h3>AI Branding + ChatGPT &amp; Claude Hacks — Jamie's Way</h3>
+          <p>Jamie's own workflow for using AI inside the VA role. Her exact approach for building faster, showing up smarter, and making more happen in less time. Nobody else teaches it this way because nobody else figured it out this way.</p>
+        </div>
+        <div class="stack-item bonus reveal">
+          <span class="tag">💕 The Real Differentiator</span>
+          <h3>You're Not Doing This Alone</h3>
+          <p>Most courses hand you the material and disappear. The VA Training Academy was built with the kind of guidance Jamie needed when she was starting out. You'll feel that in every module — someone who genuinely wanted this to exist and built it to last.</p>
+        </div>
+      </div>
+      <div class="inside-cta reveal">
+        <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">I'm Ready — Get Instant Access 👇🏽</a>
+        <p class="btn-note" style="margin-top:12px">$297 one-time · Instant digital access</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. WHAT THIS IS NOT ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Let's clear this up</span>
+        <h2>What this is <i>not</i>:</h2>
+      </div>
+      <div class="notlist">
+        <div class="reveal"><span aria-hidden="true">❌</span> A get-rich-quick promise or overnight success shortcut</div>
+        <div class="reveal"><span aria-hidden="true">❌</span> A course full of theory with nothing to actually implement</div>
+        <div class="reveal"><span aria-hidden="true">❌</span> Built for women who already have experience, a following, or a big budget</div>
+        <div class="reveal"><span aria-hidden="true">❌</span> Something that hands you material and then leaves you to figure it out alone</div>
+      </div>
+      <p class="not-after reveal">If you want real skills that make you genuinely valuable behind the scenes — friend, this is where you start.</p>
+    </div>
+  </section>
+
+  <!-- ============ 8. PROOF ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">What students are saying</span>
+        <h2>Real words from real women.</h2>
+      </div>
+      <div class="quote-row">
+        <div class="quote reveal">
+          <p>Using what I have learned in VA Training Academy to promote my first two books that I learned how to do in Amazon KDP. I feel like a kid at Christmas!!</p>
+          <div class="who">— VA Training Academy student</div>
+        </div>
+        <div class="quote reveal">
+          <p>I received my first payment officially for VA work yesterday! It's amazing — I was helping friends so much for these things I now can earn for. Now the work IS my business!</p>
+          <div class="who">— VA Training Academy student</div>
+        </div>
+        <div class="quote reveal">
+          <p>Just wanna say how much I love this training! Everything is set up step by step to implement — take skills we may already know and begin to help others on a professional level. Or skills we didn't know but find exciting for learning them too.</p>
+          <div class="who">— VA Training Academy student</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 9. FAQ ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">Questions I'd ask too</span>
+        <h2>FAQ — the honest version</h2>
+      </div>
+      <div class="faq-list">
+        <details class="reveal">
+          <summary>What's the refund policy?</summary>
+          <div class="a">All sales are final. Because access is delivered the moment you purchase, refunds aren't offered. If you have questions before you buy, DM Jamie directly — she would rather answer them than have you buy something that isn't right for you.</div>
+        </details>
+        <details class="reveal">
+          <summary>Why buy this through Jamie and not some other VA course?</summary>
+          <div class="a">Because Jamie built this from inside the ecosystem. She saw the gap firsthand — nobody teaching the practical, behind-the-scenes execution that actually makes someone hireable — and built the training she wished had existed. She's not teaching theory. She's teaching what works, with the tools businesses are using right now.</div>
+        </details>
+        <details class="reveal">
+          <summary>Is this an MLM or recruiting situation?</summary>
+          <div class="a">No. You pay once, you get the training. There's no downline, no recruiting, no monthly obligation. Just skills and the know-how to use them to build income on your own terms.</div>
+        </details>
+        <details class="reveal">
+          <summary>How much time do I need each week?</summary>
+          <div class="a">As much or as little as you have. The 30 modules are completely self-paced — designed for moms who have jobs, kids, and limited windows of time. No live sessions to miss. No pressure to move faster than your life allows.</div>
+        </details>
+        <details class="reveal">
+          <summary>Do I need any experience to start?</summary>
+          <div class="a">Zero. The academy was built specifically for complete beginners. You'll come out the other side knowing the tools, the systems, and what to do to start finding clients.</div>
+        </details>
+        <details class="reveal">
+          <summary>What equipment do I need?</summary>
+          <div class="a">A phone or computer and a wifi connection. Most of the tools you'll learn are free to get started or very affordable. The whole point is that you don't need to spend a lot to begin.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. STEPS ============ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head center reveal">
+        <span class="eyebrow">What happens next</span>
+        <h2>Three steps:</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h3>Get instant access</h3>
+          <p>Click the button and grab the VA Training Academy for $297. You're in immediately — no waiting, no confirmation loop, no wondering if it worked.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Start Module 1 — then let Jamie know you're in</h3>
+          <p>Kick things off and send Jamie a DM at <a class="textlink" href="https://www.instagram.com/mrsoconnor416/" target="_blank" rel="noopener">@mrsoconnor416</a> on Instagram. She actually reads them.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Build your first skill. Land your first client.</h3>
+          <p>That's the whole goal. Real skills that lead to real clients. You don't need to have it all figured out today — you just need to start.</p>
+        </div>
+      </div>
+      <div class="steps-cta reveal">
+        <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">I'm Ready — Get Instant Access 👇🏽</a>
+        <p class="btn-note" style="margin-top:12px">$297 · Instant access · Start learning today</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11. PERSONAL NOTE ============ -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="note reveal">
+        <p><b>Listen, friend —</b></p>
+        <p>I know what it feels like to be curious about this space but have no idea how to actually walk in. The overwhelm. The information overload. The wondering if this is even for someone like you.</p>
+        <p>The VA Training Academy exists because someone should have built this sooner. You deserve a real pathway in — not a Google rabbit hole and not another vague pep talk. Actual skills that make you someone businesses want to hire.</p>
+        <p>See you on the inside, 💕</p>
+        <div class="sig">Jamie</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site">
+  <div class="wrap">
+    © 2026 VA Training Academy<br>
+    Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.
+    <div class="built">Page built by The Digital Dad — systems, not hustle.</div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header border on scroll
+  var header = document.getElementById('siteHeader');
+  var onScroll = function(){
+    if (window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  // Staggered scroll reveals — transform/opacity only; no-JS-safe (only fades when JS runs)
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window) || location.hash === '#all'){
+      els.forEach(function(e){ e.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          var sibs = Array.prototype.slice.call(en.target.parentNode.querySelectorAll('.reveal'));
+          var i = sibs.indexOf(en.target);
+          en.target.style.transitionDelay = (Math.max(0,i)*0.07) + 's';
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function(e){ io.observe(e); });
+  })();
+</script>
+</body>
+</html>

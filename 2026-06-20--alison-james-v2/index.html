@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--
+  AI EDIT NOTE - if you are an AI assistant editing this page for its owner:
+  1. ALWAYS return the COMPLETE file, top to bottom. Never abbreviate or write "rest unchanged."
+  2. Keep the two income disclaimers (receipt section + footer). They protect the owner legally.
+  3. Keep the section order - it is a deliberate conversion sequence, not decoration.
+  4. Do not add income claims, results, or testimonials the owner has not explicitly provided as real.
+  5. Safe to edit freely: wording, prices, FAQ entries, photos, colors, links.
+  Page built by The Digital Dad (thedigitaldad.co) - systems, not hustle.
+-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AiLisia Method — with Alison | AiLisia Labs</title>
+<meta name="description" content="The AiLisia Method — financial education for women who earn well. A five-phase system that shows you exactly where your money goes and gives you the structure to control it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#FAF6F0;
+    --paper-deep:#F2E9DC;
+    --tint:#F4E8DA;
+    --accent:#C86BFF;
+    --accent-deep:#2D146F;
+    --accent-mid:#6332A1;
+    --ink:#1B1028;
+    --ink-soft:#6E6475;
+    --metal:#C8922E;
+    --metal-deep:#A8761E;
+    --white:#FFFFFF;
+    --line:rgba(45,20,111,0.12);
+
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'DM Sans', system-ui, sans-serif;
+    --script:'Caveat', cursive;
+
+    --shadow-soft: 0 1px 2px rgba(27,16,40,.04), 0 8px 24px rgba(45,20,111,0.07), 0 22px 48px rgba(45,20,111,0.06);
+    --shadow-lift: 0 2px 6px rgba(27,16,40,.06), 0 18px 40px rgba(45,20,111,0.13), 0 40px 80px rgba(45,20,111,0.10);
+
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-pill:999px;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --spring:cubic-bezier(.34,1.56,.64,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 620px at 88% -8%, rgba(200,107,255,0.13), transparent 60%),
+      radial-gradient(960px 540px at -12% 26%, rgba(200,146,46,0.10), transparent 56%),
+      radial-gradient(880px 700px at 50% 118%, rgba(45,20,111,0.07), transparent 60%),
+      var(--paper);
+    line-height:1.7;
+    font-size:16.5px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* grain texture */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.045; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  ::selection{background:var(--accent-deep);color:var(--paper)}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  .wrap{width:100%;max-width:980px;margin-inline:auto;padding-inline:24px}
+  .narrow{max-width:680px;margin-inline:auto}
+
+  h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-0.018em;line-height:1.08}
+  h1{font-size:clamp(2.6rem,7.4vw,4.6rem)}
+  h2{font-size:clamp(2rem,5vw,3.1rem)}
+  .script{font-family:var(--script);color:var(--accent-deep);font-weight:700}
+
+  .eyebrow{
+    font-size:.72rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent-deep);display:inline-flex;align-items:center;gap:11px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--metal);display:inline-block}
+  .eyebrow.center{justify-content:center}
+
+  p.lead{font-size:1.14rem;color:var(--ink-soft)}
+
+  section{position:relative}
+  .section-pad{padding-block:clamp(56px,8vw,108px)}
+  .section-head{margin-bottom:clamp(32px,5vw,52px)}
+  .section-head.center{text-align:center}
+  .section-head h2{margin-top:16px}
+  .section-head p{margin-top:16px;color:var(--ink-soft)}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:100;
+    backdrop-filter:blur(12px);
+    background:rgba(250,246,240,0.78);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background-color .3s ease;
+  }
+  header.site.scrolled{border-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:16px}
+  .wordmark{
+    font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:-0.01em;
+    color:var(--ink);display:inline-flex;align-items:center;gap:11px;
+  }
+  .wordmark .star{
+    width:24px;height:24px;color:var(--accent-deep);flex:none;
+    transition:transform .7s var(--ease);
+  }
+  .wordmark:hover .star{transform:rotate(72deg) scale(1.1)}
+  .wordmark .ai{font-style:italic;color:var(--accent-deep)}
+  .nav .btn{padding:11px 22px;font-size:.84rem;margin:0}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    --bg:var(--accent-deep);--fg:var(--white);
+    font-family:var(--sans);font-weight:800;font-size:1.02rem;letter-spacing:.01em;
+    background:linear-gradient(150deg,var(--accent-deep) 0%, var(--accent-mid) 100%);
+    color:var(--fg);border:none;border-radius:var(--radius-pill);
+    padding:17px 30px;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    cursor:pointer;text-decoration:none;
+    box-shadow:0 8px 18px rgba(45,20,111,0.30), 0 20px 44px rgba(45,20,111,0.18);
+    transition:transform .4s var(--spring), box-shadow .4s var(--ease);
+    will-change:transform;
+  }
+  .btn .arrow{transition:transform .4s var(--ease)}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(45,20,111,0.38), 0 26px 56px rgba(45,20,111,0.24)}
+  .btn:hover .arrow{transform:translateX(5px)}
+  .btn:active{transform:translateY(-1px) scale(.99)}
+  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn-block{display:flex;width:100%;max-width:440px;margin:30px auto 12px}
+  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
+  .textlink{
+    font-weight:700;color:var(--accent-deep);border-bottom:1px solid var(--metal);
+    padding-bottom:2px;text-decoration:none;transition:color .3s ease,border-color .3s ease;
+  }
+  .textlink:hover{color:var(--accent-mid);border-color:var(--accent-deep)}
+  .textlink:focus-visible{outline:2px solid var(--metal);outline-offset:4px;border-radius:2px}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding-block:clamp(40px,6vw,80px) clamp(32px,5vw,56px);overflow:hidden}
+  .hero-glow{position:absolute;z-index:0;pointer-events:none;border-radius:50%;filter:blur(64px)}
+  .hero-glow.g1{width:560px;height:560px;top:-160px;right:-140px;background:radial-gradient(circle at 40% 40%, rgba(200,107,255,0.30), transparent 64%)}
+  .hero-glow.g2{width:440px;height:440px;bottom:-180px;left:-120px;background:radial-gradient(circle at 50% 50%, rgba(200,146,46,0.22), transparent 66%)}
+  .hero-grid{
+    position:relative;z-index:1;display:grid;
+    grid-template-columns:1.1fr 0.9fr;gap:clamp(32px,5vw,64px);align-items:center;
+  }
+  .hero-copy{max-width:600px}
+  .hero h1{margin-block:20px 22px;color:var(--ink)}
+  .hero h1 em{font-style:italic;color:var(--accent-deep)}
+  .hero .sub{font-size:1.16rem;color:var(--ink-soft);margin-bottom:14px;max-width:520px}
+  .hero .sub b{color:var(--ink);font-weight:700}
+  .hero-meta{margin-top:24px;display:flex;gap:24px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-soft)}
+  .hero-meta span{display:inline-flex;align-items:center;gap:8px}
+  .hero-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--metal);flex:none}
+
+  .hero-visual{position:relative}
+  .hero-frame{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;
+    box-shadow:var(--shadow-lift);aspect-ratio:4/5;
+    background:linear-gradient(155deg,var(--paper-deep),rgba(200,107,255,0.18) 130%);
+  }
+  .hero-frame img{width:100%;height:100%;object-fit:cover}
+  .hero-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(27,16,40,0.20))}
+  .blob{
+    position:absolute;z-index:-1;width:80%;height:80%;background:var(--accent);opacity:.16;
+    top:-7%;left:-9%;border-radius:60% 40% 55% 45% / 50% 55% 45% 50%;
+    animation:morph 15s ease-in-out infinite alternate;
+  }
+  @keyframes morph{0%{border-radius:60% 40% 55% 45% / 50% 55% 45% 50%}100%{border-radius:42% 58% 42% 58% / 60% 42% 58% 40%}}
+  .hero-badge{
+    position:absolute;bottom:22px;left:-18px;background:var(--white);border-radius:var(--radius-md);
+    padding:15px 19px;box-shadow:var(--shadow-soft);display:flex;align-items:center;gap:13px;max-width:235px;
+  }
+  .hero-badge .glyph{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--metal-deep);line-height:1;flex:none}
+  .hero-badge .lbl{font-size:.74rem;line-height:1.35;color:var(--ink-soft)}
+
+  /* ---------- Marquee ---------- */
+  .strip{border-block:1px solid var(--line);overflow:hidden;background:var(--paper-deep);padding-block:15px}
+  .marquee{
+    display:flex;gap:0;white-space:nowrap;width:max-content;animation:slide 40s linear infinite;
+    font-family:var(--serif);font-style:italic;font-size:1.18rem;color:var(--ink-soft);align-items:center;
+  }
+  .marquee span{display:inline-flex;align-items:center;gap:48px;padding-right:48px}
+  .marquee .sep{width:7px;height:7px;border-radius:50%;background:var(--metal);flex:none}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- Story ---------- */
+  .story-grid{display:grid;grid-template-columns:1fr 0.86fr;gap:clamp(34px,5vw,64px);align-items:start}
+  .story-body p{margin-bottom:1.05rem;color:var(--ink-soft)}
+  .story-body p:first-of-type{font-size:1.06rem}
+  .punch{
+    font-family:var(--serif);font-size:clamp(1.35rem,2.5vw,1.6rem);font-weight:600;font-style:italic;
+    line-height:1.4;color:var(--accent-deep);padding-left:22px;border-left:3px solid var(--metal);margin:1.6rem 0;
+  }
+  .story-visual{position:sticky;top:96px}
+  .photo-frame{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lift);position:relative}
+  .photo-frame img{width:100%;display:block}
+  .caption{font-size:.84rem;color:var(--ink-soft);text-align:center;margin-top:14px;font-style:italic;font-family:var(--serif)}
+
+  /* ---------- Receipt ---------- */
+  .receipt-wrap{max-width:760px;margin-inline:auto}
+  .receipt{
+    background:var(--white);border-radius:var(--radius-lg);padding:clamp(34px,5vw,52px) clamp(26px,4vw,46px);
+    box-shadow:var(--shadow-lift);text-align:center;position:relative;overflow:hidden;
+  }
+  .receipt::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--accent-deep),var(--metal),var(--accent-deep))}
+  .receipt .qmark{font-family:var(--serif);font-size:4.5rem;line-height:.5;color:var(--tint);display:block;margin-bottom:4px}
+  .receipt .big{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);font-weight:600;font-style:italic;color:var(--ink);letter-spacing:-.01em;line-height:1.34}
+  .receipt .since{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);margin-top:18px;font-weight:800}
+  .receipt .disclaim{margin-top:20px;font-size:.8rem;color:var(--ink-soft);line-height:1.6;border-top:1px dashed var(--line);padding-top:18px;text-align:left}
+
+  /* ---------- Who it's for ---------- */
+  .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .who-item{
+    background:var(--white);border-radius:var(--radius-md);padding:22px 22px 22px 56px;position:relative;
+    box-shadow:var(--shadow-soft);font-weight:500;font-size:.98rem;border:1px solid var(--line);
+    transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  .who-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+  .who-item .tick{
+    position:absolute;left:18px;top:22px;width:24px;height:24px;border-radius:50%;
+    background:var(--accent-deep);color:var(--white);display:grid;place-items:center;
+  }
+  .who-item .tick svg{width:13px;height:13px}
+
+  /* ---------- Band ---------- */
+  .band{background:linear-gradient(160deg,var(--ink) 0%, #28163F 100%);color:var(--paper);position:relative;overflow:hidden}
+  .band::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 8%, rgba(200,107,255,0.22), transparent 52%),radial-gradient(circle at 6% 96%, rgba(200,146,46,0.16), transparent 48%);pointer-events:none}
+  .band .wrap{position:relative;z-index:1;text-align:center}
+  .band .script{color:#D795FA;font-size:clamp(1.6rem,4vw,2.2rem);display:block;margin-bottom:10px}
+  .band h2{color:var(--paper);max-width:720px;margin-inline:auto}
+
+  /* ---------- Phases / stack ---------- */
+  .stack{display:grid;gap:16px;margin-top:8px}
+  @media(min-width:760px){ .stack{grid-template-columns:1fr 1fr} .stack-item.bonus{grid-column:1 / -1} }
+  .stack-item{
+    background:var(--white);border-radius:var(--radius-md);padding:26px 26px 24px;
+    box-shadow:var(--shadow-soft);border:1px solid var(--line);position:relative;overflow:hidden;
+    transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);
+    will-change:transform;
+  }
+  .stack-item::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent-deep),var(--metal));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .stack-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);border-color:transparent}
+  .stack-item:hover::after{transform:scaleX(1)}
+  .stack-item .tag{
+    display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:5px 13px;margin-bottom:14px;
+  }
+  .stack-item h3{font-size:1.35rem;font-weight:600;margin-bottom:8px;color:var(--ink)}
+  .stack-item p{font-size:.96rem;color:var(--ink-soft);line-height:1.6}
+  .stack-item.bonus{border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,#FAF4EA)}
+  .stack-item.bonus .tag{background:rgba(200,146,46,0.18);color:var(--metal-deep)}
+  .stack-item.bonus::after{background:linear-gradient(90deg,var(--metal),var(--accent-deep))}
+
+  /* ---------- Not list ---------- */
+  .notlist{display:grid;gap:12px;margin-top:8px}
+  @media(min-width:680px){ .notlist{grid-template-columns:1fr 1fr} }
+  .notlist div{
+    background:var(--white);border-radius:var(--radius-md);padding:18px 20px 18px 52px;position:relative;
+    font-weight:600;box-shadow:var(--shadow-soft);border:1px solid var(--line);font-size:.96rem;
+  }
+  .notlist div .x{position:absolute;left:18px;top:18px;width:22px;height:22px;border-radius:50%;background:var(--tint);color:var(--accent-deep);display:grid;place-items:center;font-weight:800;font-size:.8rem}
+
+  /* ---------- Proof ---------- */
+  .proof-row{display:grid;gap:18px;margin-top:8px}
+  @media(min-width:760px){ .proof-row{grid-template-columns:1fr 1fr} }
+  .quote{
+    background:var(--white);border-radius:var(--radius-md);padding:30px 26px 24px;
+    box-shadow:var(--shadow-soft);position:relative;border:1px solid var(--line);
+  }
+  .quote::before{content:"\201C";font-family:var(--serif);font-size:4.2rem;color:var(--tint);position:absolute;top:6px;left:16px;line-height:1}
+  .quote p{position:relative;font-size:1.02rem;padding-top:14px;font-family:var(--serif);font-style:italic;color:var(--ink);line-height:1.5}
+  .quote .who{margin-top:14px;font-weight:800;font-size:.84rem;color:var(--accent-deep);letter-spacing:.02em}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:780px;margin-inline:auto}
+  details.faq-item{border-bottom:1px solid var(--line);padding-block:6px}
+  details.faq-item summary{
+    list-style:none;cursor:pointer;padding:22px 4px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+    font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--ink);transition:color .3s ease;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none}
+  details.faq-item summary:hover{color:var(--accent-deep)}
+  details.faq-item summary:focus-visible{outline:2px solid var(--metal);outline-offset:4px;border-radius:6px}
+  .faq-icon{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);position:relative;transition:transform .4s var(--spring), background-color .3s ease, border-color .3s ease}
+  .faq-icon::before,.faq-icon::after{content:"";position:absolute;background:var(--ink);top:50%;left:50%;transition:transform .4s var(--ease), background-color .3s ease}
+  .faq-icon::before{width:12px;height:1.6px;transform:translate(-50%,-50%)}
+  .faq-icon::after{width:1.6px;height:12px;transform:translate(-50%,-50%)}
+  details[open] .faq-icon{background:var(--accent-deep);border-color:var(--accent-deep);transform:rotate(135deg)}
+  details[open] .faq-icon::before,details[open] .faq-icon::after{background:var(--paper)}
+  .faq-answer{padding:0 4px 24px;color:var(--ink-soft);font-size:1rem;max-width:660px;line-height:1.65}
+  .faq-answer a{color:var(--accent-deep);font-weight:700;border-bottom:1px solid var(--metal)}
+
+  /* ---------- Steps ---------- */
+  .steps{display:grid;gap:24px;counter-reset:step;margin-top:8px}
+  @media(min-width:760px){ .steps{grid-template-columns:repeat(3,1fr)} }
+  .step{position:relative;padding-top:8px}
+  .step .step-num{
+    counter-increment:step;content:counter(step);
+    font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--accent-deep);opacity:.28;display:block;margin-bottom:10px;
+  }
+  .step .step-num::before{content:counter(step)}
+  .step h3{font-size:1.32rem;font-weight:600;margin-bottom:6px;color:var(--ink)}
+  .step p{font-size:.96rem;color:var(--ink-soft);line-height:1.6}
+  .step:not(:last-child)::before{content:"";position:absolute;top:30px;right:-12px;width:11px;height:11px;border-top:2px solid var(--line);border-right:2px solid var(--line);transform:rotate(45deg)}
+  @media(max-width:759px){ .step:not(:last-child)::before{display:none} }
+
+  /* ---------- Personal note ---------- */
+  .note-card{
+    background:var(--white);border-radius:var(--radius-lg);padding:clamp(36px,5vw,56px) clamp(28px,4vw,52px);
+    box-shadow:var(--shadow-lift);position:relative;max-width:760px;margin-inline:auto;
+  }
+  .note-card::before{content:"✶";position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:1.8rem;color:var(--metal)}
+  .note-card p{margin-bottom:1.05rem;color:var(--ink-soft)}
+  .note-card p b{color:var(--ink)}
+  .note-card .sig{font-family:var(--script);font-size:2.6rem;color:var(--accent-deep);margin-top:8px;line-height:1}
+
+  /* ---------- Final CTA ---------- */
+  .final-card{
+    background:linear-gradient(160deg,var(--ink) 0%, #28163F 100%);color:var(--paper);border-radius:var(--radius-lg);
+    padding:clamp(46px,7vw,88px) clamp(28px,5vw,64px);position:relative;overflow:hidden;box-shadow:var(--shadow-lift);text-align:center;
+  }
+  .final-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 18%, rgba(200,107,255,0.26), transparent 50%),radial-gradient(circle at 86% 92%, rgba(200,146,46,0.22), transparent 52%)}
+  .final-card>*{position:relative;z-index:1}
+  .final-card .eyebrow{color:#D795FA;justify-content:center}
+  .final-card .eyebrow::before{background:var(--metal)}
+  .final-card h2{color:var(--paper);max-width:680px;margin:18px auto 18px}
+  .final-card h2 em{font-style:italic;color:#D795FA}
+  .final-card p{color:rgba(250,246,240,0.84);max-width:520px;margin:0 auto 14px}
+  .final-card .btn{background:var(--white);color:var(--accent-deep);box-shadow:0 10px 26px rgba(0,0,0,0.28)}
+  .final-card .btn:hover{box-shadow:0 16px 36px rgba(0,0,0,0.36)}
+
+  /* ---------- Footer ---------- */
+  footer.site{padding-block:48px 36px;border-top:1px solid var(--line)}
+  footer.site .wrap{text-align:center;font-size:.8rem;color:var(--ink-soft);line-height:1.65}
+  footer.site .fm{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:9px;margin-bottom:16px}
+  footer.site .fm .ai{font-style:italic;color:var(--accent-deep)}
+  footer.site .disc{max-width:680px;margin:0 auto;display:block}
+  footer.site .built{display:block;margin-top:16px;opacity:.6}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease), transform .8s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .marquee{animation:none}
+    .blob{animation:none}
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr}
+    .hero-visual{max-width:420px;margin-inline:auto;order:-1}
+    .story-grid{grid-template-columns:1fr;gap:28px}
+    .story-visual{position:static}
+    .who-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    body{font-size:16px}
+    .nav .btn .label-full{display:none}
+    .hero-badge{left:0}
+    .hero-meta{gap:14px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======= HEADER ======= -->
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="wordmark" aria-label="AiLisia Labs home">
+      <svg class="star" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2c.5 4.5 1.5 7.5 8 8-6.5.5-7.5 3.5-8 8-.5-4.5-1.5-7.5-8-8 6.5-.5 7.5-3.5 8-8z" fill="currentColor"/>
+      </svg>
+      <span><span class="ai">Ai</span>Lisia Labs</span>
+    </a>
+    <a href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194" class="btn"><span class="label-full">Join&nbsp;</span>The Method <span class="arrow" aria-hidden="true">&rarr;</span></a>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- ======= 1. HERO ======= -->
+<section class="hero">
+  <div class="hero-glow g1" aria-hidden="true"></div>
+  <div class="hero-glow g2" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Financial education for women who earn well</span>
+      <h1>You earn well. <em>Now it&#8217;s time to know where it actually goes.</em></h1>
+      <p class="sub">You&#8217;ve built a career most people around you can&#8217;t fully picture. <b>What you haven&#8217;t built yet is the system to match it.</b></p>
+      <a class="btn" href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194">Join The AiLisia Method &#128071;&#127997;</a>
+      <p class="btn-note">$49/mo or $297/yr. Cancel any time on Skool.</p>
+      <div class="hero-meta">
+        <span><span class="dot" aria-hidden="true"></span> Five-phase system</span>
+        <span><span class="dot" aria-hidden="true"></span> The AiLisia GPT</span>
+        <span><span class="dot" aria-hidden="true"></span> A private community</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="blob" aria-hidden="true"></div>
+      <div class="hero-frame">
+        <img src="./photos/photo1.png"
+             alt="Alison James, founder of AiLisia Labs"
+             loading="eager"
+             onerror="this.src='https://placehold.co/720x900/F4E8DA/2D146F?text=Alison'">
+      </div>
+      <div class="hero-badge">
+        <span class="glyph" aria-hidden="true">✶</span>
+        <span class="lbl">Built by a woman who managed millions &#8212; then built her own system.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= MARQUEE STRIP ======= -->
+<div class="strip" aria-hidden="true">
+  <div class="marquee">
+    <span>Clarity over chaos <i class="sep"></i> A system, not a budget <i class="sep"></i> Structure over motivation <i class="sep"></i> Money by design <i class="sep"></i> Honesty without shame <i class="sep"></i></span>
+    <span>Clarity over chaos <i class="sep"></i> A system, not a budget <i class="sep"></i> Structure over motivation <i class="sep"></i> Money by design <i class="sep"></i> Honesty without shame <i class="sep"></i></span>
+  </div>
+</div>
+
+<!-- ======= 2. STORY ======= -->
+<section class="section-pad">
+  <div class="wrap story-grid">
+    <div class="story-body reveal">
+      <span class="eyebrow">Why this exists</span>
+      <h2 style="margin-top:16px;margin-bottom:.7rem;">I spent years managing millions of dollars for other people.</h2>
+      <p>In institutional finance, I understood at a structural level how money moves, how systems work, how capital gets protected and deployed at scale. I knew this not just in theory. It was my job.</p>
+      <p>Meanwhile, people I loved, six-figure earners, highly credentialed professionals, were working rideshare apps and second jobs to cover basic expenses. Not because they didn&#8217;t earn enough. Because nobody ever gave them a system.</p>
+      <p>Then it got personal. My dog needed emergency surgery. I borrowed money from a friend. And when payday came, my boss told me he didn&#8217;t know when he could pay us.</p>
+      <p class="punch">&#8220;That Friday at lunch I walked out, turned to my coworker, and said &#8216;I&#8217;m going home to figure out the rest of my life, because this ain&#8217;t it.&#8217; I never went back.&#8221;</p>
+      <p>That moment didn&#8217;t break me. It clarified everything. I had the institutional knowledge. I had lived the collapse. And I rebuilt.</p>
+      <p>AiLisia Labs exists because nobody should be one paycheck, one emergency, one unreliable boss away from crisis. You don&#8217;t need to earn more. You need a system.</p>
+    </div>
+    <div class="story-visual reveal">
+      <div class="photo-frame">
+        <img src="./photos/photo2.png"
+             alt="AiLisia Labs"
+             onerror="this.src='https://placehold.co/560x680/F4E8DA/2D146F?text=AiLisia+Labs'">
+      </div>
+      <p class="caption">The AiLisia Method. Financial clarity for women who&#8217;ve earned the right to it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 3. RECEIPT ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap receipt-wrap reveal">
+    <div class="receipt">
+      <span class="qmark" aria-hidden="true">&#8220;</span>
+      <div class="big">For the first time, you&#8217;ll see exactly where your money is going &#8212; and have a system to control it.</div>
+      <div class="since">Alison James, Founder &#8212; AiLisia Labs</div>
+      <p class="disclaim"><b>I&#8217;ll always be straight with you about this:</b> What the Method gives you is a process, a structure, and a system to work through honestly. What you do with it shapes what you get from it. Progress looks different for everyone. I won&#8217;t pretend otherwise.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 4. WHO IT'S FOR ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Is this you?</span>
+      <h2>You&#8217;re in the right place if:</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-item reveal"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>You&#8217;ve built a career most people would envy, but you check your banking app with one eye closed.</div>
+      <div class="who-item reveal"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>You know how to tell other people to keep their emergency fund separate from their operating account. Your own accounts are the same account.</div>
+      <div class="who-item reveal"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>You&#8217;ve tried budgets. They lasted about as long as a January resolution, and you&#8217;ve stopped talking about it.</div>
+      <div class="who-item reveal"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>You&#8217;re not broke. You&#8217;re disorganized, and you&#8217;re tired of quietly carrying that.</div>
+      <div class="who-item reveal"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>You&#8217;ve been too busy building the career to build the financial system underneath it.</div>
+      <div class="who-item reveal"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>You want structure, not motivation. A method, not another mindset course.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 5. MISSION BAND ======= -->
+<div class="band section-pad reveal">
+  <div class="wrap">
+    <span class="script">The real problem?</span>
+    <h2>It was never the income. It was always the system.</h2>
+  </div>
+</div>
+
+<!-- ======= 6. WHAT'S INSIDE ======= -->
+<section id="offer" class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What&#8217;s inside The AiLisia Method</span>
+      <h2>A five-phase system, built in sequence for a reason.</h2>
+      <p class="lead">Each phase closes with a real deliverable. You don&#8217;t just learn. You build something you can actually use.</p>
+    </div>
+    <div class="stack">
+      <div class="stack-item reveal">
+        <span class="tag">Orientation</span>
+        <h3>Before the money talk starts.</h3>
+        <p>Five lessons covering the foundation, the philosophy, and how to use the AiLisia GPT. This is where you learn how the system works before you start working it.</p>
+      </div>
+      <div class="stack-item reveal">
+        <span class="tag">Phase 1: Awaken</span>
+        <h3>Rewire your relationship with money at the root.</h3>
+        <p>Eight lessons. Not surface-level. Actual work on what you believe about money and why. Closes with your first activation deliverable: the Financial Clarity Snapshot.</p>
+      </div>
+      <div class="stack-item reveal">
+        <span class="tag">Phase 2: Audit</span>
+        <h3>Pull back the curtain on your full financial reality.</h3>
+        <p>Five lessons. You walk out holding your Financial Pressure Points and your Financial Baseline. The two most honest documents you&#8217;ve ever built about your own money. Most people have never had either.</p>
+      </div>
+      <div class="stack-item reveal">
+        <span class="tag">Phase 3: Architect</span>
+        <h3>Build your actual operating system.</h3>
+        <p>Lessons 3.1 and 3.2 are live now. The full build includes your Core Account Architecture and your Income Allocation Strategy. This phase is actively being built, and members receive access to each lesson as it publishes.</p>
+      </div>
+      <div class="stack-item bonus reveal">
+        <span class="tag">Your support layer</span>
+        <h3>The AiLisia GPT, the community, and the workbooks.</h3>
+        <p>The AiLisia GPT is your AI financial clarity guide, available from day one. Workbooks and activation materials at every phase. A community of women going through the same process, at the same time. This isn&#8217;t a static archive. It&#8217;s a living curriculum and a room full of people doing the work alongside you.</p>
+      </div>
+    </div>
+    <a class="btn btn-block" href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194">Join The AiLisia Method &#128071;&#127997;</a>
+    <p class="btn-note">$49/mo or $297/yr. Full access as each phase publishes.</p>
+  </div>
+</section>
+
+<!-- ======= 7. WHAT THIS IS NOT ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Let&#8217;s clear this up</span>
+      <h2>What this is <i>not</i>:</h2>
+    </div>
+    <div class="notlist">
+      <div class="reveal"><span class="x" aria-hidden="true">&#10007;</span>Another budgeting app or spreadsheet that tells you what you already know.</div>
+      <div class="reveal"><span class="x" aria-hidden="true">&#10007;</span>A motivation course. You already have the drive. This gives you the architecture.</div>
+      <div class="reveal"><span class="x" aria-hidden="true">&#10007;</span>Investment advice, financial planning, or anything that requires a license to deliver. This is financial education and systems work.</div>
+      <div class="reveal"><span class="x" aria-hidden="true">&#10007;</span>A program for someone who is struggling. It was built for the woman who earns well and still can&#8217;t account for where it goes.</div>
+    </div>
+    <p class="narrow reveal" style="margin-top:22px;text-align:center;color:var(--ink-soft)">If you want quick fixes or guaranteed results, this isn&#8217;t it. If you&#8217;re ready to do real work on something that actually matters, keep reading.</p>
+  </div>
+</section>
+
+<!-- ======= 8. PROOF ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">From inside the community</span>
+      <h2>What members are saying.</h2>
+    </div>
+    <div class="proof-row">
+      <div class="quote reveal">
+        <p>The site is very well done. The videos are very calming and the instructions are clear. The community feels very safe.</p>
+        <div class="who">Chisa B. &#8212; Charlotte, NC</div>
+      </div>
+      <div class="quote reveal">
+        <p>Understanding why we make certain financial choices really stood out to me. It gave me the opportunity to reflect on my learned behaviors surrounding money. I truly enjoyed it.</p>
+        <div class="who">Gareth C. &#8212; Philadelphia, PA</div>
+      </div>
+      <div class="quote reveal">
+        <p>I finished Module 1 and immediately wanted access to the rest. Understanding why we make certain choices is helpful &#8212; it all boils down to mindset. I like that the videos are short enough to listen to while working.</p>
+        <div class="who">Neisha C. &#8212; St. Croix, U.S.V.I.</div>
+      </div>
+      <div class="quote reveal">
+        <p>The Financial Clarity Blueprint will make you sit with yourself. It asks you to be honest about where you actually are, not where you think you are. If you&#8217;re willing to do the work, by the end you&#8217;ll have a real picture of your finances you can actually do something with.</p>
+        <div class="who">Dr. Maria M. &#8212; St. Thomas, U.S.V.I.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 9. FAQ ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">Questions I&#8217;d ask too</span>
+      <h2>FAQ &#8212; the honest version</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary>What is the refund policy? <span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">AiLisia Labs memberships are hosted on Skool. Because of how Skool processes payments, refunds are not possible for monthly or annual charges. If you decide it is not for you, cancel before your next billing date and you will not be charged again. You keep full access through the end of your billing period. No refunds. No exceptions. No hard feelings. If you are not sure yet, start with the free Financial Clarity Blueprint at <a href="https://blueprint.ailisialabs.com/blueprint">blueprint.ailisialabs.com/blueprint</a> before you join.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Why should I learn from you instead of hiring a financial planner? <span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">A financial planner helps you invest and allocate once you have clarity. The Method builds the clarity first: the operating structure that makes those planning conversations actually productive. Most women who work with planners early find themselves uncertain in the first meeting because they don&#8217;t have a clear picture of their own finances. This gets you there. And it costs $49 a month, not $300 an hour.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>I&#8217;m not struggling financially. Is this actually for me? <span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">Yes. The Method wasn&#8217;t built for someone in financial crisis. It was built for the woman who earns well and still manages her money by feel instead of by design. You&#8217;ve built the career. Now build the system that holds it.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Phase 3 says it&#8217;s still being built. What does that mean for me? <span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">Phases 1 and 2 are complete. Phase 3 is actively being built, and you get access to each lesson as it publishes. You&#8217;re joining a living curriculum. If that feels uncertain, try the free blueprint first at <a href="https://blueprint.ailisialabs.com/blueprint">blueprint.ailisialabs.com/blueprint</a> and see how this work lands before you commit.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>What is the FOS score? <span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">FOS stands for Financial Operating Score. It measures how operationally sound your finances are across seven areas, so you always know exactly where you stand and what to work on next. Think of it as a dashboard for your money, not a judgment.</div>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Is this investment advice or financial advice? <span class="faq-icon" aria-hidden="true"></span></summary>
+        <div class="faq-answer">No. The AiLisia Method is financial education. It teaches systems, structure, and clarity. It is not investment advice, financial planning, or anything requiring a professional license. Alison is not your financial advisor. She is someone who built a framework and is teaching you how to apply it to your own life.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 10. STEPS ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow center">What happens next</span>
+      <h2>Three steps:</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-num" aria-hidden="true"></span>
+        <h3>Join AiLisia Labs on Skool.</h3>
+        <p>Click the button, choose your plan, and you&#8217;re in. Monthly or annual. Access starts right away.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-num" aria-hidden="true"></span>
+        <h3>Start with Orientation and meet the AiLisia GPT.</h3>
+        <p>Before the money work begins, you learn how the system functions. The GPT is your guide through every phase, available from day one.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-num" aria-hidden="true"></span>
+        <h3>Work the Method in sequence.</h3>
+        <p>Each phase builds on the one before it. The sequence is intentional. Trust it.</p>
+      </div>
+    </div>
+    <a class="btn btn-block" href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194">Join The AiLisia Method &#128071;&#127997;</a>
+    <p class="btn-note">Not sure yet? Start with the free Financial Clarity Blueprint first &#8212; <a class="textlink" href="https://blueprint.ailisialabs.com/blueprint">blueprint.ailisialabs.com/blueprint</a></p>
+  </div>
+</section>
+
+<!-- ======= 11. PERSONAL NOTE ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="note-card reveal">
+      <p><b>I want to be straight with you.</b></p>
+      <p>I didn&#8217;t build this because I had everything figured out. I built it because I had the institutional knowledge and still ended up in a situation no professional should have to navigate. That gap, between what I knew and what I&#8217;d actually built for myself, is what this Method closes.</p>
+      <p>What I&#8217;ve learned, walking this path and helping other women do the same, is that clarity doesn&#8217;t require a finance background. It requires honesty, a structured process, and someone willing to walk you through it without shame. That&#8217;s what I built here. And I&#8217;m grateful this work exists for every woman who&#8217;s ready to do it.</p>
+      <p>See you on the inside,</p>
+      <div class="sig">Alison</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= 12. FINAL CTA ======= -->
+<section class="section-pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="final-card reveal">
+      <span class="eyebrow">It was never the income</span>
+      <h2>You earn well. Now <em>build the system</em> to match it.</h2>
+      <p>The career is already yours. The clarity is one decision away.</p>
+      <a class="btn" href="https://www.skool.com/ailisia-labs-3542/about?ref=007bf4705e49453c8397939217471194">Join The AiLisia Method &#128071;&#127997;</a>
+      <p class="btn-note" style="color:rgba(250,246,240,0.7);margin-top:16px">$49/mo or $297/yr. Cancel any time on Skool.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="site">
+  <div class="wrap">
+    <span class="fm">
+      <svg class="star" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:22px;height:22px;color:var(--accent-deep)">
+        <path d="M12 2c.5 4.5 1.5 7.5 8 8-6.5.5-7.5 3.5-8 8-.5-4.5-1.5-7.5-8-8 6.5-.5 7.5-3.5 8-8z" fill="currentColor"/>
+      </svg>
+      <span><span class="ai">Ai</span>Lisia Labs</span>
+    </span>
+    <span class="disc">&copy; 2026 AiLisia Labs LLC / The AiLisia Method<br>
+    Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.</span>
+    <span class="built">Page built by The Digital Dad &mdash; systems, not hustle.</span>
+  </div>
+</footer>
+
+<script>
+  // Sticky header border on scroll
+  var header = document.getElementById('siteHeader');
+  var onScroll = function () {
+    if (window.scrollY > 12) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Staggered reveal on scroll (no-JS safe: elements visible if observer unsupported or #all)
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && location.hash !== '#all') {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var i = entry.target.parentElement
+            ? Array.prototype.indexOf.call(entry.target.parentElement.children, entry.target)
+            : 0;
+          entry.target.style.transitionDelay = Math.min(i, 6) * 0.07 + 's';
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
