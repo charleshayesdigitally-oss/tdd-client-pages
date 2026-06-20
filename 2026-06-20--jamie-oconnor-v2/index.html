@@ -16,297 +16,331 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,560;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:wght@400;500;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    color-scheme: light;
-    --paper:#FAF7F4;
-    --paper-2:#F4ECE3;
-    --tint:#EDE5DC;
-    --accent:#AC8669;
-    --accent-deep:#7D5A3E;
-    --ink:#3C3A39;
-    --ink-soft:#6A5544;
-    --metal:#D5BAA9;
-    --white:#FFFFFF;
-    --line:rgba(125,90,62,0.16);
-    --shadow-soft: 0 2px 6px rgba(60,58,57,.05), 0 14px 34px rgba(125,90,62,0.12);
-    --shadow-lift: 0 4px 10px rgba(60,58,57,.07), 0 22px 48px rgba(125,90,62,0.18);
-    --shadow-deep: 0 6px 16px rgba(60,58,57,.10), 0 40px 80px rgba(125,90,62,0.20);
-    --serif:'Fraunces',Georgia,serif;
-    --sans:'Karla',system-ui,sans-serif;
-    --script:'Caveat',cursive;
-    --ease:cubic-bezier(0.22,1,0.36,1);
-    --radius-lg:30px;
-    --radius-md:20px;
-    --radius-pill:999px;
-    --maxw:1120px;
+    color-scheme: dark;
+    --bg:#080808;
+    --bg-2:#0E0C0D;
+    --bg-3:#15100F;
+    --panel:#121011;
+    --panel-2:#171314;
+    --red:#E11D2A;
+    --red-hot:#FF2E3C;
+    --red-deep:#9E0F18;
+    --gold-1:#F7E7B0;
+    --gold-2:#E7C674;
+    --gold-3:#D8A23A;
+    --off:#F4F1EE;
+    --off-dim:#C7C0BB;
+    --muted:#8A817C;
+    --muted-dim:#5E5752;
+    --line:rgba(244,241,238,0.10);
+    --line-strong:rgba(244,241,238,0.22);
+    --line-red:rgba(225,29,42,0.34);
+    --shadow:0 28px 70px -24px rgba(0,0,0,0.9), 0 6px 18px -8px rgba(0,0,0,0.7);
+    --glow-red:0 0 0 1px rgba(225,29,42,0.45), 0 14px 44px -10px rgba(225,29,42,0.55);
+    --glow-red-soft:0 18px 50px -22px rgba(225,29,42,0.5);
+    --display:'Anton',Impact,sans-serif;
+    --sans:'Archivo',system-ui,sans-serif;
+    --narrow:'Archivo Narrow','Archivo',sans-serif;
+    --ease:cubic-bezier(0.16,1,0.3,1);
+    --pad:clamp(1.25rem,5vw,5.5rem);
+    --maxw:1200px;
+    --gold-grad:linear-gradient(120deg,var(--gold-1) 0%,var(--gold-2) 42%,var(--gold-3) 100%);
   }
-  *{margin:0;padding:0;box-sizing:border-box}
+
+  *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
+    background:var(--bg);
+    color:var(--off);
     font-family:var(--sans);
-    color:var(--ink);
-    background-color:var(--paper);
-    background-image:
-      radial-gradient(1100px 620px at 88% -8%, rgba(172,134,105,0.20), transparent 60%),
-      radial-gradient(900px 540px at -12% 18%, rgba(213,186,169,0.16), transparent 55%),
-      radial-gradient(760px 520px at 60% 108%, rgba(172,134,105,0.10), transparent 60%);
-    line-height:1.7;
-    font-size:17px;
-    -webkit-font-smoothing:antialiased;
+    font-size:clamp(1rem,0.55vw + 0.9rem,1.07rem);
+    line-height:1.66;
+    letter-spacing:0.004em;
     overflow-x:hidden;
-    position:relative;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(1100px 680px at 86% -10%, rgba(225,29,42,0.16), transparent 58%),
+      radial-gradient(820px 560px at -12% 14%, rgba(158,15,24,0.14), transparent 55%),
+      radial-gradient(760px 560px at 60% 112%, rgba(216,162,58,0.07), transparent 60%);
+    background-attachment:fixed;
   }
-  /* grain texture */
+  /* grain overlay */
   body::before{
-    content:""; position:fixed; inset:0; pointer-events:none; z-index:9999; opacity:.05; mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;
+    opacity:0.055;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-  ::selection{background:var(--accent);color:var(--white)}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
+  ::selection{background:var(--red);color:var(--off)}
 
-  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
   .narrow{max-width:760px}
 
-  h1,h2,h3{font-family:var(--serif);font-weight:560;letter-spacing:-0.02em;line-height:1.1}
-  .script{font-family:var(--script);color:var(--accent-deep);font-weight:700}
+  h1,h2,h3,.display{
+    font-family:var(--display);font-weight:400;text-transform:uppercase;
+    line-height:0.94;letter-spacing:0.006em;color:var(--off);
+  }
+  .gold{
+    background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;color:var(--gold-2);
+  }
+  .red{color:var(--red-hot)}
 
   .eyebrow{
-    display:inline-flex;align-items:center;gap:10px;
-    font-family:var(--sans);font-size:.72rem;font-weight:800;letter-spacing:.22em;
-    text-transform:uppercase;color:var(--accent-deep);
+    font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.3em;
+    font-size:0.72rem;font-weight:700;color:var(--red-hot);
+    display:inline-flex;align-items:center;gap:0.7rem;
   }
-  .eyebrow::before{content:"💕";font-size:.85rem}
-  .eyebrow.line::before{content:"";width:26px;height:1px;background:var(--accent);display:inline-block}
+  .eyebrow::before{content:"";width:32px;height:2px;background:var(--red);display:inline-block;box-shadow:0 0 12px rgba(225,29,42,0.8)}
+  .eyebrow.center{justify-content:center}
+  .eyebrow.center::before{display:none}
 
   /* ---------- buttons ---------- */
   .btn{
-    display:inline-flex;align-items:center;justify-content:center;gap:10px;text-align:center;
-    font-family:var(--sans);font-weight:800;font-size:1.02rem;letter-spacing:.01em;
-    background:linear-gradient(150deg,var(--accent) 0%,var(--accent-deep) 100%);
-    color:var(--white);padding:17px 30px;border-radius:var(--radius-pill);
-    box-shadow:0 6px 14px rgba(125,90,62,0.30), 0 18px 40px rgba(125,90,62,0.22);
-    transform:translateY(0);
-    transition:transform .4s var(--ease), box-shadow .4s var(--ease);
-    will-change:transform;cursor:pointer;
+    position:relative;display:inline-flex;align-items:center;justify-content:center;gap:0.7rem;text-align:center;
+    font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.13em;font-weight:700;font-size:0.98rem;
+    padding:1.05rem 2.1rem;background:var(--red);color:var(--off);border:0;cursor:pointer;
+    clip-path:polygon(0 0,100% 0,100% 100%,14px 100%,0 calc(100% - 14px));
+    box-shadow:var(--glow-red);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),background-color .25s ease;
+    will-change:transform;
   }
-  .btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(125,90,62,0.36), 0 26px 52px rgba(125,90,62,0.28)}
+  .btn .arr{transition:transform .35s var(--ease)}
+  .btn:hover{transform:translateY(-3px);background:var(--red-hot);box-shadow:0 0 0 1px rgba(255,46,60,0.6),0 26px 60px -16px rgba(225,29,42,0.75)}
+  .btn:hover .arr{transform:translateX(5px)}
   .btn:active{transform:translateY(-1px) scale(.99)}
-  .btn:focus-visible{outline:3px solid var(--metal);outline-offset:3px}
+  .btn:focus-visible{outline:3px solid var(--gold-2);outline-offset:4px}
   .btn--full{display:flex;width:100%}
-  .btn-note{text-align:center;font-size:.85rem;color:var(--ink-soft)}
-  .textlink{
-    font-weight:800;color:var(--accent-deep);border-bottom:1.5px solid var(--metal);padding-bottom:2px;
-    transition:color .3s ease, border-color .3s ease;
+  .btn-note{text-align:center;font-size:.85rem;color:var(--muted);font-family:var(--narrow);letter-spacing:.06em;text-transform:uppercase}
+  .linklike{
+    font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.15em;font-weight:700;font-size:0.85rem;
+    color:var(--off);position:relative;padding-bottom:3px;transition:color .25s ease;
   }
-  .textlink:hover{color:var(--accent);border-color:var(--accent)}
-  .textlink:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:2px}
+  .linklike::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+  .linklike:hover{color:var(--red-hot)}
+  .linklike:hover::after{transform:scaleX(1)}
+  .linklike:focus-visible{outline:2px solid var(--red);outline-offset:6px}
+  .textlink{color:var(--gold-2);font-weight:700;border-bottom:1.5px solid var(--gold-3);padding-bottom:1px;transition:color .25s ease,border-color .25s ease}
+  .textlink:hover{color:var(--gold-1);border-color:var(--gold-1)}
+  .textlink:focus-visible{outline:2px solid var(--gold-2);outline-offset:4px;border-radius:2px}
 
   /* ---------- header ---------- */
   header.site{
-    position:sticky;top:0;z-index:100;
-    backdrop-filter:blur(10px);
-    background:rgba(250,247,244,0.80);
-    border-bottom:1px solid transparent;
-    transition:border-color .3s ease, background-color .3s ease;
+    position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);
+    background:linear-gradient(180deg,rgba(8,8,8,0.95),rgba(8,8,8,0.72));
+    border-bottom:1px solid transparent;transition:border-color .3s ease;
   }
   header.site.scrolled{border-color:var(--line)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding-block:16px}
-  .wordmark{font-family:var(--serif);font-size:1.4rem;font-weight:560;color:var(--ink);display:inline-flex;align-items:center;gap:9px}
-  .wordmark em{font-style:italic;color:var(--accent-deep)}
-  .wordmark .heart{font-size:1rem;transition:transform .5s var(--ease)}
-  .wordmark:hover .heart{transform:scale(1.18) rotate(-8deg)}
-  .nav .btn{padding:11px 22px;font-size:.86rem}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .mark{font-family:var(--display);text-transform:uppercase;font-size:1.5rem;letter-spacing:0.03em;display:inline-flex;align-items:center;gap:0.6rem;color:var(--off)}
+  .mark em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .mark .ring{
+    width:14px;height:14px;border-radius:50%;border:2px solid var(--red);
+    box-shadow:0 0 14px rgba(225,29,42,0.9),inset 0 0 6px rgba(225,29,42,0.6);flex:0 0 auto;
+  }
+  .nav .btn{padding:0.7rem 1.4rem;font-size:.82rem}
 
   /* ---------- section scaffolding ---------- */
   section{position:relative}
-  .sec{padding-block:clamp(58px,8vw,108px)}
+  .sec{padding-block:clamp(58px,8vw,112px)}
   .sec-head{max-width:680px;margin-bottom:clamp(34px,5vw,56px)}
   .sec-head.center{margin-inline:auto;text-align:center}
-  .sec-head.center .eyebrow{justify-content:center}
-  .sec-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);margin-top:16px;color:var(--ink)}
-  .sec-head h2 i,.sec-head h2 em{font-style:italic;color:var(--accent-deep)}
-  .sec-head p.lead{margin-top:16px;font-size:1.12rem;color:var(--ink-soft)}
+  .sec-head h2{font-size:clamp(2rem,5.2vw,3.3rem);margin-top:16px}
+  .sec-head p.lead{margin-top:16px;font-size:1.1rem;color:var(--off-dim)}
+  .tint{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-3) 50%,var(--bg) 100%)}
+  .tint-panel{background:linear-gradient(180deg,rgba(20,16,15,0) 0%,rgba(20,16,15,0.6) 50%,rgba(20,16,15,0) 100%)}
 
   /* ---------- hero ---------- */
-  .hero{position:relative;padding-block:clamp(48px,7vw,96px) clamp(36px,5vw,64px);overflow:hidden}
-  .hero-glow{position:absolute;z-index:0;pointer-events:none;border-radius:50%;filter:blur(60px)}
-  .hero-glow.g1{width:520px;height:520px;top:-140px;right:-120px;background:radial-gradient(circle at 40% 40%,rgba(172,134,105,0.30),transparent 65%)}
-  .hero-glow.g2{width:420px;height:420px;bottom:-180px;left:-120px;background:radial-gradient(circle at 50% 50%,rgba(213,186,169,0.30),transparent 66%)}
-  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.06fr 0.94fr;gap:clamp(32px,5vw,68px);align-items:center}
-  .hero-copy{max-width:600px}
-  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin-block:20px 20px;color:var(--ink)}
-  .hero h1 em{font-style:italic;color:var(--accent-deep);position:relative;white-space:normal}
-  .hero h1 em::after{
-    content:"";position:absolute;left:0;right:0;bottom:0.04em;height:0.13em;background:var(--metal);opacity:.6;border-radius:3px;
-    transform:scaleX(0);transform-origin:left;animation:draw 1.1s var(--ease) .6s forwards;
+  .hero{position:relative;padding-top:clamp(3rem,7vw,6rem);padding-bottom:clamp(2.6rem,5vw,4.6rem);overflow:hidden}
+  .stripe{
+    position:absolute;top:-12%;right:-8%;width:48%;height:130%;z-index:0;transform:skewX(-8deg);pointer-events:none;
+    background:repeating-linear-gradient(135deg,rgba(225,29,42,0.10) 0 2px,transparent 2px 26px);
   }
+  .hero .wrap{position:relative;z-index:2}
+  .hero-grid{display:grid;grid-template-columns:1.12fr 0.88fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+  .hero h1{font-size:clamp(2.7rem,7.4vw,5.6rem);margin:1.3rem 0 1.4rem;text-wrap:balance}
+  .hero h1 .hl{position:relative;display:inline-block}
+  .hero h1 .hl::after{content:"";position:absolute;left:-1%;right:-1%;bottom:0.05em;height:0.16em;background:var(--red);opacity:.28;z-index:-1;transform:scaleX(0);transform-origin:left;animation:draw 1s var(--ease) .5s forwards}
   @keyframes draw{to{transform:scaleX(1)}}
-  .hero .sub{font-size:1.12rem;color:var(--ink-soft);max-width:520px;margin-bottom:30px}
-  .hero .sub b{color:var(--ink)}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
-  .hero-meta{margin-top:26px;display:flex;gap:24px;flex-wrap:wrap;font-size:.84rem;color:var(--ink-soft)}
-  .hero-meta span{display:inline-flex;align-items:center;gap:8px}
-  .hero-meta .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+  .hero .sub{font-size:clamp(1.04rem,1.3vw,1.22rem);color:var(--off-dim);max-width:46ch;margin-bottom:2rem}
+  .hero .sub b{color:var(--off)}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+  .hero-meta{display:flex;gap:clamp(1.1rem,3vw,2.4rem);margin-top:2.4rem;flex-wrap:wrap}
+  .hero-meta .stat .n{font-family:var(--display);font-size:clamp(1.5rem,2.2vw,2rem);line-height:1;color:var(--off)}
+  .hero-meta .stat .n span{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-meta .stat .l{font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.15em;font-size:0.64rem;color:var(--muted);font-weight:700;margin-top:0.45rem}
+  .hero-meta .stat+.stat{padding-left:clamp(1.1rem,3vw,2.4rem);border-left:1px solid var(--line)}
 
   .hero-visual{position:relative}
-  .hero-frame{
-    position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-deep);
-    aspect-ratio:4/5;background:linear-gradient(155deg,var(--tint),var(--accent) 140%);
+  .hero-visual .frame{
+    position:relative;overflow:hidden;border:1px solid var(--line-red);
+    clip-path:polygon(0 0,100% 0,100% 92%,92% 100%,0 100%);
+    box-shadow:var(--shadow),0 0 60px -18px rgba(225,29,42,0.5);background:var(--bg-3);aspect-ratio:4/5;
   }
-  .hero-frame img{width:100%;height:100%;object-fit:cover}
-  .hero-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(60,58,57,0.16))}
-  .blob{
-    position:absolute;z-index:-1;width:80%;height:80%;background:var(--accent);opacity:.16;top:-7%;right:-9%;
-    border-radius:60% 40% 55% 45% / 50% 55% 45% 50%;animation:morph 15s ease-in-out infinite alternate;
+  .hero-visual img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) brightness(0.97);transition:transform .8s var(--ease)}
+  .hero-visual:hover img{transform:scale(1.04)}
+  .hero-visual .frame::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,8,8,0.55))}
+  .hero-visual .badge{
+    position:absolute;bottom:1.1rem;left:-14px;z-index:3;
+    background:var(--panel);border:1px solid var(--line-red);
+    padding:0.85rem 1.2rem;display:flex;align-items:center;gap:0.85rem;max-width:250px;
+    box-shadow:var(--glow-red-soft);clip-path:polygon(0 0,100% 0,100% 100%,10px 100%,0 calc(100% - 10px));
   }
-  @keyframes morph{0%{border-radius:60% 40% 55% 45% / 50% 55% 45% 50%}100%{border-radius:42% 58% 42% 58% / 60% 42% 58% 40%}}
-  .hero-badge{
-    position:absolute;bottom:22px;left:-16px;background:var(--white);border-radius:var(--radius-md);
-    padding:15px 20px;box-shadow:var(--shadow-soft);display:flex;align-items:center;gap:13px;max-width:240px;
-  }
-  .hero-badge .num{font-family:var(--serif);font-size:2rem;color:var(--accent-deep);line-height:1;font-weight:600}
-  .hero-badge .lbl{font-size:.74rem;line-height:1.35;color:var(--ink-soft)}
+  .hero-visual .badge b{font-family:var(--display);font-size:2rem;line-height:0.9;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-visual .badge span{font-family:var(--narrow);font-size:0.7rem;line-height:1.3;color:var(--off-dim)}
 
   /* ---------- marquee ---------- */
-  .strip{border-block:1px solid var(--line);overflow:hidden;background:var(--paper-2);padding-block:15px}
-  .marquee{display:flex;gap:0;white-space:nowrap;width:max-content;animation:slide 38s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--ink-soft);align-items:center}
-  .marquee span{display:inline-flex;align-items:center;gap:48px;padding-right:48px}
-  .marquee .sep{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
-  @keyframes slide{to{transform:translateX(-50%)}}
+  .marquee{border-block:1px solid var(--line);background:var(--bg-2);overflow:hidden;padding:1.05rem 0}
+  .marquee-track{display:flex;gap:0;white-space:nowrap;width:max-content;animation:scroll 36s linear infinite;font-family:var(--display);text-transform:uppercase;font-size:1.1rem;letter-spacing:0.04em;color:var(--off-dim);align-items:center}
+  .marquee-track span{display:inline-flex;align-items:center;gap:2.4rem;padding-right:2.4rem}
+  .marquee-track .sep{width:8px;height:8px;background:var(--red);transform:rotate(45deg);flex:none;box-shadow:0 0 10px rgba(225,29,42,0.8)}
+  @keyframes scroll{to{transform:translateX(-50%)}}
 
   /* ---------- story ---------- */
   .story-grid{display:grid;grid-template-columns:1fr 0.82fr;gap:clamp(34px,5vw,64px);align-items:center}
-  .story p{margin-bottom:1.05rem}
+  .story p{margin-bottom:1.05rem;color:var(--off-dim)}
   .story .punch{
-    font-family:var(--serif);font-size:1.32rem;font-weight:560;line-height:1.35;color:var(--accent-deep);
-    padding-left:20px;border-left:3px solid var(--metal);margin:1.5rem 0;
+    font-family:var(--display);text-transform:uppercase;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.06;
+    color:var(--off);padding-left:1.1rem;border-left:3px solid var(--red);margin:1.6rem 0;
+    text-shadow:0 0 24px rgba(225,29,42,0.2);
   }
   .story-visual{position:relative}
-  .story-visual img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lift);aspect-ratio:4/5;object-fit:cover}
+  .story-visual .frame{position:relative;overflow:hidden;border:1px solid var(--line-strong);clip-path:polygon(0 0,100% 0,100% 100%,0 100%,0 14px);box-shadow:var(--shadow);aspect-ratio:4/5;background:var(--bg-3)}
+  .story-visual img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04) brightness(0.96)}
   .story-visual .caption{
-    position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);
-    background:var(--white);border-radius:var(--radius-pill);padding:10px 22px;box-shadow:var(--shadow-soft);
-    font-family:var(--script);font-size:1.25rem;color:var(--accent-deep);white-space:nowrap;
+    position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);white-space:nowrap;
+    background:var(--panel);border:1px solid var(--line-red);color:var(--off);
+    font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;font-size:0.78rem;
+    padding:0.6rem 1.3rem;box-shadow:var(--glow-red-soft);
   }
 
   /* ---------- receipt ---------- */
   .receipt{
-    max-width:660px;margin-inline:auto;background:var(--white);border-radius:var(--radius-lg);padding:clamp(34px,5vw,52px) clamp(26px,4vw,44px);
-    box-shadow:var(--shadow-deep);text-align:center;position:relative;overflow:hidden;
+    max-width:680px;margin-inline:auto;background:var(--panel);
+    border:1px solid var(--line-red);padding:clamp(34px,5vw,54px) clamp(26px,4vw,46px);
+    text-align:center;position:relative;overflow:hidden;
+    box-shadow:var(--shadow),0 0 70px -26px rgba(225,29,42,0.55);
+    clip-path:polygon(0 0,100% 0,100% 100%,18px 100%,0 calc(100% - 18px));
   }
-  .receipt::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,var(--accent),var(--metal),var(--accent))}
-  .receipt .since-top{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-deep);font-weight:800;margin-bottom:14px}
-  .receipt .big{font-family:var(--serif);font-size:clamp(3.2rem,9vw,5rem);font-weight:600;color:var(--ink);letter-spacing:-.03em;line-height:.95}
-  .receipt .big span{color:var(--accent-deep)}
-  .receipt .since{font-size:.92rem;letter-spacing:.04em;color:var(--ink-soft);margin-top:14px;max-width:420px;margin-inline:auto;font-weight:500}
-  .receipt .disclaim{margin-top:22px;font-size:.78rem;color:var(--ink-soft);line-height:1.55;border-top:1px dashed var(--tint);padding-top:18px;text-align:left}
+  .receipt::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold-2),var(--red))}
+  .receipt .since-top{font-family:var(--narrow);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red-hot);font-weight:700;margin-bottom:14px}
+  .receipt .big{font-family:var(--display);text-transform:uppercase;font-size:clamp(3.4rem,11vw,6rem);line-height:.9;letter-spacing:.01em;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 6px 30px rgba(216,162,58,0.25))}
+  .receipt .since{font-size:.95rem;letter-spacing:.02em;color:var(--off-dim);margin-top:16px;max-width:440px;margin-inline:auto}
+  .receipt .disclaim{margin-top:24px;font-size:.78rem;color:var(--muted);line-height:1.55;border-top:1px dashed var(--line-strong);padding-top:18px;text-align:left}
+  .receipt .disclaim b{color:var(--off-dim)}
 
   /* ---------- who it's for ---------- */
   .check-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
   ul.check{list-style:none;display:contents}
   ul.check li{
-    padding:18px 20px 18px 52px;position:relative;background:var(--white);border-radius:var(--radius-md);
-    box-shadow:var(--shadow-soft);font-weight:500;border:1px solid var(--line);
-    transition:transform .4s var(--ease), box-shadow .4s var(--ease);will-change:transform;
+    padding:18px 20px 18px 54px;position:relative;background:var(--panel);
+    border:1px solid var(--line);font-weight:500;color:var(--off-dim);
+    clip-path:polygon(0 0,100% 0,100% 100%,10px 100%,0 calc(100% - 10px));
+    transition:transform .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);will-change:transform;
   }
-  ul.check li:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
-  ul.check li::before{content:"💕";position:absolute;left:18px;top:17px;font-size:1.05rem}
+  ul.check li:hover{transform:translateY(-4px);border-color:var(--line-red);box-shadow:var(--glow-red-soft)}
+  ul.check li::before{content:"";position:absolute;left:20px;top:23px;width:14px;height:14px;border:2px solid var(--red);border-radius:50%;box-shadow:0 0 10px rgba(225,29,42,0.7)}
+  ul.check li::after{content:"";position:absolute;left:25px;top:28px;width:5px;height:5px;background:var(--gold-2);border-radius:50%}
 
   /* ---------- mission band ---------- */
-  .band{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ink) 0%,#49403A 100%);color:var(--paper)}
-  .band::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 0%,rgba(172,134,105,0.26),transparent 52%),radial-gradient(circle at 4% 100%,rgba(213,186,169,0.18),transparent 50%)}
+  .band{position:relative;overflow:hidden;background:linear-gradient(160deg,#100B0B 0%,#1A0E10 100%);border-block:1px solid var(--line-red)}
+  .band::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 0%,rgba(225,29,42,0.22),transparent 52%),radial-gradient(circle at 4% 100%,rgba(216,162,58,0.12),transparent 50%)}
   .band .wrap{position:relative;z-index:1;text-align:center}
-  .band .script{color:#D8BBA3;font-size:clamp(1.5rem,4vw,2rem);display:block;margin-bottom:14px}
-  .band h2{color:var(--paper);font-size:clamp(2rem,5vw,3.1rem)}
+  .band .script{display:block;margin-bottom:18px;font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.14em;font-weight:700;font-size:clamp(1rem,2vw,1.25rem);color:var(--gold-2)}
+  .band h2{font-size:clamp(2.1rem,5.4vw,3.5rem)}
+  .band h2 .red{text-shadow:0 0 30px rgba(225,29,42,0.4)}
 
   /* ---------- what's inside ---------- */
   .stack{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
   .stack-item{
-    background:var(--white);border-radius:var(--radius-md);padding:28px 26px 24px;
-    box-shadow:var(--shadow-soft);border:1px solid var(--line);position:relative;overflow:hidden;
-    transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s var(--ease);will-change:transform;
+    background:var(--panel);border:1px solid var(--line);padding:30px 28px 26px;position:relative;overflow:hidden;
+    clip-path:polygon(0 0,100% 0,100% 100%,14px 100%,0 calc(100% - 14px));
+    transition:transform .45s var(--ease),border-color .45s var(--ease),box-shadow .45s var(--ease);will-change:transform;
   }
-  .stack-item::after{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--accent),var(--metal));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
-  .stack-item:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);border-color:transparent}
+  .stack-item::after{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--red),var(--gold-2));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .stack-item:hover{transform:translateY(-6px);border-color:var(--line-red);box-shadow:var(--glow-red-soft)}
   .stack-item:hover::after{transform:scaleX(1)}
-  .stack-item h3{font-size:1.22rem;margin-bottom:8px;color:var(--ink)}
-  .stack-item .tag{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--tint);color:var(--accent-deep);border-radius:30px;padding:5px 13px;margin-bottom:13px}
-  .stack-item p{font-size:.97rem;color:var(--ink-soft)}
-  .stack-item.bonus{grid-column:1 / -1;border:1.5px dashed var(--metal);background:linear-gradient(160deg,#FFFDF8,#F8F1EA)}
-  .stack-item.bonus .tag{background:var(--accent);color:var(--white)}
-  .inside-cta{margin-top:34px;text-align:center}
+  .stack-item h3{font-size:1.3rem;margin-bottom:10px;letter-spacing:0.01em}
+  .stack-item .tag{display:inline-block;font-family:var(--narrow);font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:rgba(225,29,42,0.12);color:var(--red-hot);border:1px solid var(--line-red);padding:5px 13px;margin-bottom:15px}
+  .stack-item p{font-size:.97rem;color:var(--off-dim)}
+  .stack-item.bonus{grid-column:1 / -1;border:1px solid var(--gold-3);background:linear-gradient(160deg,#15100C,#0F0B09)}
+  .stack-item.bonus .tag{background:var(--gold-grad);color:#1A130A;border:0}
+  .stack-item.bonus::after{background:var(--gold-grad)}
+  .stack-item.bonus h3{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .inside-cta{margin-top:36px;text-align:center}
 
   /* ---------- what this is NOT ---------- */
   .notlist{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .notlist div{
-    background:var(--white);border-radius:var(--radius-md);padding:18px 22px;font-weight:700;box-shadow:var(--shadow-soft);
-    display:flex;gap:12px;align-items:flex-start;border-left:3px solid var(--accent);
-    transition:transform .3s var(--ease);will-change:transform;
+    background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--red);padding:18px 22px;font-weight:600;color:var(--off);
+    display:flex;gap:12px;align-items:flex-start;transition:transform .3s var(--ease),border-color .3s var(--ease);will-change:transform;
   }
-  .notlist div:hover{transform:translateX(5px)}
-  .notlist div span{flex:none}
-  .not-after{margin-top:22px;font-size:1.08rem;color:var(--ink-soft);max-width:640px}
+  .notlist div:hover{transform:translateX(5px);border-left-color:var(--red-hot)}
+  .notlist div .x{flex:none;color:var(--red-hot);font-weight:800;font-family:var(--narrow)}
+  .not-after{margin-top:24px;font-size:1.1rem;color:var(--off-dim);max-width:640px}
 
   /* ---------- proof ---------- */
   .quote-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .quote{
-    background:var(--white);border-radius:var(--radius-md);padding:34px 26px 24px;box-shadow:var(--shadow-soft);
-    position:relative;border:1px solid var(--line);
+    background:var(--panel);border:1px solid var(--line);padding:36px 26px 26px;position:relative;
+    clip-path:polygon(0 0,100% 0,100% 100%,12px 100%,0 calc(100% - 12px));
   }
-  .quote::before{content:"\201C";font-family:var(--serif);font-size:4.4rem;color:var(--tint);position:absolute;top:6px;left:18px;line-height:1}
-  .quote p{position:relative;font-size:1.02rem;padding-top:18px;color:var(--ink)}
-  .quote .who{margin-top:16px;font-weight:800;font-size:.82rem;letter-spacing:.04em;color:var(--accent-deep)}
+  .quote::before{content:"\201C";font-family:var(--display);font-size:4.2rem;color:var(--red);opacity:.4;position:absolute;top:8px;left:18px;line-height:1}
+  .quote p{position:relative;font-size:1rem;padding-top:18px;color:var(--off)}
+  .quote .who{margin-top:18px;font-family:var(--narrow);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-2)}
 
   /* ---------- faq ---------- */
-  .faq-list{max-width:780px;margin-inline:auto}
-  details{background:var(--white);border-radius:var(--radius-md);margin-bottom:12px;box-shadow:var(--shadow-soft);overflow:hidden;border:1px solid var(--line)}
-  summary{cursor:pointer;font-weight:800;padding:20px 56px 20px 22px;list-style:none;position:relative;font-size:1.04rem;color:var(--ink);transition:color .25s ease}
-  summary:hover{color:var(--accent-deep)}
+  .faq-list{max-width:800px;margin-inline:auto}
+  details{background:var(--panel);border:1px solid var(--line);margin-bottom:12px;overflow:hidden;transition:border-color .3s ease}
+  details[open]{border-color:var(--line-red)}
+  summary{cursor:pointer;font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.04em;font-weight:700;padding:20px 58px 20px 22px;list-style:none;position:relative;font-size:1.02rem;color:var(--off);transition:color .25s ease}
+  summary:hover{color:var(--red-hot)}
   summary::-webkit-details-marker{display:none}
-  summary::after{content:"+";position:absolute;right:22px;top:14px;font-family:var(--serif);font-size:1.7rem;color:var(--accent);transition:transform .35s var(--ease)}
+  summary::after{content:"+";position:absolute;right:22px;top:13px;font-family:var(--display);font-size:1.8rem;color:var(--red);transition:transform .35s var(--ease)}
   details[open] summary::after{transform:rotate(45deg)}
-  summary:focus-visible{outline:2px solid var(--accent);outline-offset:-4px;border-radius:var(--radius-md)}
-  details .a{padding:0 22px 20px;color:var(--ink-soft);font-size:.98rem}
+  summary:focus-visible{outline:2px solid var(--red);outline-offset:-4px}
+  details .a{padding:0 22px 22px;color:var(--off-dim);font-size:.97rem}
 
   /* ---------- steps ---------- */
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step}
-  .step{position:relative;background:var(--white);border-radius:var(--radius-md);padding:30px 26px 26px;box-shadow:var(--shadow-soft);border:1px solid var(--line)}
+  .step{position:relative;background:var(--panel);border:1px solid var(--line);padding:32px 26px 26px;clip-path:polygon(0 0,100% 0,100% 100%,14px 100%,0 calc(100% - 14px))}
   .step::before{
-    counter-increment:step;content:counter(step);
-    width:50px;height:50px;border-radius:50%;background:linear-gradient(150deg,var(--accent),var(--accent-deep));
-    color:var(--paper);font-family:var(--serif);font-weight:600;font-size:1.4rem;
-    display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft);margin-bottom:18px;
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    font-family:var(--display);font-size:2.4rem;line-height:1;display:block;margin-bottom:16px;
+    background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
   }
-  .step h3{font-size:1.15rem;margin-bottom:8px;color:var(--ink)}
-  .step p{font-size:.96rem;color:var(--ink-soft)}
-  .steps-cta{margin-top:34px;text-align:center}
+  .step h3{font-size:1.2rem;margin-bottom:9px}
+  .step p{font-size:.95rem;color:var(--off-dim)}
+  .steps-cta{margin-top:36px;text-align:center}
 
   /* ---------- personal note ---------- */
   .note{
-    max-width:680px;margin-inline:auto;background:var(--white);border-radius:var(--radius-lg);padding:clamp(36px,5vw,52px) clamp(28px,4vw,48px);
-    box-shadow:var(--shadow-deep);position:relative;
+    max-width:700px;margin-inline:auto;background:var(--panel);border:1px solid var(--line-red);
+    padding:clamp(38px,5vw,54px) clamp(28px,4vw,48px);position:relative;
+    box-shadow:var(--shadow),0 0 60px -26px rgba(225,29,42,0.45);
+    clip-path:polygon(0 0,100% 0,100% 100%,18px 100%,0 calc(100% - 18px));
   }
-  .note::before{content:"💕";position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:1.9rem}
-  .note p{margin-bottom:1rem}
-  .note p b{color:var(--ink)}
-  .note .sig{font-family:var(--script);font-size:2.4rem;color:var(--accent-deep);margin-top:8px}
+  .note p{margin-bottom:1rem;color:var(--off-dim)}
+  .note p b{color:var(--off)}
+  .note .sig{font-family:var(--display);text-transform:uppercase;font-size:2.4rem;letter-spacing:0.02em;margin-top:10px;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
   /* ---------- footer ---------- */
-  footer.site{text-align:center;padding-block:48px 36px;border-top:1px solid var(--line);font-size:.78rem;color:var(--ink-soft);line-height:1.6}
-  footer.site .wrap{max-width:680px}
-  footer.site .built{margin-top:14px;opacity:.6}
+  footer.site{text-align:center;padding-block:48px 36px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted);line-height:1.6}
+  footer.site .wrap{max-width:720px}
+  footer.site .ring{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--red);box-shadow:0 0 10px rgba(225,29,42,0.8);vertical-align:middle;margin-right:7px}
+  footer.site .built{margin-top:14px;opacity:.7;font-family:var(--narrow);text-transform:uppercase;letter-spacing:0.1em}
 
   /* ---------- reveal ---------- */
-  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease), transform .8s var(--ease)}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){
     .reveal{opacity:1;transform:none;transition:none}
-    .marquee{animation:none}
-    .blob{animation:none}
-    .hero h1 em::after{animation:none;transform:scaleX(1)}
+    .marquee-track{animation:none}
+    .hero h1 .hl::after{animation:none;transform:scaleX(1)}
   }
 
   /* ---------- responsive ---------- */
@@ -323,10 +357,11 @@
     body{font-size:16px}
     .check-grid{grid-template-columns:1fr}
     .notlist{grid-template-columns:1fr}
-    .hero-badge{left:0}
+    .hero-visual .badge{left:0}
     .nav .btn{display:none}
     .hero-cta{flex-direction:column;align-items:stretch}
     .hero-cta .btn{width:100%}
+    .hero-meta .stat+.stat{padding-left:1.1rem}
   }
 </style>
 </head>
@@ -335,10 +370,10 @@
 <!-- ===== HEADER ===== -->
 <header class="site" id="siteHeader">
   <div class="wrap nav">
-    <a href="#top" class="wordmark" aria-label="VA Training Academy home">
-      <span class="heart" aria-hidden="true">💕</span> VA Training <em>Academy</em>
+    <a href="#top" class="mark" aria-label="VA Training Academy home">
+      <span class="ring" aria-hidden="true"></span> VA Training <em>Academy</em>
     </a>
-    <a href="#offer" class="btn">Get Instant Access</a>
+    <a href="#offer" class="btn">Get Instant Access <span class="arr" aria-hidden="true">&rarr;</span></a>
   </div>
 </header>
 
@@ -347,59 +382,59 @@
 
   <!-- ============ 1. HERO ============ -->
   <section class="hero">
-    <div class="hero-glow g1" aria-hidden="true"></div>
-    <div class="hero-glow g2" aria-hidden="true"></div>
+    <div class="stripe" aria-hidden="true"></div>
     <div class="wrap hero-grid">
       <div class="hero-copy reveal">
         <span class="eyebrow">For the mama who's ready to build something real</span>
-        <h1>You don't need more confidence. You need <em>the skills that build it.</em></h1>
-        <p class="sub">If you've been thinking about becoming a VA but had no idea where to actually start — this is that start. The VA Training Academy takes you from complete beginner to confident, skilled, and ready to find clients.</p>
+        <h1>You don't need more confidence. You need <span class="hl gold">the skills that build it.</span></h1>
+        <p class="sub">If you've been thinking about becoming a VA but had no idea where to actually start &mdash; this is that start. The VA Training Academy takes you from complete beginner to <b>confident, skilled, and ready to find clients.</b></p>
         <div class="hero-cta">
-          <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">Yes, I Want In — Get Instant Access 👇🏽</a>
-          <a href="#story" class="textlink">Hear how it started</a>
+          <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">Yes, I Want In — Get Instant Access <span class="arr" aria-hidden="true">&rarr;</span></a>
+          <a href="#story" class="linklike">Hear how it started</a>
         </div>
         <div class="hero-meta">
-          <span><span class="dot" aria-hidden="true"></span> $297 one-time</span>
-          <span><span class="dot" aria-hidden="true"></span> Instant digital access</span>
-          <span><span class="dot" aria-hidden="true"></span> Start today</span>
+          <div class="stat"><div class="n"><span>$197</span></div><div class="l">One-time</div></div>
+          <div class="stat"><div class="n">Instant</div><div class="l">Digital access</div></div>
+          <div class="stat"><div class="n">Today</div><div class="l">You can start</div></div>
         </div>
       </div>
 
       <div class="hero-visual reveal">
-        <div class="blob" aria-hidden="true"></div>
-        <div class="hero-frame">
+        <div class="frame">
           <img src="./photos/photo1.png" alt="Jamie O'Connor, smiling" loading="eager">
         </div>
-        <div class="hero-badge">
-          <span class="num">30</span>
-          <span class="lbl">step-by-step modules to take you from curious to client-ready</span>
+        <div class="badge">
+          <b>30</b>
+          <span>step-by-step modules to take you from curious to client-ready</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== MARQUEE STRIP ===== -->
-  <div class="strip" aria-hidden="true">
-    <div class="marquee">
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
       <span>Real tools <i class="sep"></i> Real clients <i class="sep"></i> Real systems <i class="sep"></i> Work from home <i class="sep"></i> Start as a beginner <i class="sep"></i> Build something real <i class="sep"></i></span>
       <span>Real tools <i class="sep"></i> Real clients <i class="sep"></i> Real systems <i class="sep"></i> Work from home <i class="sep"></i> Start as a beginner <i class="sep"></i> Build something real <i class="sep"></i></span>
     </div>
   </div>
 
   <!-- ============ 2. STORY ============ -->
-  <section class="sec story" id="story">
+  <section class="sec story tint" id="story">
     <div class="wrap story-grid">
       <div class="reveal">
         <span class="eyebrow">My story (the real one)</span>
-        <h2 style="margin-top:16px;margin-bottom:1.1rem">How I Saw the Gap Nobody Was Filling</h2>
+        <h2 style="margin-top:16px;margin-bottom:1.2rem">How I Saw the Gap Nobody Was Filling</h2>
         <p>When I first stepped into this space, I had no idea I would end up here. I didn't plan on becoming a VA. Didn't map out some big strategy. I just stepped in — and started paying attention.</p>
         <p class="punch">But once I was working behind the scenes for real businesses, I saw it clearly: a true beginner could not simply walk in and become a VA. Not without real skill.</p>
         <p>There were opportunities. There were creators. There were platforms. But nobody was teaching the practical, behind-the-scenes execution that actually makes someone valuable in this role.</p>
         <p>You don't become a VA by wanting it. You become one by knowing how to operate inside real systems.</p>
-        <p>That's why the academy exists. Platform familiarity. Real backend practice. Clear structure. A legitimate pathway — the kind I wish had existed when I was starting. 🖤</p>
+        <p>That's why the academy exists. Platform familiarity. Real backend practice. Clear structure. A legitimate pathway — the kind I wish had existed when I was starting.</p>
       </div>
       <div class="story-visual reveal">
-        <img src="./photos/photo2.png" alt="Jamie working on her business from home">
+        <div class="frame">
+          <img src="./photos/photo2.png" alt="Jamie working on her business from home">
+        </div>
         <span class="caption">Building something real, one skill at a time.</span>
       </div>
     </div>
@@ -418,11 +453,11 @@
   </section>
 
   <!-- ============ 4. WHO IT'S FOR ============ -->
-  <section class="sec">
+  <section class="sec tint">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Is this you?</span>
-        <h2>This one's for you if...</h2>
+        <h2>This one's <span class="gold">for you</span> if...</h2>
       </div>
       <div class="check-grid">
         <ul class="check">
@@ -441,16 +476,16 @@
   <section class="sec band reveal">
     <div class="wrap">
       <span class="script">"When you understand how businesses actually run..."</span>
-      <h2>You become valuable everywhere you go.</h2>
+      <h2>You become <span class="red">valuable</span> everywhere you go.</h2>
     </div>
   </section>
 
   <!-- ============ 6. WHAT'S INSIDE ============ -->
-  <section id="offer" class="sec">
+  <section id="offer" class="sec tint">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">What's inside VA Training Academy</span>
-        <h2>Everything you need to go from curious to clients.</h2>
+        <h2>Everything you need to go from <span class="gold">curious to clients.</span></h2>
         <p class="lead">30 modules. 100+ hours. Real tools, real clients, real systems.</p>
       </div>
       <div class="stack">
@@ -470,14 +505,14 @@
           <p>Jamie's own workflow for using AI inside the VA role. Her exact approach for building faster, showing up smarter, and making more happen in less time. Nobody else teaches it this way because nobody else figured it out this way.</p>
         </div>
         <div class="stack-item bonus reveal">
-          <span class="tag">💕 The Real Differentiator</span>
+          <span class="tag">The Real Differentiator</span>
           <h3>You're Not Doing This Alone</h3>
           <p>Most courses hand you the material and disappear. The VA Training Academy was built with the kind of guidance Jamie needed when she was starting out. You'll feel that in every module — someone who genuinely wanted this to exist and built it to last.</p>
         </div>
       </div>
       <div class="inside-cta reveal">
-        <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">I'm Ready — Get Instant Access 👇🏽</a>
-        <p class="btn-note" style="margin-top:12px">$297 one-time · Instant digital access</p>
+        <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">I'm Ready — Get Instant Access <span class="arr" aria-hidden="true">&rarr;</span></a>
+        <p class="btn-note" style="margin-top:14px">$197 one-time · Instant digital access</p>
       </div>
     </div>
   </section>
@@ -487,24 +522,24 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">Let's clear this up</span>
-        <h2>What this is <i>not</i>:</h2>
+        <h2>What this is <span class="red">not</span>:</h2>
       </div>
       <div class="notlist">
-        <div class="reveal"><span aria-hidden="true">❌</span> A get-rich-quick promise or overnight success shortcut</div>
-        <div class="reveal"><span aria-hidden="true">❌</span> A course full of theory with nothing to actually implement</div>
-        <div class="reveal"><span aria-hidden="true">❌</span> Built for women who already have experience, a following, or a big budget</div>
-        <div class="reveal"><span aria-hidden="true">❌</span> Something that hands you material and then leaves you to figure it out alone</div>
+        <div class="reveal"><span class="x" aria-hidden="true">&times;</span> A get-rich-quick promise or overnight success shortcut</div>
+        <div class="reveal"><span class="x" aria-hidden="true">&times;</span> A course full of theory with nothing to actually implement</div>
+        <div class="reveal"><span class="x" aria-hidden="true">&times;</span> Built for women who already have experience, a following, or a big budget</div>
+        <div class="reveal"><span class="x" aria-hidden="true">&times;</span> Something that hands you material and then leaves you to figure it out alone</div>
       </div>
       <p class="not-after reveal">If you want real skills that make you genuinely valuable behind the scenes — friend, this is where you start.</p>
     </div>
   </section>
 
   <!-- ============ 8. PROOF ============ -->
-  <section class="sec">
+  <section class="sec tint">
     <div class="wrap">
       <div class="sec-head center reveal">
-        <span class="eyebrow">What students are saying</span>
-        <h2>Real words from real women.</h2>
+        <span class="eyebrow center">What students are saying</span>
+        <h2>Real words from <span class="gold">real women.</span></h2>
       </div>
       <div class="quote-row">
         <div class="quote reveal">
@@ -527,8 +562,8 @@
   <section class="sec">
     <div class="wrap">
       <div class="sec-head center reveal">
-        <span class="eyebrow">Questions I'd ask too</span>
-        <h2>FAQ — the honest version</h2>
+        <span class="eyebrow center">Questions I'd ask too</span>
+        <h2>FAQ — <span class="gold">the honest version</span></h2>
       </div>
       <div class="faq-list">
         <details class="reveal">
@@ -560,16 +595,16 @@
   </section>
 
   <!-- ============ 10. STEPS ============ -->
-  <section class="sec">
+  <section class="sec tint">
     <div class="wrap">
       <div class="sec-head center reveal">
-        <span class="eyebrow">What happens next</span>
-        <h2>Three steps:</h2>
+        <span class="eyebrow center">What happens next</span>
+        <h2>Three <span class="red">steps</span>:</h2>
       </div>
       <div class="steps">
         <div class="step reveal">
           <h3>Get instant access</h3>
-          <p>Click the button and grab the VA Training Academy for $297. You're in immediately — no waiting, no confirmation loop, no wondering if it worked.</p>
+          <p>Click the button and grab the VA Training Academy for $197. You're in immediately — no waiting, no confirmation loop, no wondering if it worked.</p>
         </div>
         <div class="step reveal">
           <h3>Start Module 1 — then let Jamie know you're in</h3>
@@ -581,8 +616,8 @@
         </div>
       </div>
       <div class="steps-cta reveal">
-        <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">I'm Ready — Get Instant Access 👇🏽</a>
-        <p class="btn-note" style="margin-top:12px">$297 · Instant access · Start learning today</p>
+        <a class="btn" href="https://bosswithjamie.com/shop/70e2ad71-8cb1-41c7-9776-2c928d19a17f">I'm Ready — Get Instant Access <span class="arr" aria-hidden="true">&rarr;</span></a>
+        <p class="btn-note" style="margin-top:14px">$197 · Instant access · Start learning today</p>
       </div>
     </div>
   </section>
@@ -594,7 +629,7 @@
         <p><b>Listen, friend —</b></p>
         <p>I know what it feels like to be curious about this space but have no idea how to actually walk in. The overwhelm. The information overload. The wondering if this is even for someone like you.</p>
         <p>The VA Training Academy exists because someone should have built this sooner. You deserve a real pathway in — not a Google rabbit hole and not another vague pep talk. Actual skills that make you someone businesses want to hire.</p>
-        <p>See you on the inside, 💕</p>
+        <p>See you on the inside,</p>
         <div class="sig">Jamie</div>
       </div>
     </div>
@@ -605,7 +640,7 @@
 <!-- ===== FOOTER ===== -->
 <footer class="site">
   <div class="wrap">
-    © 2026 VA Training Academy<br>
+    <span class="ring" aria-hidden="true"></span> © 2026 VA Training Academy<br>
     Income Disclaimer: Results are not typical and are not guaranteed. Earnings shown reflect personal results after significant time, effort, and consistency. Your results depend on your skill, effort, consistency, and market conditions. This is education, not a job or an investment.
     <div class="built">Page built by The Digital Dad — systems, not hustle.</div>
   </div>
