@@ -275,7 +275,11 @@
   "use strict";
 
   /* ============ CONFIG ============ */
-  var WEBHOOK = "https://hook.us2.make.com/n7qbioa3ycjccadzqkocb0rfrjbckxwh";
+  /* Leads go DIRECTLY to Rhonni via FormSubmit — no third-party middleman owns this list.
+     Requires her one-time activation click (first submission triggers the email).
+     After activation: swap to her random alias endpoint to hide the address from page source. */
+  var ENDPOINT = "https://formsubmit.co/ajax/Rhonnie32@gmail.com";
+  var ENDPOINT_FALLBACK = "https://formsubmit.co/Rhonnie32@gmail.com";
   var LINKS = {
     swc:   "https://stan.store/affiliates/804fb9bf-68f8-42e3-ba39-84924660fa8d",
     mfz:   "https://stan.store/affiliates/c0c0e96e-3d63-470b-994b-cd4d6be71412",
@@ -492,14 +496,17 @@
     var oc = OUTCOMES[state.outcome] || OUTCOMES.remote;
     var answerStr = state.answers.map(function(a){ return a.k + ": " + a.v; }).join(" | ");
 
-    var payload = new URLSearchParams();
-    payload.append("firstName", name);
-    payload.append("email", email);
-    payload.append("path", oc.path);
-    payload.append("result", oc.title);
-    payload.append("answers", answerStr);
-    payload.append("source", "rhonni-quiz");
-    payload.append("ts", new Date().toISOString());
+    var lead = {
+      name: name,
+      email: email,
+      path: oc.path,
+      result: oc.title,
+      answers: answerStr,
+      source: "rhonni-quiz",
+      submitted: new Date().toISOString(),
+      _subject: "New quiz lead — " + name + " → " + oc.title,
+      _template: "table"
+    };
 
     /* honeypot: silently skip the capture for bots, still show a result */
     var isBot = $("company").value !== "";
@@ -508,11 +515,20 @@
 
     if(isBot){ finish(); return; }
 
-    fetch(WEBHOOK, { method:"POST", body:payload })
+    fetch(ENDPOINT, {
+      method:"POST",
+      headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body: JSON.stringify(lead)
+    })
       .then(finish)
       .catch(function(){
-        /* CORS/network fallback — fire-and-forget, never strand the user */
-        try { fetch(WEBHOOK, { method:"POST", mode:"no-cors", body:payload }); } catch(err){}
+        /* network/CORS fallback: form-encoded POST to the standard endpoint still
+           registers server-side even though the redirect response is ignored */
+        try {
+          var fd = new URLSearchParams();
+          Object.keys(lead).forEach(function(k){ fd.append(k, lead[k]); });
+          fetch(ENDPOINT_FALLBACK, { method:"POST", mode:"no-cors", body:fd });
+        } catch(err){}
         setTimeout(finish, 400);
       });
   });
