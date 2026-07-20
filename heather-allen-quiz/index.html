@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What's Your Next Chapter? — Travel & Goodness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Karla:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF6; --paper-2:#F3F7F6; --tint:#DBF3F1; --turq:#1CCFC9;
+    --teal:#008C95; --teal-deep:#066B72; --gold:#F4B400; --gold-deep:#C98A0A;
+    --ink:#2C3030; --ink-soft:#5A6463; --white:#FFFFFF; --line:#E7E2D8;
+    --shadow-soft:0 2px 6px rgba(44,48,48,.05),0 16px 38px rgba(0,140,149,.10);
+    --shadow-lift:0 6px 14px rgba(44,48,48,.08),0 28px 60px rgba(0,140,149,.16);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Karla',system-ui,sans-serif;color:var(--ink);line-height:1.65;min-height:100vh;
+    background:
+      radial-gradient(1100px 620px at 88% -8%, rgba(28,207,201,.20), transparent 60%),
+      radial-gradient(820px 520px at -12% 26%, rgba(244,180,0,.10), transparent 55%),
+      radial-gradient(900px 700px at 50% 118%, rgba(0,140,149,.12), transparent 60%),
+      var(--paper);
+    display:flex;flex-direction:column;align-items:center;padding:26px 18px 70px}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:560;letter-spacing:-0.018em;line-height:1.1}
+  .script{font-family:'Caveat',cursive;color:var(--teal);font-weight:700}
+
+  .brand{display:flex;align-items:center;gap:10px;margin-bottom:26px;text-decoration:none}
+  .brand img{height:40px;width:auto;display:block}
+  .brand b{font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;color:var(--ink)}
+
+  .card{width:100%;max-width:600px;background:rgba(255,255,255,.72);backdrop-filter:blur(6px);
+    border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow-lift);
+    padding:38px 34px 34px;position:relative}
+
+  /* progress */
+  .prog{display:flex;gap:6px;margin-bottom:24px}
+  .prog i{height:5px;flex:1;border-radius:5px;background:var(--tint)}
+  .prog i.on{background:linear-gradient(90deg,var(--turq),var(--teal))}
+
+  .eyebrow{display:inline-block;font-weight:800;letter-spacing:.2em;text-transform:uppercase;
+    font-size:.68rem;color:var(--gold-deep);margin-bottom:12px}
+
+  /* screens */
+  .screen{display:none;animation:fade .4s ease}
+  .screen.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* intro */
+  #intro h1{font-size:clamp(2rem,7vw,2.7rem);margin-bottom:14px}
+  #intro h1 .script{display:block;font-size:.62em;margin-bottom:2px}
+  #intro p{color:var(--ink-soft);font-size:1.04rem;margin-bottom:8px}
+  .meta{font-size:.86rem;color:var(--ink-soft);margin:18px 0 26px}
+
+  /* questions */
+  .q-title{font-size:1.5rem;margin-bottom:20px}
+  .opt{display:block;width:100%;text-align:left;background:var(--white);border:1.5px solid var(--line);
+    border-radius:14px;padding:15px 18px;margin-bottom:12px;font-size:1rem;color:var(--ink);
+    font-family:'Karla',sans-serif;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .05s}
+  .opt:hover{border-color:var(--turq);box-shadow:var(--shadow-soft)}
+  .opt:active{transform:scale(.995)}
+
+  /* buttons */
+  .btn{display:inline-block;font-family:'Karla',sans-serif;font-weight:800;letter-spacing:.03em;
+    font-size:.92rem;text-transform:uppercase;color:var(--white)!important;text-decoration:none;
+    background:linear-gradient(150deg,var(--turq),var(--teal));padding:15px 30px;border:none;
+    border-radius:13px;box-shadow:var(--shadow-soft);cursor:pointer;transition:transform .06s,box-shadow .15s}
+  .btn:hover{box-shadow:var(--shadow-lift)}
+  .btn:active{transform:translateY(1px)}
+  .btn-block{width:100%}
+
+  /* email gate */
+  #gate h2{font-size:1.7rem;margin-bottom:8px}
+  #gate p{color:var(--ink-soft);margin-bottom:20px}
+  .field{width:100%;padding:15px 16px;border:1.5px solid var(--line);border-radius:13px;
+    font-size:1rem;font-family:'Karla',sans-serif;color:var(--ink);margin-bottom:14px;background:var(--white)}
+  .field:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,140,149,.12)}
+  .fine{font-size:.78rem;color:var(--ink-soft);margin-top:14px;text-align:center}
+  /* Beacons embed form -> matched to the quiz gate */
+  #bcns-quiz .beacons-embed-image{display:none!important}
+  #bcns-quiz .beacons-embed-text,#bcns-quiz .beacons-embed-description{display:none!important}
+  #bcns-quiz > div,#bcns-quiz > div > div{padding:0!important;margin:0 auto!important;flex-direction:column!important;max-width:100%!important}
+  #bcns-quiz .beacons-embed-input{width:100%!important;padding:15px 16px!important;border:1.5px solid var(--line)!important;border-radius:13px!important;font-size:1rem!important;font-family:'Karla',sans-serif!important;color:var(--ink)!important;margin-bottom:14px!important;background:var(--white)!important;box-sizing:border-box}
+  #bcns-quiz .beacons-embed-input:focus{outline:none!important;border-color:var(--teal)!important;box-shadow:0 0 0 3px rgba(0,140,149,.12)!important}
+  #bcns-quiz button{width:100%!important;font-family:'Karla',sans-serif!important;font-weight:800!important;letter-spacing:.03em!important;font-size:.92rem!important;text-transform:uppercase!important;color:var(--white)!important;background:linear-gradient(150deg,var(--turq),var(--teal))!important;padding:15px 30px!important;border:none!important;border-radius:13px!important;cursor:pointer;position:static!important;margin-top:0!important;box-shadow:var(--shadow-soft)}
+
+  /* result */
+  #result .badge{display:inline-block;font-family:'Caveat',cursive;font-weight:700;color:var(--teal);
+    font-size:1.4rem;margin-bottom:2px}
+  #result h2{font-size:clamp(1.8rem,6vw,2.4rem);margin-bottom:14px}
+  #result .rdesc{color:var(--ink-soft);font-size:1.05rem;margin-bottom:24px}
+  #result .rcta{margin-bottom:16px}
+  #result .ps{font-size:.9rem;color:var(--teal-deep);background:var(--tint);border-radius:12px;
+    padding:13px 16px;margin-top:8px}
+  .retake{display:inline-block;margin-top:20px;font-size:.85rem;color:var(--ink-soft);
+    text-decoration:underline;cursor:pointer;background:none;border:none;font-family:'Karla',sans-serif}
+
+  @media(max-width:560px){.card{padding:30px 22px 26px}.q-title{font-size:1.3rem}}
+</style>
+</head>
+<body>
+
+<a class="brand" href="https://www.travelandgoodness.com/">
+  <img src="https://charleshayesdigitally-oss.github.io/tdd-content-assets/travel-and-goodness/logo.png" alt="Travel & Goodness">
+  <b>Travel &amp; Goodness</b>
+</a>
+
+<div class="card">
+  <div class="prog" id="prog" style="display:none">
+    <i></i><i></i><i></i><i></i>
+  </div>
+
+  <!-- INTRO -->
+  <section class="screen active" id="intro">
+    <span class="eyebrow">A 60-second quiz</span>
+    <h1><span class="script">What's your</span>Next Chapter?</h1>
+    <p>You're in your 50s or beyond and something in you is ready for more — more income, more freedom, more <em>you</em>. But there are a hundred directions, and the noise is exhausting.</p>
+    <p>Answer four honest questions and I'll point you to the path that actually fits your life — no hype, no hustle.</p>
+    <div class="meta">4 quick questions · takes about a minute</div>
+    <button class="btn btn-block" onclick="start()">Start the quiz</button>
+  </section>
+
+  <!-- QUESTIONS render here -->
+  <section class="screen" id="question">
+    <h2 class="q-title" id="q-title"></h2>
+    <div id="q-opts"></div>
+  </section>
+
+  <!-- EMAIL GATE -->
+  <section class="screen" id="gate">
+    <span class="eyebrow">Last step</span>
+    <h2>Where should I send your result?</h2>
+    <p>Pop in your email and I'll show your next-chapter path — plus a few starter steps to go with it.</p>
+    <!-- Newsletter capture -> Beacons email-only embed form (fc13e084-c781-4f25-8d82-4271a081776a). Subscribers land in Beacons; the "Any Email List" welcome sequence auto-fires. Styled to match via #bcns-quiz below; result reveals on successful submit. -->
+    <div id="bcns-quiz"><div id="fc13e084-c781-4f25-8d82-4271a081776a"></div></div>
+    <p class="fine">No spam, ever. Just what's actually working — and you can leave any time.</p>
+  </section>
+
+  <!-- RESULT -->
+  <section class="screen" id="result">
+    <span class="badge" id="r-badge"></span>
+    <h2 id="r-title"></h2>
+    <p class="rdesc" id="r-desc"></p>
+    <div class="rcta"><a class="btn btn-block" id="r-cta" href="#">See it</a></div>
+    <div class="ps" id="r-ps"></div>
+    <button class="retake" onclick="location.reload()">Retake the quiz</button>
+  </section>
+</div>
+
+<script>
+  var QUESTIONS = [
+    { q: "What's pulling you toward your next chapter?",
+      a: [
+        ["A real skill I can build a profession around", "mp"],
+        ["Flexible income that fits around my life", "ib"],
+        ["More freedom, travel, and time for me", "ts"]
+      ]},
+    { q: "Which sounds the most like you?",
+      a: [
+        ["I love organizing details and making things run smoothly", "mp"],
+        ["I'd rather learn a few simple tools and start small", "ib"],
+        ["I come alive planning trips and experiences", "ts"]
+      ]},
+    { q: "When you picture “success,” it looks like…",
+      a: [
+        ["A profession I'm proud of, with real earning potential", "mp"],
+        ["Income coming in while I live my life", "ib"],
+        ["Freedom to go, do, and rest on my own terms", "ts"]
+      ]},
+    { q: "How do you want to start?",
+      a: [
+        ["Learn a real skill, step by step", "mp"],
+        ["Something beginner-friendly I can start this week", "ib"],
+        ["Dream up the lifestyle first, the details later", "ts"]
+      ]}
+  ];
+
+  var RESULTS = {
+    mp: {
+      badge: "Your next chapter is…",
+      title: "The Meeting Planner",
+      desc: "You've got the instincts this career runs on — organized, detail-loving, and ready to build something real. Corporate meeting planning is a genuine profession with real earning potential, and it's exactly where my own 20 years came from. My beginner guide walks you in step by step — no degree or experience required.",
+      cta: "See the Meeting Planner Guide",
+      url: "https://www.travelandgoodness.com/guides"
+    },
+    ib: {
+      badge: "Your next chapter is…",
+      title: "The Flexible Income Builder",
+      desc: "You don't want another job — you want income that fits around your life. Beginner-friendly digital tools and affiliate income are the gentlest way in, and you can start small this week. I've pulled together the honest resources I actually use, so you're not guessing your way through it.",
+      cta: "Explore the Resources",
+      url: "https://www.travelandgoodness.com/resources"
+    },
+    ts: {
+      badge: "Your next chapter is…",
+      title: "The Freedom & Travel Seeker",
+      desc: "Your next chapter is about time, freedom, and experiences — not hustle. That's the whole heart of Travel & Goodness. You're on the list now, so the travel finds, the encouragement, and my cruise guide will come to you the moment they're ready.",
+      cta: "Browse Travel & Goodness",
+      url: "https://www.travelandgoodness.com/shop"
+    }
+  };
+
+  var idx = 0, scores = {mp:0, ib:0, ts:0}, firstPick = null;
+
+  function start(){ idx = 0; scores = {mp:0,ib:0,ts:0}; firstPick = null;
+    document.getElementById('prog').style.display = 'flex'; show('question'); render(); }
+
+  function render(){
+    var Q = QUESTIONS[idx];
+    document.getElementById('q-title').textContent = (idx+1) + ". " + Q.q;
+    var box = document.getElementById('q-opts'); box.innerHTML = '';
+    Q.a.forEach(function(pair){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.textContent = pair[0];
+      b.onclick = function(){ pick(pair[1]); };
+      box.appendChild(b);
+    });
+    var bars = document.querySelectorAll('.prog i');
+    bars.forEach(function(bar,i){ bar.className = i <= idx ? 'on' : ''; });
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function pick(tag){
+    scores[tag]++; if(idx === 0) firstPick = tag;
+    idx++;
+    if(idx < QUESTIONS.length){ render(); }
+    else { document.getElementById('prog').style.display='none'; show('gate'); }
+  }
+
+  function winner(){
+    var top = Math.max(scores.mp, scores.ib, scores.ts);
+    var tied = ['mp','ib','ts'].filter(function(k){ return scores[k] === top; });
+    if(tied.length === 1) return tied[0];
+    return (tied.indexOf(firstPick) > -1) ? firstPick : tied[0]; // tie-break: their first pull
+  }
+
+  // Newsletter capture -> Beacons email-only embed form (fc13e084-c781-4f25-8d82-4271a081776a). Reveal the result on a successful subscribe.
+  function revealResult(){
+    if(revealResult._done) return; revealResult._done = true;
+    var r = RESULTS[winner()];
+    document.getElementById('r-badge').textContent = r.badge;
+    document.getElementById('r-title').textContent = r.title;
+    document.getElementById('r-desc').textContent = r.desc;
+    var cta = document.getElementById('r-cta'); cta.textContent = r.cta; cta.href = r.url;
+    document.getElementById('r-ps').textContent = "You're on the newsletter now - I'll send your starter steps your way. Check your inbox (and your spam folder, just in case).";
+    show('result'); window.scrollTo({top:0,behavior:'smooth'});
+  }
+  // (a) fetch hook: reveal when the Beacons subscribe POST succeeds
+  (function(){ var of = window.fetch; if(!of) return; window.fetch = function(){ var args=arguments; var p=of.apply(this,args);
+    try{ var u=args[0]; u=(u&&u.url)||u||''; if(String(u).indexOf('embed_actions')>-1){ p.then(function(res){ if(res&&res.ok) revealResult(); }).catch(function(){}); } }catch(e){}
+    return p; }; })();
+  // (b) backup: when the Beacons form inputs vanish (submitted), reveal
+  (function(){ var box=document.getElementById('bcns-quiz'); if(!box) return; var seen=false;
+    var mo=new MutationObserver(function(){ var inputs=box.querySelectorAll('.beacons-embed-input, input');
+      if(inputs.length>0){ seen=true; } else if(seen){ revealResult(); } });
+    mo.observe(box,{childList:true,subtree:true}); })();
+  // (c) load the Beacons form + relabel its submit button
+  (function(){ var s=document.createElement('script'); var t=Math.floor(Date.now()/120000); s.type='module'; s.async=1;
+    s.src='https://beacons.ai/embeds/emailForm.js?v='+t+'&b=heatherallen&f=fc13e084-c781-4f25-8d82-4271a081776a'; document.head.appendChild(s);
+    var tries=0,iv=setInterval(function(){tries++;var b=document.querySelector('#bcns-quiz button');if(b){b.textContent='Show my result →';clearInterval(iv);}if(tries>80)clearInterval(iv);},250); })();
+
+  function show(id){
+    document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+</body>
+</html>
