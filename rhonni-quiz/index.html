@@ -1,559 +1,490 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Which Online Income Path Is Right for You? — Dr. Rhonni Easton</title>
-<meta name="description" content="60 seconds. A handful of honest questions. Find the online income path that actually fits your life — from Dr. Rhonni Easton, DNP.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#14100D;
-    --surface:#1E1813;
-    --surface-2:#241C15;
-    --ink:#F5EFE6;
-    --muted:#B3A490;
-    --gold:#C9A96A;
-    --gold-soft:rgba(201,169,106,.25);
-    --gold-faint:rgba(201,169,106,.12);
-    --line:rgba(201,169,106,.18);
-    --radius:14px;
-    --ease:cubic-bezier(.22,1,.36,1);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Jost',sans-serif;
-    font-size:17px;
-    line-height:1.7;
-    min-height:100vh;
-    position:relative;
-    overflow-x:hidden;
-  }
-  body::before{
-    content:"";
-    position:fixed;inset:0;z-index:0;pointer-events:none;
-    background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,169,106,.10), transparent 60%),
-      radial-gradient(ellipse 60% 40% at 85% 110%, rgba(120,84,40,.10), transparent 60%);
-  }
-  body::after{
-    content:"";
-    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.035;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  .wrap{
-    position:relative;z-index:1;
-    max-width:660px;margin:0 auto;
-    padding:32px 20px 48px;
-    min-height:100vh;
-    display:flex;flex-direction:column;
-  }
-  /* ---------- masthead ---------- */
-  .masthead{
-    display:flex;align-items:center;gap:16px;
-    justify-content:center;
-    margin-bottom:40px;
-  }
-  .masthead .rule{height:1px;flex:1;max-width:90px;background:linear-gradient(90deg,transparent,var(--gold-soft))}
-  .masthead .rule:last-child{background:linear-gradient(90deg,var(--gold-soft),transparent)}
-  .masthead .lockup{
-    font-family:'Playfair Display',serif;
-    font-size:.95rem;letter-spacing:.22em;font-weight:600;
-    color:var(--gold);white-space:nowrap;
-  }
-  .masthead .lockup span{display:block;text-align:center;font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.34em;color:var(--muted);font-weight:500;margin-top:2px}
-  /* ---------- progress ---------- */
-  .progress{
-    height:3px;border-radius:2px;background:rgba(245,239,230,.08);
-    overflow:hidden;margin-bottom:34px;
-    opacity:0;transition:opacity .3s var(--ease);
-  }
-  .progress.show{opacity:1}
-  .progress i{
-    display:block;height:100%;width:0%;
-    background:linear-gradient(90deg,#a5854b,var(--gold));
-    border-radius:2px;
-    transition:width .45s var(--ease);
-  }
-  .stepline{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;font-weight:500;min-height:1em}
-  /* ---------- screens ---------- */
-  .screen{display:none}
-  .screen.on{display:block;animation:rise .34s var(--ease) both}
-  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  .eyebrow{
-    font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;
-    color:var(--gold);font-weight:600;margin-bottom:18px;
-  }
-  h1{
-    font-family:'Playfair Display',serif;
-    font-weight:600;font-size:clamp(2.1rem,6.4vw,3.4rem);
-    line-height:1.12;letter-spacing:-0.015em;
-    margin-bottom:22px;
-  }
-  h1 em{font-style:italic;color:var(--gold)}
-  h2{
-    font-family:'Playfair Display',serif;
-    font-weight:600;font-size:clamp(1.5rem,4.6vw,2.1rem);
-    line-height:1.2;letter-spacing:-0.01em;
-    margin-bottom:14px;
-  }
-  .sub{color:var(--muted);max-width:46ch;margin-bottom:30px}
-  .fineline{font-size:.85rem;color:var(--muted);margin-top:22px}
-  /* ---------- buttons & options ---------- */
-  .btn{
-    display:inline-block;
-    font-family:'Jost',sans-serif;font-weight:600;font-size:1rem;
-    letter-spacing:.06em;text-transform:uppercase;
-    color:#191307;background:linear-gradient(135deg,#d9bc82,var(--gold) 55%,#b8945a);
-    border:none;border-radius:999px;cursor:pointer;
-    padding:16px 38px;min-height:52px;
-    text-decoration:none;text-align:center;
-    box-shadow:0 6px 24px rgba(201,169,106,.22),0 2px 6px rgba(0,0,0,.4);
-    transition:transform .2s var(--ease),box-shadow .2s var(--ease);
-  }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,169,106,.32),0 3px 8px rgba(0,0,0,.4)}
-  .btn:active{transform:translateY(0)}
-  .btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-  .options{display:flex;flex-direction:column;gap:12px;margin-top:6px}
-  .opt{
-    font-family:'Jost',sans-serif;font-size:1.02rem;line-height:1.5;
-    text-align:left;color:var(--ink);
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:var(--radius);
-    padding:16px 20px;min-height:52px;
-    cursor:pointer;
-    transition:transform .18s var(--ease),border-color .18s var(--ease),box-shadow .18s var(--ease),background .18s var(--ease);
-    animation:rise .34s var(--ease) both;
-  }
-  .opt:nth-child(2){animation-delay:.05s}
-  .opt:nth-child(3){animation-delay:.1s}
-  .opt:nth-child(4){animation-delay:.15s}
-  .opt:nth-child(5){animation-delay:.2s}
-  .opt:hover{
-    transform:translateY(-2px);
-    border-color:var(--gold);
-    background:var(--surface-2);
-    box-shadow:0 10px 30px rgba(0,0,0,.35),0 4px 18px var(--gold-faint);
-  }
-  .opt:active{transform:translateY(0)}
-  .opt:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-  .backrow{margin-top:26px}
-  .backlink{
-    background:none;border:none;cursor:pointer;
-    font-family:'Jost',sans-serif;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--muted);padding:10px 2px;
-    transition:color .18s var(--ease);
-  }
-  .backlink:hover{color:var(--gold)}
-  .backlink:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-  /* ---------- email gate ---------- */
-  .field{margin-bottom:18px}
-  label{display:block;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:8px}
-  input[type=text],input[type=email]{
-    width:100%;
-    font-family:'Jost',sans-serif;font-size:1.05rem;color:var(--ink);
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:15px 18px;min-height:52px;
-    transition:border-color .18s var(--ease),box-shadow .18s var(--ease);
-  }
-  input::placeholder{color:rgba(179,164,144,.55)}
-  input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-faint)}
-  .hp{position:absolute;left:-5000px;opacity:0;pointer-events:none}
-  .err{color:#e8a08a;font-size:.9rem;margin-top:-8px;margin-bottom:14px;display:none}
-  .err.show{display:block}
-  /* ---------- result ---------- */
-  .result-card{
-    background:linear-gradient(180deg,var(--surface-2),var(--surface));
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:38px 30px;
-    box-shadow:0 24px 60px rgba(0,0,0,.45),0 6px 24px var(--gold-faint);
-  }
-  .result-card .eyebrow{margin-bottom:10px}
-  .result-copy{color:var(--ink);margin:18px 0 8px}
-  .result-copy p{margin-bottom:14px}
-  .result-copy .ps{color:var(--muted);font-size:.95rem}
-  .cta-row{margin-top:26px}
-  .retake{margin-top:30px;text-align:center}
-  /* ---------- footer ---------- */
-  footer{
-    margin-top:auto;padding-top:56px;
-    text-align:center;font-size:.78rem;letter-spacing:.08em;color:var(--muted);
-  }
-  footer a{color:var(--gold);text-decoration:none}
-  footer a:hover{color:var(--gold)}
-  @media (prefers-reduced-motion: reduce){
-    *,*::before,*::after{animation:none!important;transition:none!important}
-  }
-  @media (min-width:640px){
-    .wrap{padding-top:48px}
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f9f5f2" />
+  <link rel="icon" href="data:," />
+  <title>Exit Path Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper:#f9f5f2;
+      --surface:#ffffff;
+      --surface-2:#f1e9e5;
+      --ink:#1f191b;
+      --muted:#655c60;
+      --line:#d9cfcb;
+      --accent:#b52655;
+      --accent-strong:#8f173f;
+      --accent-soft:#f7dbe4;
+      --sage:#55756b;
+      --sage-soft:#dfe9e5;
+      --shadow:0 22px 58px rgba(57,34,42,.10);
+      --focus:#146c92;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper:#181416;
+        --surface:#231d20;
+        --surface-2:#2d2528;
+        --ink:#fff8f6;
+        --muted:#c9bdc1;
+        --line:#493d42;
+        --accent:#f06f99;
+        --accent-strong:#ff9abb;
+        --accent-soft:#4d2634;
+        --sage:#9bc7b9;
+        --sage-soft:#243b34;
+        --shadow:0 24px 64px rgba(0,0,0,.28);
+        --focus:#77ccef;
+      }
+    }
+    *{box-sizing:border-box}
+    html{min-height:100%;background:var(--paper)}
+    body{margin:0;min-height:100vh;background:var(--paper);color:var(--ink);font-family:"Libre Franklin",sans-serif;-webkit-font-smoothing:antialiased}
+    button{font:inherit}
+    button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+    .page{width:min(1080px,100%);margin:0 auto;padding:clamp(22px,5vw,60px) clamp(18px,5vw,54px) 48px}
+    .screen{display:none}
+    .screen.active{display:block}
+    .intro{min-height:calc(100vh - 110px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:clamp(36px,7vw,86px);align-items:center}
+    .overline{margin:0 0 18px;color:var(--accent);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+    h1,h2,h3{font-family:"Source Serif 4",serif;margin:0;line-height:1.02}
+    h1{font-size:clamp(2.85rem,7vw,6rem);letter-spacing:-.045em;max-width:760px}
+    .lead{font-size:clamp(1.06rem,2vw,1.28rem);line-height:1.65;color:var(--muted);max-width:630px;margin:26px 0 30px}
+    .primary,.secondary,.text-button{border:0;cursor:pointer}
+    .primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:14px 22px;background:var(--accent);color:#fff;border-radius:9px;font-weight:700;box-shadow:0 8px 22px rgba(181,38,85,.18)}
+    .primary:hover{background:var(--accent-strong)}
+    .primary svg{width:18px;height:18px}
+    .primary:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+    .meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:20px;color:var(--muted);font-size:.84rem}
+    .meta span{display:flex;align-items:center;gap:7px}
+    .meta svg{width:16px;height:16px;color:var(--sage)}
+    .route-board{position:relative;min-height:430px;border-left:1px solid var(--line);padding:20px 0 20px clamp(28px,5vw,60px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+    .route{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:center;padding:13px 0}
+    .route-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);color:var(--accent)}
+    .route:nth-child(2) .route-mark,.route:nth-child(5) .route-mark{background:var(--sage-soft);color:var(--sage);border-color:transparent}
+    .route svg{width:19px;height:19px}
+    .route strong{display:block;font-size:.93rem;margin-bottom:3px}
+    .route small{color:var(--muted);font-size:.77rem;line-height:1.4}
+    .quiz-shell{width:min(790px,100%);margin:0 auto}
+    .quiz-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .progress-wrap{flex:1}
+    .progress-copy{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.78rem;font-weight:600;margin-bottom:9px}
+    .progress{height:5px;background:var(--surface-2);overflow:hidden;border-radius:999px}
+    .progress-fill{height:100%;width:12.5%;background:var(--accent);border-radius:999px;transition:width .25s ease}
+    .close-quiz{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--muted);display:grid;place-items:center;cursor:pointer}
+    .question-card{background:var(--surface);box-shadow:var(--shadow);border-radius:18px;padding:clamp(26px,6vw,52px)}
+    .question-num{color:var(--accent);font-size:.79rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:15px}
+    .question-card h2{font-size:clamp(2rem,5vw,3.35rem);letter-spacing:-.035em;max-width:680px}
+    .question-help{color:var(--muted);margin:14px 0 25px;line-height:1.55}
+    .options{display:grid;gap:10px}
+    .option{width:100%;text-align:left;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:16px 18px;border-radius:10px;display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:start;cursor:pointer;line-height:1.42;transition:border-color .16s ease,background .16s ease}
+    .option:hover{border-color:var(--accent)}
+    .option.selected{border-color:var(--accent);background:var(--accent-soft)}
+    .radio{width:21px;height:21px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;margin-top:1px}
+    .option.selected .radio{border-color:var(--accent)}
+    .option.selected .radio:after{content:"";width:11px;height:11px;border-radius:50%;background:var(--accent)}
+    .quiz-actions{display:flex;align-items:center;justify-content:space-between;margin-top:24px;gap:16px}
+    .text-button{background:transparent;color:var(--muted);padding:12px 2px;font-weight:600}
+    .text-button:hover{color:var(--ink)}
+    .result-shell{width:min(980px,100%);margin:0 auto}
+    .result-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(250px,.7fr);gap:34px;background:var(--surface);border-radius:18px;box-shadow:var(--shadow);padding:clamp(28px,6vw,60px);position:relative;overflow:hidden}
+    .result-hero:after{content:"";position:absolute;right:-60px;top:-90px;width:220px;height:220px;border:52px solid var(--accent-soft);border-radius:50%;pointer-events:none}
+    .result-kicker{color:var(--accent);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.11em;margin:0 0 15px}
+    .result-hero h2{font-size:clamp(2.65rem,7vw,5.3rem);letter-spacing:-.045em;max-width:700px}
+    .result-summary{font-size:1.1rem;color:var(--muted);line-height:1.65;margin:22px 0 0;max-width:660px}
+    .fit-meter{align-self:end;position:relative;z-index:1;padding:20px 0 2px}
+    .fit-label{font-size:.76rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+    .fit-track{height:9px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+    .fit-track span{display:block;height:100%;width:0;background:var(--sage);border-radius:99px;transition:width .7s ease .1s}
+    .fit-copy{margin-top:9px;color:var(--muted);font-size:.8rem}
+    .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+    .panel{background:var(--surface);border-radius:12px;padding:clamp(22px,4vw,34px)}
+    .panel.wide{grid-column:1/-1}
+    .panel h3{font-size:1.5rem;letter-spacing:-.02em;margin-bottom:16px}
+    .plain-list{list-style:none;padding:0;margin:0;display:grid;gap:13px}
+    .plain-list li{display:grid;grid-template-columns:22px 1fr;gap:10px;line-height:1.48;color:var(--muted)}
+    .plain-list svg{width:18px;height:18px;color:var(--accent);margin-top:2px}
+    .role-chips{display:flex;flex-wrap:wrap;gap:9px}
+    .role-chips span{padding:9px 12px;background:var(--surface-2);border-radius:7px;font-size:.86rem;font-weight:600}
+    .step-list{counter-reset:steps;list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step-list li{counter-increment:steps;border-top:2px solid var(--line);padding-top:15px;color:var(--muted);line-height:1.5;font-size:.92rem}
+    .step-list li:before{content:"0" counter(steps);display:block;color:var(--accent);font-weight:700;font-size:.77rem;letter-spacing:.08em;margin-bottom:9px}
+    .recommendation{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;background:var(--sage-soft)}
+    .recommendation p,.second-lane p{color:var(--muted);line-height:1.56;margin:8px 0 0;max-width:650px}
+    .result-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .secondary{min-height:50px;padding:13px 18px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:9px;font-weight:700}
+    .secondary:hover{border-color:var(--accent)}
+    .link-button{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;text-align:center}
+    .cta-stack{display:grid;gap:9px;width:min(340px,100%)}
+    .school-name{font-family:"Source Serif 4",serif;font-weight:700;font-size:1.7rem;line-height:1.15;color:var(--accent);margin:0 0 18px}
+    .second-lane{background:var(--surface-2)}
+    .second-lane h3{font-size:2rem}
+    .second-lane .link-button{margin-top:20px}
+    .footer-actions{justify-content:flex-end}
+    .all-lanes>p,.choose-panel>p{color:var(--muted);line-height:1.55;margin:0 0 20px}
+    .lane-links,.lane-chooser{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .choose-lane{display:flex;flex-direction:column;gap:5px;padding:16px;text-align:left;border:1px solid var(--line);border-radius:9px;color:var(--ink);background:var(--paper);cursor:pointer}
+    .choose-lane span{color:var(--muted);font-size:.77rem;line-height:1.4}
+    .choose-lane:hover,.choose-lane.active-choice{border-color:var(--accent);background:var(--accent-soft)}
+    .lane-links a{display:flex;flex-direction:column;gap:5px;padding:16px;border:1px solid var(--line);border-radius:9px;color:var(--ink);text-decoration:none;background:var(--paper)}
+    .lane-links a:hover{border-color:var(--accent)}
+    .lane-links span{color:var(--muted);font-size:.78rem;line-height:1.4}
+    .gate-card{max-width:680px;margin:8vh auto 0}
+    .gate-fields{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:14px}
+    .field-group{min-width:0}
+    .email-label{display:block;font-size:.82rem;font-weight:700;margin-bottom:8px}
+    .email-input{width:100%;min-height:56px;padding:14px 15px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);font:inherit}
+    .email-input:focus{outline:3px solid color-mix(in srgb,var(--focus) 35%,transparent);border-color:var(--focus)}
+    .field-error{min-height:22px;margin:7px 0 0;color:var(--accent);font-size:.8rem;font-weight:600}
+    .copy-note{min-height:22px;margin:10px 0 0;color:var(--sage);font-size:.82rem;font-weight:600}
+    .disclaimer{color:var(--muted);font-size:.76rem;line-height:1.5;margin:18px 3px 0}
+    @media (max-width:760px){
+      .page{padding-top:22px}
+      .intro{grid-template-columns:1fr;align-content:start;min-height:auto;padding-top:20px}
+      .route-board{min-height:0;border-left:0;border-top:1px solid var(--line);padding:25px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}
+      .route{grid-template-columns:34px 1fr;gap:10px}.route-mark{width:34px;height:34px}.route small{display:none}
+      .result-hero{grid-template-columns:1fr}.fit-meter{max-width:320px}.result-grid{grid-template-columns:1fr}.panel.wide{grid-column:auto}.step-list{grid-template-columns:1fr}.recommendation{grid-template-columns:1fr}.cta-stack{width:100%}.lane-links,.lane-chooser{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:430px){
+      .page{padding-inline:14px}.question-card{padding:23px 18px}.option{padding:14px}.route-board{grid-template-columns:1fr}.quiz-actions{align-items:stretch}.quiz-actions .primary{flex:1}.result-actions{display:grid}.result-actions button{width:100%}.lane-links,.lane-chooser{grid-template-columns:1fr}.gate-fields{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
 </head>
 <body>
-<div class="wrap">
-
-  <header class="masthead" aria-label="Dr. Rhonni Easton">
-    <div class="rule"></div>
-    <div class="lockup">DR. RHONNI EASTON<span>DNP &nbsp;·&nbsp; DIGITAL CEO</span></div>
-    <div class="rule"></div>
-  </header>
-
-  <div class="progress" id="progress" aria-hidden="true"><i id="progressbar"></i></div>
-
-  <main id="main">
-
-    <!-- INTRO -->
-    <section class="screen on" id="s-intro">
-      <p class="eyebrow">The 60-Second Quiz</p>
-      <h1>Which online income path is <em>right for you?</em></h1>
-      <p class="sub">A handful of honest questions. No hype, no pressure — just the path that actually fits your life, before you spend a dime.</p>
-      <button class="btn" id="startBtn" type="button">Find my path</button>
-      <p class="fineline">Made for healthcare professionals — and open to everyone.</p>
-    </section>
-
-    <!-- QUESTIONS (rendered by JS) -->
-    <section class="screen" id="s-quiz" aria-live="polite">
-      <p class="stepline" id="stepline"></p>
-      <h2 id="qtitle"></h2>
-      <div class="options" id="opts"></div>
-      <div class="backrow"><button class="backlink" id="backBtn" type="button">&larr; Back</button></div>
-    </section>
-
-    <!-- EMAIL GATE -->
-    <section class="screen" id="s-gate">
-      <p class="eyebrow">One last step</p>
-      <h2>Where should your results go?</h2>
-      <p class="sub">Your path shows instantly. Dr. Rhonni uses your email to send you the right resources for it — no spam, and you can step away anytime.</p>
-      <form id="gateForm" novalidate>
-        <div class="field">
-          <label for="firstName">First name</label>
-          <input type="text" id="firstName" name="firstName" autocomplete="given-name" placeholder="Your first name" required>
+  <main class="page">
+    <section class="screen active" id="intro" aria-labelledby="intro-title">
+      <div class="intro">
+        <div>
+          <p class="overline">Your next chapter, made clearer</p>
+          <h1 id="intro-title">What’s your best path beyond the bedside?</h1>
+          <p class="lead">Answer ten honest questions, plus one quick lane selector when Clinical Leap fits. You’ll uncover a starting path, the Academy School that fits it, and the next three moves to test—without throwing away the experience you’ve earned.</p>
+          <button class="primary" id="startBtn">Find my path
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+          </button>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 7v5l3 2m6-2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>About 2 minutes</span>
+            <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6"/></svg>A direction, not a personality label</span>
+          </div>
         </div>
-        <div class="field">
-          <label for="email">Best email</label>
-          <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
-        </div>
-        <p class="err" id="gateErr">Please add your first name and a valid email so your results have somewhere to go.</p>
-        <div class="hp" aria-hidden="true">
-          <label for="company">Company</label>
-          <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
-        </div>
-        <button class="btn" type="submit" id="gateBtn">Show me my path</button>
-      </form>
-      <p class="fineline">Your answers go to Dr. Rhonni only — so she can point you to what genuinely fits.</p>
-    </section>
-
-    <!-- RESULT -->
-    <section class="screen" id="s-result">
-      <div class="result-card">
-        <p class="eyebrow">Your path</p>
-        <h2 id="resultTitle"></h2>
-        <div class="result-copy" id="resultCopy"></div>
-        <div class="cta-row"><a class="btn" id="resultCta" href="#" target="_blank" rel="noopener">See it</a></div>
+        <aside class="route-board" aria-label="Possible career lanes">
+          <div class="route"><span class="route-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 8h16v11H4zM8 8V5h8v3M9 13h6"/></svg></span><div><strong>Pharma & life sciences</strong><small>Translate clinical judgment into influence.</small></div></div>
+          <div class="route"><span class="route-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M4 5h16v12H4zM8 21h8M12 17v4"/></svg></span><div><strong>Remote clinical work</strong><small>Keep the clinical thread, change the setting.</small></div></div>
+          <div class="route"><span class="route-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg></span><div><strong>Entrepreneurship</strong><small>VA, freelancing, and flexible business.</small></div></div>
+          <div class="route"><span class="route-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 6h18v12H3zM7 10h4M7 14h7M17 10h.01"/></svg></span><div><strong>Digital Income</strong><small>UGC, affiliate, and digital products.</small></div></div>
+        </aside>
       </div>
-      <p class="retake"><button class="backlink" id="retakeBtn" type="button">Retake the quiz</button></p>
     </section>
 
-  </main>
+    <section class="screen" id="quiz" aria-live="polite">
+      <div class="quiz-shell">
+        <div class="quiz-top">
+          <div class="progress-wrap">
+            <div class="progress-copy"><span id="progressText">Question 1 of 8</span><span id="progressPercent">13%</span></div>
+            <div class="progress" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+          </div>
+          <button class="close-quiz" id="closeQuiz" aria-label="Return to start">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+        <article class="question-card">
+          <p class="question-num" id="questionNum">First, the friction</p>
+          <h2 id="questionTitle"></h2>
+          <p class="question-help" id="questionHelp"></p>
+          <div class="options" id="options" role="radiogroup"></div>
+          <div class="quiz-actions">
+            <button class="text-button" id="backBtn">Back</button>
+            <button class="primary" id="nextBtn" disabled>Continue
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; <span id="yr"></span> Dr. Rhonni Easton &nbsp;·&nbsp; <a href="https://stan.store/DNPToDigitalCEO" target="_blank" rel="noopener">stan.store/DNPToDigitalCEO</a></p>
-  </footer>
-</div>
+    <section class="screen" id="routeChoice" aria-labelledby="route-title">
+      <div class="quiz-shell">
+        <article class="question-card gate-card">
+          <p class="question-num">One last routing question</p>
+          <h2 id="route-title">Which excites you more?</h2>
+          <p class="question-help">Both belong to the Clinical Leap path. Choose the School you’d most like to explore first.</p>
+          <div class="options">
+            <button class="option route-choice" type="button" data-lane="pharma"><span class="radio" aria-hidden="true"></span><span>Pharmaceutical careers</span></button>
+            <button class="option route-choice" type="button" data-lane="remote"><span class="radio" aria-hidden="true"></span><span>Remote healthcare roles</span></button>
+          </div>
+          <div class="quiz-actions"><button class="text-button" type="button" id="routeBack">Back</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen" id="gate" aria-labelledby="gate-title">
+      <div class="quiz-shell">
+        <article class="question-card gate-card">
+          <p class="question-num">Your map is ready</p>
+          <h2 id="gate-title">Let’s put a name to your next chapter.</h2>
+          <p class="question-help">Share your first name and best email to reveal your two strongest lanes.</p>
+          <form id="emailGate">
+<input type="text" id="company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <div class="gate-fields">
+              <div class="field-group">
+                <label class="email-label" for="firstNameInput">First name</label>
+                <input class="email-input" id="firstNameInput" name="firstName" type="text" autocomplete="given-name" required placeholder="Your first name">
+              </div>
+              <div class="field-group">
+                <label class="email-label" for="emailInput">Email address</label>
+                <input class="email-input" id="emailInput" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <p class="field-error" id="emailError" role="alert"></p>
+            <div class="quiz-actions">
+              <button class="text-button" type="button" id="gateBack">Back</button>
+              <button class="primary" type="submit">Reveal my paths</button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen" id="result" aria-live="polite">
+      <div class="result-shell">
+        <div class="result-hero">
+          <div>
+            <p class="result-kicker">Based on your responses, you may want to start here:</p>
+            <h2 id="resultTitle"></h2>
+            <p class="result-summary" id="resultSummary"></p>
+          </div>
+          <div class="fit-meter">
+            <div class="fit-label">Starting-point signal</div>
+            <div class="fit-track"><span id="fitBar"></span></div>
+            <div class="fit-copy" id="fitCopy"></div>
+          </div>
+        </div>
+        <div class="result-grid">
+          <section class="panel">
+            <h3>Why this fits</h3>
+            <ul class="plain-list" id="whyList"></ul>
+          </section>
+          <section class="panel">
+            <h3>Your recommended School</h3>
+            <p class="school-name" id="schoolName"></p>
+            <div class="role-chips" id="roleList"></div>
+          </section>
+          <section class="panel wide">
+            <h3>Your next three moves</h3>
+            <ol class="step-list" id="stepsList"></ol>
+          </section>
+          <section class="panel wide recommendation">
+            <div>
+              <h3>Choose your next level of support</h3>
+              <p>Start free, get a personal diagnosis, or join the live training that shows you how to move from bedside experience to a focused exit plan.</p>
+            </div>
+            <div class="cta-stack">
+              <a class="primary link-button" href="https://stan.store/HealthcareCareerAcademy" target="_blank" rel="noopener">Register for the masterclass</a>
+              <a class="secondary link-button" href="https://stan.store/HealthcareCareerAcademy" target="_blank" rel="noopener">Get the free Healthcare Career Evolution Guide</a>
+              <a class="secondary link-button" href="https://stan.store/HealthcareCareerAcademy" target="_blank" rel="noopener">Explore the $399 Clarity Session</a>
+            </div>
+          </section>
+          <section class="panel wide second-lane">
+            <p class="result-kicker">Your second lane to explore</p>
+            <h3 id="secondTitle"></h3>
+            <p id="secondCopy"></p>
+            <a class="secondary link-button" id="secondCta" target="_blank" rel="noopener"></a>
+          </section>
+          <section class="panel wide choose-panel">
+            <h3>Want to be more in control? Choose your own path:</h3>
+            <p>The quiz can suggest a starting point. You decide what deserves a closer look.</p>
+            <div class="lane-chooser" id="laneChooser"></div>
+          </section>
+          <section class="panel wide all-lanes">
+            <h3>Not feeling it? Every path is open to you.</h3>
+            <p>This is a starting recommendation based on today’s answers—not a verdict. Explore all four lanes and follow the one that makes you curious.</p>
+            <div class="lane-links">
+              <a href="https://stan.store/HealthcareCareerAcademy" target="_blank" rel="noopener"><strong>Pharmaceutical Careers</strong><span>Clinical credibility, industry impact</span></a>
+              <a href="https://stan.store/HealthcareCareerAcademy" target="_blank" rel="noopener"><strong>Remote Work</strong><span>Flexible healthcare roles</span></a>
+              <a href="https://stan.store/HealthcareCareerAcademy" target="_blank" rel="noopener"><strong>Entrepreneurship</strong><span>VA, freelancing, flexible business</span></a>
+              <a href="https://stan.store/DNPToDigitalCEO" target="_blank" rel="noopener"><strong>Digital Income</strong><span>UGC, affiliate, digital products</span></a>
+            </div>
+          </section>
+        </div>
+        <div class="result-actions footer-actions">
+          <button class="secondary" id="copyBtn">Copy my exit snapshot</button>
+          <button class="primary" id="retakeBtn">Retake quiz</button>
+        </div>
+        <p class="copy-note" id="copyNote" role="status"></p>
+        <p class="disclaimer">Use this result as a starting hypothesis. Job scope, requirements, and fit vary by employer; validate the lane through conversations, role research, and your own priorities before making a career decision.</p>
+      </div>
+    </section>
+  </main>
 
 <script>
 (function(){
-  "use strict";
-
-  /* ============ CONFIG ============ */
-  /* Leads go DIRECTLY to Rhonni via FormSubmit — no third-party middleman owns this list.
-     Requires her one-time activation click (first submission triggers the email).
-     After activation: swap to her random alias endpoint to hide the address from page source. */
-  var ENDPOINT = "https://formsubmit.co/ajax/Rhonnie32@gmail.com";
-  var ENDPOINT_FALLBACK = "https://formsubmit.co/Rhonnie32@gmail.com";
-  var LINKS = {
-    swc:   "https://stan.store/affiliates/804fb9bf-68f8-42e3-ba39-84924660fa8d",
-    mfz:   "https://stan.store/affiliates/c0c0e96e-3d63-470b-994b-cd4d6be71412",
-    boss:  "https://stan.store/affiliates/08cbaadf-98c5-4541-82c1-c229a549d7cc",
-    scm:   "https://drrhonni--madisonhatten.thrivecart.com/simple-content-method/",  /* her direct SCM affiliate link (from her Stan tile) */
-    ig:    "https://www.instagram.com/Rhonnieaston",  /* her real IG (verified from her live store's social icon) */
-    store: "https://stan.store/DNPToDigitalCEO"
+  var LANES = {
+    pharma:{path:"Clinical Leap",school:"Pharmaceutical Careers School",title:"Pharmaceutical Careers",summary:"Your clinical credibility is ready to travel into industry. You’re drawn to work where expertise, communication, and influence can shape care beyond one shift or one unit.",why:["You want to keep your healthcare credibility while expanding your influence.","Your answers favor strategy, education, relationships, and cross-functional work.","An adjacent-industry move gives you reinvention without starting from zero."],roles:["Clinical educator","Medical science liaison","Clinical research associate","Medical affairs specialist"],steps:["Choose one function—medical affairs, clinical education, research, or patient services—and compare 10 job descriptions.","Build a proof bank of presentations, clinical influence, stakeholder work, and outcomes.","Map five target companies and schedule three informational conversations to learn the language of the role."],secondary:"Your answers also show an appetite for influence, expertise, and career growth inside a new healthcare setting.",cta:"Explore Pharmaceutical Careers"},
+    remote:{path:"Clinical Leap",school:"Remote Work School",title:"Remote Work",summary:"You may not need to leave healthcare—you need to leave the pace, physical strain, and schedule of the bedside. Your judgment still belongs at the center; the setting needs to change.",why:["You want a lower-physical-demand environment without abandoning patient impact.","Your judgment, coordination, and communication can travel beyond a unit.","A familiar-adjacent move may give you the fastest credible pivot."],roles:["Remote case manager","Care coordinator","Utilization review nurse","Telehealth nurse"],steps:["Choose one target role and compare 10 job descriptions for repeated requirements—not just titles.","Rewrite three bedside stories as proof of judgment, coordination, and measurable outcomes.","Talk with two people already doing the work; test schedule, workload, and employer expectations."],secondary:"You still value healthcare impact, but your answers suggest the environment and schedule need to work differently.",cta:"Explore Remote Work"},
+    entrepreneur:{path:"Flex Builder",school:"Entrepreneurship School",title:"Entrepreneurship",summary:"Flexibility and ownership matter to you. Your strongest starting point is a service-based lane—VA work, freelancing, consulting, or another focused business you can test while protecting your financial runway.",why:["You want more say over when, where, and how you work.","You’re willing to create solutions instead of waiting for a perfect job description.","A flexible service can turn existing skills into proof and income before a bigger leap."],roles:["Healthcare virtual assistant","Freelance consultant","Résumé or career support","Independent educator"],steps:["Name one person, one painful problem, and one service you can credibly deliver.","Pilot the smallest paid version before building a large brand, course, or website.","Set a weekly outreach target and a financial runway threshold for your transition."],secondary:"Your answers reveal a meaningful pull toward flexibility, service, and ownership—even if you build it beside a job first.",cta:"Explore Entrepreneurship"},
+    digital:{path:"Digital CEO",school:"Digital Marketing School",title:"Digital Income",summary:"You’re drawn to scalable creative work: UGC, affiliate marketing, and digital products. Your next chapter may be built through audience, assets, and distribution rather than a traditional job ladder.",why:["You want to create, communicate, and build assets you own.","You’re open to learning marketing and testing offers in public.","Your answers favor scalable income models over trading only hours for dollars."],roles:["UGC creator","Affiliate marketer","Digital product creator","Healthcare content strategist"],steps:["Choose one primary model—UGC, affiliate, or digital products—for your first 30-day test.","Create one proof asset: a sample video, focused recommendation, or small paid resource.","Set a consistent content-and-outreach rhythm and measure conversations, not vanity metrics."],secondary:"Your answers also show creative energy and a desire to build assets, audience, and income that can scale.",cta:"Explore Digital Income"}
   };
-
-  /* ============ QUESTIONS ============ */
-  var FORK = {
-    key:"fork",
-    title:"First things first — what are you really looking for?",
-    opts:[
-      {label:"I want to build income online", path:"B", a:"build income online"},
-      {label:"I want to change or move my healthcare career", path:"A", a:"change healthcare career"},
-      {label:"Honestly… maybe both", path:"B", a:"both", both:true}
-    ]
-  };
-  var PATH_B = [
-    {key:"experience", title:"Have you tried building income online before?",
-      opts:[
-        {label:"No — I'm completely new to this", a:"brand new"},
-        {label:"I've dabbled, but nothing has stuck yet", a:"dabbled"},
-        {label:"I'm building already and want to grow", a:"already building"}
-      ]},
-    {key:"draw", title:"Which of these sounds most like you?",
-      opts:[
-        {label:"Getting paid to create content for brands — no big following needed", a:"UGC / create for brands", outcome:"ugc"},
-        {label:"Recommending products I believe in, and earning when they help someone", a:"affiliate marketing", outcome:"affiliate"},
-        {label:"Creating and selling my own digital products", a:"own digital products", outcome:"digital"},
-        {label:"Growing my own audience and content", a:"own audience/content", outcome:"content"},
-        {label:"Building a complete online business for the long term", a:"complete online business", outcome:"business"}
-      ]},
-    {key:"goal", title:"What's your biggest goal right now?",
-      opts:[
-        {label:"My first $500 online", a:"first $500"},
-        {label:"Extra income each month", a:"extra monthly income"},
-        {label:"Eventually replacing my income", a:"replace income"},
-        {label:"Building a long-term business", a:"long-term business"}
-      ]},
-    {key:"time", title:"And how much time can you honestly give it?",
-      opts:[
-        {label:"Pockets of time between shifts", a:"pockets of time"},
-        {label:"A few steady hours a week", a:"few hours weekly"},
-        {label:"I'm ready to go all-in", a:"all-in"}
-      ]}
+  var QUESTIONS = [
+    {tag:"First, the friction",title:"What do you most need your next chapter to change?",help:"Choose the one that feels most urgent—not the answer that sounds most practical.",options:[
+      ["The physical demands, long shifts, and constant urgency",{remote:3,clinical:2}],
+      ["Feeling underused when I know I can influence more",{pharma:3,clinical:2}],
+      ["Having too little control over my schedule",{entrepreneur:3,flex:2}],
+      ["Giving everything to an employer and owning too little",{digital:3,digitalPath:2}]
+    ]},
+    {tag:"Keep the good part",title:"Which part of your experience still gives you energy?",help:"Your exit does not have to erase what you’re already good at.",options:[
+      ["Guiding people through complex healthcare decisions",{remote:3,clinical:2}],
+      ["Translating clinical insight for leaders and teams",{pharma:3,clinical:2}],
+      ["Organizing, solving, and supporting behind the scenes",{entrepreneur:3,flex:2}],
+      ["Teaching, creating, and sharing useful ideas",{digital:3,digitalPath:2}]
+    ]},
+    {tag:"Picture the workday",title:"What kind of work would you gladly do more often?",help:"Think about the tasks—not the job title.",options:[
+      ["Focused review, documentation, and case decisions",{remote:3,clinical:2}],
+      ["Relationship-building and strategic conversations",{pharma:3,clinical:2}],
+      ["Flexible client work with clear deliverables",{entrepreneur:3,flex:2}],
+      ["Creating videos, resources, or recommendations",{digital:3,digitalPath:2}]
+    ]},
+    {tag:"Choose your environment",title:"Where do you picture yourself doing your best work?",help:"There is no universally better answer—only a better fit for this season.",options:[
+      ["At home in a structured healthcare role",{remote:3,clinical:2}],
+      ["Inside a corporate or cross-functional team",{pharma:3,clinical:2}],
+      ["Working with a small roster of my own clients",{entrepreneur:3,flex:2}],
+      ["Building online with flexible creative work",{digital:3,digitalPath:2}]
+    ]},
+    {tag:"Name your edge",title:"Which strength do people already rely on you for?",help:"Use outside evidence: what do colleagues actually come to you for?",options:[
+      ["Calm clinical judgment when a case is complicated",{remote:3,clinical:2}],
+      ["Influencing people without formal authority",{pharma:3,clinical:2}],
+      ["Creating order and getting important work finished",{entrepreneur:3,flex:2}],
+      ["Making people understand, trust, and act on a message",{digital:3,digitalPath:2}]
+    ]},
+    {tag:"Set the risk level",title:"How far from your current identity are you ready to move?",help:"Choose the amount of reinvention you can support right now.",options:[
+      ["Keep my license and clinical identity close",{remote:2,pharma:2,clinical:3}],
+      ["Move into an adjacent healthcare industry",{pharma:3,clinical:3}],
+      ["Build a flexible service while I keep my job",{entrepreneur:3,flex:3}],
+      ["Create a new digital brand or income stream",{digital:3,digitalPath:3}]
+    ]},
+    {tag:"Follow the motivation",title:"Which outcome would make you proudest one year from now?",help:"Pick the outcome—not the title.",options:[
+      ["A stable role with healthier hours and less physical strain",{remote:3,clinical:2}],
+      ["A respected industry role where my voice has reach",{pharma:3,clinical:2}],
+      ["A dependable client-based business I control",{entrepreneur:3,flex:2}],
+      ["An audience and digital assets that generate income",{digital:3,digitalPath:2}]
+    ]},
+    {tag:"Test your appetite",title:"What would you be most willing to learn next?",help:"A strong path should make the learning feel worth it.",options:[
+      ["Remote-care workflows, payer systems, or case review",{remote:3,clinical:2}],
+      ["Industry language, clinical research, or medical affairs",{pharma:3,clinical:2}],
+      ["Client outreach, proposals, and service delivery",{entrepreneur:3,flex:2}],
+      ["Content, audience growth, and online sales",{digital:3,digitalPath:2}]
+    ]},
+    {tag:"Choose your support",title:"What kind of support would help you act—not just think?",help:"All four options can serve any path.",support:true,options:[
+      ["A personal diagnosis and a written path",{support:"clarity"}],
+      ["A self-paced curriculum and community",{support:"community"}],
+      ["Weekly coaching, accountability, and a cohort",{support:"flagship"}],
+      ["Private, high-touch help from plan through execution",{support:"intensive"}]
+    ]},
+    {tag:"Set the pace",title:"How soon do you want to make a serious move?",help:"Your timeline changes the plan—not your potential.",timeline:true,options:[
+      ["I’m exploring; I need the right direction first",{timeline:"explore"}],
+      ["Within 3–6 months",{timeline:"steady"}],
+      ["Within 30–90 days",{timeline:"ready"}],
+      ["As soon as possible—but I need a realistic plan",{timeline:"urgent"}]
+    ]}
   ];
-  var PATH_A = [
-    {key:"move", title:"What kind of move are you hoping for?",
-      opts:[
-        {label:"A remote role where I keep using my healthcare background", a:"remote healthcare role", outcome:"remote"},
-        {label:"A bigger change — pharma, industry, or out of healthcare", a:"bigger change / pharma / industry", outcome:"transition"},
-        {label:"I'm not sure yet — I just know something has to change", a:"not sure, needs change", outcome:"remote"}
-      ]},
-    {key:"stage", title:"Where are you right now?",
-      opts:[
-        {label:"Just starting to explore", a:"exploring"},
-        {label:"Actively looking or applying", a:"actively applying"},
-        {label:"Burned out and needing a change soon", a:"burned out, needs change soon"}
-      ]},
-    {key:"background", title:"What's your background?",
-      opts:[
-        {label:"Bedside nursing", a:"bedside nursing"},
-        {label:"NP / DNP / advanced practice", a:"NP/DNP/advanced practice"},
-        {label:"Another healthcare role", a:"other healthcare"},
-        {label:"I'm not in healthcare", a:"not in healthcare"}
-      ]}
-  ];
-
-  /* ============ OUTCOMES ============ */
-  var OUTCOMES = {
-    affiliate:{
-      title:"Affiliate Marketing",
-      copy:["<p>Affiliate marketing fits you. You don't need your own product or a big following — you learn to share tools and courses you genuinely believe in, and you earn when they help someone.</p><p>SWC 2.0 is where I send beginners. It walks you through everything step by step, in plain language.</p>"],
-      cta:"Start with SWC 2.0", link:LINKS.swc, path:"Digital CEO"
-    },
-    ugc:{
-      title:"UGC Creator",
-      copy:["<p>You'd love UGC. Brands pay creators for authentic content — not for follower counts. Many of my students started with tiny audiences, because the content itself is what brands are buying.</p><p>Made From Zero teaches UGC plus other simple, low-pressure ways to earn as a beginner.</p>"],
-      cta:"Explore Made From Zero", link:LINKS.mfz, path:"Digital CEO"
-    },
-    digital:{
-      title:"Digital Products",
-      copy:["<p>Creating your own digital products is a wonderful path — you build something once and it keeps serving people over and over.</p><p>The Boss Suite is my complete digital-business library. The product-creation and sales pieces inside are built to take you from idea to launch.</p>"],
-      cta:"Look inside The Boss Suite", link:LINKS.boss, path:"Digital CEO"
-    },
-    content:{
-      title:"Content Creator",
-      copy:["<p>Your path starts with content. Growing your own audience opens doors that stay open — offers, partnerships, income streams that build on each other.</p><p>The Simple Content Method keeps it simple and repeatable, so you're never staring at a blank screen wondering what to post.</p>"],
-      cta:"Get the Simple Content Method", link:LINKS.scm, path:"Digital CEO"
-    },
-    business:{
-      title:"Business Builder",
-      copy:["<p>You're ready to build the whole thing: a real online business where content, offers, and systems work together.</p><p>That's exactly what The Boss Suite covers, end to end. Go at your own pace; it's all in there.</p>"],
-      cta:"Step into The Boss Suite", link:LINKS.boss, path:"Digital CEO"
-    },
-    transition:{
-      title:"Healthcare Career Transition",
-      copy:["<p>Your next chapter is a career move — not a marketing course — and I want you to hear that from me directly.</p><p>I transitioned from bedside nursing into pharmaceutical leadership, and helping others map that same kind of move is one of my favorite things to do. Send me a DM and tell me where you are; I'll point you in the right direction.</p>"],
-      cta:"DM me on Instagram", link:LINKS.ig, path:"Healthcare Career"
-    },
-    remote:{
-      title:"Remote Healthcare Careers",
-      copy:["<p>Here's some good news: you may not have to leave healthcare to get your life back. Remote clinical roles, telehealth, pharma, case management — there are more work-from-home paths for healthcare professionals than most people realize.</p><p>DM me and I'll help you figure out which one fits your background.</p>"],
-      cta:"DM me on Instagram", link:LINKS.ig, path:"Healthcare Career"
-    }
-  };
-
-  /* ============ STATE ============ */
-  var state = { path:null, both:false, idx:-1, answers:[], outcome:null };
-
-  var $ = function(id){ return document.getElementById(id); };
-  var screens = { intro:$("s-intro"), quiz:$("s-quiz"), gate:$("s-gate"), result:$("s-result") };
-
-  function show(name){
-    Object.keys(screens).forEach(function(k){ screens[k].classList.remove("on"); });
-    /* force reflow so the entrance animation replays */
-    void screens[name].offsetWidth;
-    screens[name].classList.add("on");
-    window.scrollTo({top:0, behavior:"auto"});
-  }
-
-  function questionList(){
-    return state.path === "A" ? PATH_A : PATH_B;
-  }
-  function totalSteps(){
-    return 1 + questionList().length; /* fork + branch questions */
-  }
-  function setProgress(step){
-    $("progress").classList.add("show");
-    $("progressbar").style.width = Math.round((step / (totalSteps()+1)) * 100) + "%"; /* +1 = email gate */
-  }
-
+  var state={index:0,answers:new Array(QUESTIONS.length),result:null,displayLane:null};
+  var screens={intro:document.getElementById("intro"),quiz:document.getElementById("quiz"),routeChoice:document.getElementById("routeChoice"),gate:document.getElementById("gate"),result:document.getElementById("result")};
+  function show(name){Object.keys(screens).forEach(function(k){screens[k].classList.toggle("active",k===name)});window.scrollTo(0,0)}
   function renderQuestion(){
-    var q, stepNum;
-    if(state.idx === -1){ q = FORK; stepNum = 1; }
-    else { q = questionList()[state.idx]; stepNum = state.idx + 2; }
-    $("stepline").textContent = "Question " + stepNum + " of " + (state.path ? totalSteps() : "5");
-    $("qtitle").textContent = q.title;
-    var wrap = $("opts");
-    wrap.innerHTML = "";
-    q.opts.forEach(function(opt){
-      var b = document.createElement("button");
-      b.type = "button";
-      b.className = "opt";
-      b.textContent = opt.label;
-      b.addEventListener("click", function(){ answer(q, opt); });
-      wrap.appendChild(b);
+    var q=QUESTIONS[state.index], saved=state.answers[state.index];
+    document.getElementById("progressText").textContent="Question "+(state.index+1)+" of "+QUESTIONS.length;
+    var pct=Math.round(((state.index+1)/QUESTIONS.length)*100);
+    document.getElementById("progressPercent").textContent=pct+"%";
+    document.getElementById("progressFill").style.width=pct+"%";
+    document.getElementById("questionNum").textContent=q.tag;
+    document.getElementById("questionTitle").textContent=q.title;
+    document.getElementById("questionHelp").textContent=q.help;
+    var wrap=document.getElementById("options"); wrap.innerHTML="";
+    q.options.forEach(function(opt,i){
+      var b=document.createElement("button"); b.type="button"; b.className="option"+(saved===i?" selected":""); b.setAttribute("role","radio"); b.setAttribute("aria-checked",saved===i?"true":"false");
+      b.innerHTML='<span class="radio" aria-hidden="true"></span><span>'+opt[0]+'</span>';
+      b.addEventListener("click",function(){state.answers[state.index]=i;renderQuestion()}); wrap.appendChild(b);
     });
-    $("backBtn").style.visibility = (state.idx === -1) ? "hidden" : "visible";
-    setProgress(stepNum);
-    show("quiz");
+    document.getElementById("backBtn").style.visibility=state.index===0?"hidden":"visible";
+    var next=document.getElementById("nextBtn"); next.disabled=saved===undefined; next.firstChild.nodeValue=state.index===QUESTIONS.length-1?"Continue ":"Continue ";
   }
-
-  function answer(q, opt){
-    if(q === FORK){
-      state.path = opt.path;
-      state.both = !!opt.both;
-      state.answers = [{k:"Looking for", v:opt.a}];
-      state.idx = 0;
-    } else {
-      state.answers.push({k:q.title, v:opt.a});
-      if(opt.outcome){ state.outcome = opt.outcome; }
-      state.idx++;
-    }
-    if(state.idx >= questionList().length){
-      setProgress(totalSteps()+1);
-      show("gate");
-      $("firstName").focus();
-    } else {
-      renderQuestion();
-    }
+  function calculate(){
+    var scores={remote:0,pharma:0,entrepreneur:0,digital:0}, pathScores={clinical:0,flex:0,digitalPath:0}, support="default",timeline="explore";
+    QUESTIONS.forEach(function(q,qi){var ai=state.answers[qi]; if(ai===undefined)return; var data=q.options[ai][1]; Object.keys(data).forEach(function(k){if(scores.hasOwnProperty(k))scores[k]+=data[k];if(pathScores.hasOwnProperty(k))pathScores[k]+=data[k];if(k==="support")support=data[k];if(k==="timeline")timeline=data[k]})});
+    var pathRanked=Object.keys(pathScores).sort(function(a,b){return pathScores[b]-pathScores[a]});
+    var primaryPath=pathRanked[0];
+    var top=primaryPath==="flex"?"entrepreneur":primaryPath==="digitalPath"?"digital":null;
+    var ranked=Object.keys(scores).sort(function(a,b){return scores[b]-scores[a]});
+    if(!top) top=scores.pharma>=scores.remote?"pharma":"remote";
+    var second=ranked.filter(function(k){return k!==top})[0];
+    var total=Object.keys(scores).reduce(function(sum,k){return sum+scores[k]},0),share=Math.round(scores[top]/Math.max(total,1)*100);
+    state.result={top:top,second:second,scores:scores,pathScores:pathScores,primaryPath:primaryPath,support:support,timeline:timeline,strength:Math.max(58,Math.min(90,46+share))};
+    state.displayLane=top;
   }
-
-  $("backBtn").addEventListener("click", function(){
-    if(state.idx <= 0){
-      state.path = null; state.idx = -1; state.answers = []; state.outcome = null;
-      renderQuestion();
-    } else {
-      state.idx--;
-      state.answers.pop();
-      renderQuestion();
-    }
-  });
-
-  $("startBtn").addEventListener("click", function(){
-    state.path = null; state.both = false; state.idx = -1; state.answers = []; state.outcome = null;
-    renderQuestion();
-  });
-
-  $("retakeBtn").addEventListener("click", function(){
-    state.path = null; state.both = false; state.idx = -1; state.answers = []; state.outcome = null;
-    $("gateForm").reset();
-    renderQuestion();
-  });
-
-  /* ============ GATE + CAPTURE ============ */
-  function validEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
-
-  $("gateForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    var name = $("firstName").value.trim();
-    var email = $("email").value.trim();
-    if(!name || !validEmail(email)){
-      $("gateErr").classList.add("show");
-      return;
-    }
-    $("gateErr").classList.remove("show");
-    var btn = $("gateBtn");
-    btn.disabled = true;
-    btn.textContent = "One moment…";
-
-    var oc = OUTCOMES[state.outcome] || OUTCOMES.remote;
-    var answerStr = state.answers.map(function(a){ return a.k + ": " + a.v; }).join(" | ");
-
-    var lead = {
-      name: name,
-      email: email,
-      path: oc.path,
-      result: oc.title,
-      answers: answerStr,
-      source: "rhonni-quiz",
-      submitted: new Date().toISOString(),
-      _subject: "New quiz lead — " + name + " → " + oc.title,
-      _template: "table"
-    };
-
-    /* honeypot: silently skip the capture for bots, still show a result */
-    var isBot = $("company").value !== "";
-
-    function finish(){ showResult(oc); }
-
-    if(isBot){ finish(); return; }
-
-    fetch(ENDPOINT, {
-      method:"POST",
-      headers:{ "Content-Type":"application/json", "Accept":"application/json" },
-      body: JSON.stringify(lead)
-    })
-      .then(finish)
-      .catch(function(){
-        /* network/CORS fallback: form-encoded POST to the standard endpoint still
-           registers server-side even though the redirect response is ignored */
-        try {
-          var fd = new URLSearchParams();
-          Object.keys(lead).forEach(function(k){ fd.append(k, lead[k]); });
-          fetch(ENDPOINT_FALLBACK, { method:"POST", mode:"no-cors", body:fd });
-        } catch(err){}
-        setTimeout(finish, 400);
-      });
-  });
-
-  function showResult(oc){
-    $("resultTitle").textContent = oc.title;
-    var html = oc.copy.join("");
-    /* personalization */
-    var exp = state.answers.filter(function(a){ return a.k.indexOf("tried building") !== -1; })[0];
-    if(oc.path === "Digital CEO" && exp && exp.v === "brand new"){
-      html += "<p class='ps'>P.S. Since you're brand new: start small and take it one step at a time. You don't need to be “techy” or have a following to begin — every one of these paths starts smaller than you think.</p>";
-    }
-    if(state.both){
-      html += "<p class='ps'>P.S. You mentioned your career too — if a remote healthcare move is also on your mind, <a href='" + LINKS.ig + "' target='_blank' rel='noopener' style='color:var(--gold)'>DM me on Instagram</a> and I'll point you in the right direction.</p>";
-    }
-    $("resultCopy").innerHTML = html;
-    var cta = $("resultCta");
-    cta.textContent = oc.cta;
-    cta.href = oc.link;
-    $("gateBtn").disabled = false;
-    $("gateBtn").textContent = "Show me my path";
-    show("result");
+  function iconCheck(){return '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m5 12 4 4L19 6"/></svg>'}
+  function renderLane(key,isChoice){
+    var p=LANES[key]; state.displayLane=key;
+    document.getElementById("resultTitle").textContent=p.path+" — "+p.title;
+    document.getElementById("resultSummary").textContent=(isChoice?"You chose to explore this lane. ":"")+p.summary;
+    document.getElementById("whyList").innerHTML=p.why.map(function(x){return "<li>"+iconCheck()+"<span>"+x+"</span></li>"}).join("");
+    document.getElementById("schoolName").textContent=p.school;
+    document.getElementById("roleList").innerHTML=p.roles.map(function(x){return "<span>"+x+"</span>"}).join("");
+    document.getElementById("stepsList").innerHTML=p.steps.map(function(x){return "<li>"+x+"</li>"}).join("");
+    document.querySelectorAll(".choose-lane").forEach(function(b){b.classList.toggle("active-choice",b.getAttribute("data-lane")===key)});
   }
-
-  $("yr").textContent = new Date().getFullYear();
+  function renderResult(){
+    var r=state.result,primary=LANES[r.top],secondary=LANES[r.second];
+    renderLane(r.top,false);
+    document.getElementById("fitCopy").textContent="A useful starting signal · you stay in charge";
+    document.getElementById("secondTitle").textContent=secondary.title;
+    document.getElementById("secondCopy").textContent=secondary.secondary;
+    var sc=document.getElementById("secondCta"); sc.textContent=secondary.cta; sc.href=r.second==="digital"?"https://stan.store/DNPToDigitalCEO":"https://stan.store/HealthcareCareerAcademy";
+    show("result"); setTimeout(function(){document.getElementById("fitBar").style.width=r.strength+"%"},40);
+  }
+  function snapshot(){
+    var r=state.result,p=LANES[state.displayLane],second=LANES[r.second];
+    return "MY BEDSIDE EXIT SNAPSHOT\n\nBased on my responses, I may want to start here: "+p.title+"\nRecommended School: "+p.school+"\n\nWhy it could fit:\n- "+p.why.join("\n- ")+"\n\nMy next three moves:\n1. "+p.steps.join("\n2. ")+"\n\nSecond lane to explore: "+second.title+"\n\nEvery path remains open to me.";
+  }
+  function buildLaneChoosers(){
+    var host=document.getElementById("laneChooser"); if(!host)return;
+    host.innerHTML="";
+    Object.keys(LANES).forEach(function(k){var p=LANES[k],b=document.createElement("button");b.type="button";b.className="choose-lane";b.setAttribute("data-lane",k);b.innerHTML="<strong>"+p.title+"</strong><span>"+p.school+"</span>";b.addEventListener("click",function(){renderLane(k,true);document.getElementById("result").scrollIntoView({behavior:"smooth",block:"start"})});host.appendChild(b)});
+  }
+  buildLaneChoosers();
+  document.getElementById("startBtn").addEventListener("click",function(){state.index=0;renderQuestion();show("quiz")});
+  document.getElementById("closeQuiz").addEventListener("click",function(){show("intro")});
+  document.getElementById("backBtn").addEventListener("click",function(){if(state.index>0){state.index--;renderQuestion()}});
+  document.getElementById("nextBtn").addEventListener("click",function(){if(state.answers[state.index]===undefined)return;if(state.index<QUESTIONS.length-1){state.index++;renderQuestion()}else{calculate();if(state.result.primaryPath==="clinical"){show("routeChoice")}else{show("gate");document.getElementById("firstNameInput").focus()}}});
+  document.getElementById("routeBack").addEventListener("click",function(){show("quiz")});
+  document.querySelectorAll(".route-choice").forEach(function(b){b.addEventListener("click",function(){var chosen=b.getAttribute("data-lane");state.result.scores[chosen]+=10;var ranked=Object.keys(state.result.scores).sort(function(a,c){return state.result.scores[c]-state.result.scores[a]});state.result.top=chosen;state.result.second=ranked.filter(function(k){return k!==chosen})[0];state.displayLane=chosen;show("gate");document.getElementById("firstNameInput").focus()})});
+  document.getElementById("gateBack").addEventListener("click",function(){if(state.result&&state.result.primaryPath==="clinical")show("routeChoice");else show("quiz")});
+  document.getElementById("emailGate").addEventListener("submit",function(e){e.preventDefault();var name=document.getElementById("firstNameInput"),email=document.getElementById("emailInput"),err=document.getElementById("emailError");if(!name.value.trim()){err.textContent="Please share your first name so we can continue.";name.focus();return}if(!email.checkValidity()){err.textContent="Please enter a valid email address to continue.";email.focus();return}err.textContent="";sendLead(name.value.trim(),email.value.trim())});
+  /* Leads go DIRECTLY to Rhonni via FormSubmit (same rail as her original quiz). No middleman holds this list. */
+  var ENDPOINT="https://formsubmit.co/ajax/Rhonnie32@gmail.com", ENDPOINT_FALLBACK="https://formsubmit.co/Rhonnie32@gmail.com", sending=false;
+  function sendLead(name,email){
+    if(sending)return; sending=true;
+    var btn=document.querySelector("#emailGate button[type=submit]"); if(btn)btn.disabled=true;
+    var done=false; function finish(){if(done)return;done=true;sending=false;if(btn)btn.disabled=false;renderResult()}
+    var hp=document.getElementById("company"); if(hp&&hp.value!==""){finish();return}
+    var r=state.result||{}, top=LANES[r.top]||{}, second=LANES[r.second]||{};
+    var answers=QUESTIONS.map(function(q,qi){var ai=state.answers[qi];return ai===undefined?null:(q.title+": "+String(q.options[ai][0]).replace(/<[^>]*>/g,""))}).filter(Boolean).join(" | ");
+    var lead={name:name,email:email,top_path:top.title||r.top||"",second_path:second.title||r.second||"",support:r.support||"",timeline:r.timeline||"",answers:answers,source:"exit-path-quiz",submitted:new Date().toISOString(),_captcha:"false",_subject:"New Exit Path Quiz lead — "+name+" → "+(top.title||r.top||""),_template:"table"};
+    var timer=setTimeout(finish,6000);
+    fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(lead)})
+      .then(function(res){if(!res.ok)throw new Error("http "+res.status);return res.json().catch(function(){return {}})}).then(function(j){if(j&&String(j.success)==="false")throw new Error("rejected");clearTimeout(timer);finish()})
+      .catch(function(){try{var fd=new URLSearchParams();Object.keys(lead).forEach(function(k){fd.append(k,lead[k])});fetch(ENDPOINT_FALLBACK,{method:"POST",mode:"no-cors",body:fd})}catch(x){}clearTimeout(timer);setTimeout(finish,400)});
+  }
+  document.getElementById("retakeBtn").addEventListener("click",function(){state={index:0,answers:new Array(QUESTIONS.length),result:null,displayLane:null};document.getElementById("fitBar").style.width="0";document.getElementById("copyNote").textContent="";document.getElementById("firstNameInput").value="";document.getElementById("emailInput").value="";renderQuestion();show("quiz")});
+  document.getElementById("copyBtn").addEventListener("click",function(){
+    var note=document.getElementById("copyNote"),text=snapshot();
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){note.textContent="Your exit snapshot is copied."}).catch(function(){note.textContent="Copy was blocked by this browser. Select the result text above to save it."})}else{note.textContent="Copy is not supported in this browser. Select the result text above to save it."}
+  });
 })();
 </script>
 </body>
